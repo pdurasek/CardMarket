@@ -4,18 +4,20 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "model.Rarity" table = "rarity">
+    <class name = "models.Card" table = "card">
 
         <meta attribute = "class-description">
-            This class contains the rarity detail.
+            This class contains the card detail.
         </meta>
 
-        <id name = "rarityID" type = "int" column = "rarityID">
+        <id name = "cardID" type = "int" column = "cardID">
             <generator class="native"/>
         </id>
 
         <property name = "name" column = "name" type = "string"/>
-
+        <property name = "firstEd" column = "firstEd" type = "boolean"/>
+        <property name = "description" column = "description" type = "string"/>
+        <property name = "imageUrl" column = "imageUrl" type = "string"/>
 
     </class>
 </hibernate-mapping>

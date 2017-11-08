@@ -1,30 +1,30 @@
-package model;
+package models;
 
-public class Rarity
+public class Condition
 {
-   private int rarityID;
+   private int conditionId;
    private String name;
    private String abbr;
 
-   public Rarity()
+   public Condition()
    {
    }
 
-   public Rarity(int rarityID, String name, String abbr)
+   public Condition(int conditionId, String name, String abbr)
    {
-      this.rarityID = rarityID;
+      this.conditionId = conditionId;
       this.name = name;
       this.abbr = abbr;
    }
 
-   public int getRarityID()
+   public int getConditionId()
    {
-      return rarityID;
+      return conditionId;
    }
 
-   public void setRarityID(int rarityID)
+   public void setConditionId(int conditionId)
    {
-      this.rarityID = rarityID;
+      this.conditionId = conditionId;
    }
 
    public String getName()

@@ -1,4 +1,5 @@
 import com.jfoenix.controls.JFXMasonryPane;
+import com.sun.istack.internal.Nullable;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -8,17 +9,16 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import model.Rarity;
+import models.Card;
+import models.Cardset;
+import models.Rarity;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Market extends Application
 {
@@ -27,40 +27,42 @@ public class Market extends Application
    @Override
    public void start(Stage primaryStage) throws Exception
    {
-
-
       JFXMasonryPane jfxMasonryPane = new JFXMasonryPane();
       jfxMasonryPane.setStyle("-fx-background-color: #181818");
 
-      Random r = new Random();
-      for (int i = 0; i < 20; i++)
+      List set = TestHibernateConnection();
+
+      for (int i = 0; i < set.size(); ++i)
       {
+         Cardset cardset = (Cardset) set.get(i);
+         Set cards = cardset.getCards();
+
+         for (Iterator iterator = cards.iterator(); iterator.hasNext();)
+         {
+            Card card = (Card) iterator.next();
+
             /*Label label = new Label();
             label.setStyle("-fx-background-color:rgb(" + r.nextInt(255) + "," + r.nextInt(255) + "," + r.nextInt(255) + ")");
             jfxMasonryPane.getChildren().add(label);*/
 
-         VBox card = new VBox();
-         int kekFactor = r.nextInt(2);
-         String imgName = "";
-         if(kekFactor == 0)
-         {
-            imgName = "ash.png";
-         }
-         else
-         {
-            imgName = "ghost.png";
-         }
-         ImageView slikica = new ImageView(imgName);
+            VBox cardBox = new VBox();
+            String imgName = card.getImageUrl();
+
+            ImageView slikica = new ImageView("images/" +imgName);
             /*slikica.setFitHeight(243);
             slikica.setFitWidth(171);*/
-         Label label = new Label(imgName);
-         label.setTextFill(Paint.valueOf("#bfbfbf"));
-         //label.setPrefSize(100, 10);
-         card.getChildren().addAll(slikica, label);
-         card.setPrefSize(171,243 );
+            Label label = new Label(card.getName());
+            Label label2 = new Label(card.getDescription());
+            label.setTextFill(Paint.valueOf("#bfbfbf"));
+            label2.setTextFill(Paint.valueOf("#bfbfbf"));
+            //label.setPrefSize(100, 10);
+            cardBox.getChildren().addAll(slikica, label, label2);
+            cardBox.setPrefSize(171,243 );
 
-         jfxMasonryPane.getChildren().add(card);
+            jfxMasonryPane.getChildren().add(cardBox);
+         }
       }
+
       jfxMasonryPane.setCellHeight(150);
       jfxMasonryPane.setHSpacing(20);
       jfxMasonryPane.setVSpacing(1);
@@ -80,11 +82,12 @@ public class Market extends Application
 
    public static void main(String[] args)
    {
-      TestHibernateConnection();
+      //TestHibernateConnection();
       launch(args);
    }
 
-   private static void TestHibernateConnection()
+   @Nullable
+   private static List TestHibernateConnection()
    {
       try
       {
@@ -102,29 +105,47 @@ public class Market extends Application
       try (Session session = factory.openSession())
       {
          transaction = session.beginTransaction();
-         List rarities = session.createQuery("FROM Rarity").list();
          ArrayList<Rarity> rarities2 = new ArrayList<>(session.createQuery("FROM Rarity").list());
 
          for (int i = 0; i < rarities2.size(); ++i)
          {
-            Rarity rarity = (Rarity) rarities2.get(i);
-            System.out.println(rarity.getRarityID());
+            Rarity rarity = rarities2.get(i);
+            System.out.print(rarity.getRarityID() +". ");
             System.out.println(rarity.getName());
          }
+
+         /*List rarities = session.createQuery("FROM Rarity").list();
 
          for (int i = 0; i < rarities.size(); ++i)
          {
             Rarity rarity = (Rarity) rarities.get(i);
-            System.out.println(rarity.getRarityID());
+            System.out.print(rarity.getRarityID() +". ");
             System.out.println(rarity.getName());
          }
 
          for (Iterator iterator = rarities.iterator(); iterator.hasNext();)
          {
             Rarity rarity = (Rarity) iterator.next();
-            System.out.println(rarity.getRarityID());
+            System.out.print(rarity.getRarityID() +". ");
             System.out.println(rarity.getName());
+         }*/
+
+         List sets = session.createQuery("FROM Cardset ").list();
+
+         for (int i = 0; i < sets.size(); ++i)
+         {
+            Cardset set = (Cardset) sets.get(i);
+            System.out.println("Cardset name: " +set.getName() +"; ");
+            Set cards = set.getCards();
+
+            for (Iterator iterator = cards.iterator(); iterator.hasNext();)
+            {
+               Card card = (Card) iterator.next();
+               System.out.println("\t Card name: " +card.getName());
+            }
          }
+
+         return sets;
       }
       catch(HibernateException e)
       {
@@ -133,5 +154,7 @@ public class Market extends Application
             transaction.rollback();
          }
       }
+
+      return null;
    }
 }
