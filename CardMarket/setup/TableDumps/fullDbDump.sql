@@ -44,10 +44,10 @@ CREATE TABLE `card` (
   CONSTRAINT `fk_Card_Condition1` FOREIGN KEY (`conditionId`) REFERENCES `condition` (`conditionId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Language1` FOREIGN KEY (`languageID`) REFERENCES `language` (`languageID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Rarity1` FOREIGN KEY (`rarityID`) REFERENCES `rarity` (`rarityID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Card_Set1` FOREIGN KEY (`setID`) REFERENCES `set` (`setID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Card_Set1` FOREIGN KEY (`setID`) REFERENCES `cardset` (`setID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_SubType1` FOREIGN KEY (`subTypeID`) REFERENCES `subtype` (`subTypeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Type1` FOREIGN KEY (`typeID`) REFERENCES `type` (`typeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,6 +56,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
+INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,6 +91,31 @@ CREATE TABLE `cardoffer` (
 LOCK TABLES `cardoffer` WRITE;
 /*!40000 ALTER TABLE `cardoffer` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cardoffer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cardset`
+--
+
+DROP TABLE IF EXISTS `cardset`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cardset` (
+  `setID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `abbr` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`setID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cardset`
+--
+
+LOCK TABLES `cardset` WRITE;
+/*!40000 ALTER TABLE `cardset` DISABLE KEYS */;
+INSERT INTO `cardset` VALUES (1,'Maximum Crisis','MACR'),(2,'Raging Tempest','RATE'),(3,'Invasion: Vengeance','INOV'),(4,'The Dark Illusion','TDIL'),(5,'Battle of Legend: Light\'s Revenge','BLLR'),(6,'Pendulum Evolution','PEVO'),(7,'Shining Victories','SHVI'),(8,'Breakers of Shadow','BOSH');
+/*!40000 ALTER TABLE `cardset` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -129,7 +155,7 @@ CREATE TABLE `condition` (
   `name` varchar(70) DEFAULT NULL,
   `abbr` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`conditionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,31 +325,6 @@ INSERT INTO `rarity` VALUES (1,'Common','C'),(2,'Rare','R'),(3,'Super Rare','SR'
 UNLOCK TABLES;
 
 --
--- Table structure for table `set`
---
-
-DROP TABLE IF EXISTS `set`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `set` (
-  `setID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `abbr` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`setID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `set`
---
-
-LOCK TABLES `set` WRITE;
-/*!40000 ALTER TABLE `set` DISABLE KEYS */;
-INSERT INTO `set` VALUES (1,'Maximum Crisis','MACR'),(2,'Raging Tempest','RATE'),(3,'Invasion: Vengeance','INOV'),(4,'The Dark Illusion','TDIL'),(5,'Battle of Legend: Light\'s Revenge','BLLR'),(6,'Pendulum Evolution','PEVO'),(7,'Shining Victories','SHVI'),(8,'Breakers of Shadow','BOSH');
-/*!40000 ALTER TABLE `set` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `shippingaddress`
 --
 
@@ -427,7 +428,7 @@ CREATE TABLE `subtype` (
   `subTypeID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`subTypeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -436,6 +437,7 @@ CREATE TABLE `subtype` (
 
 LOCK TABLES `subtype` WRITE;
 /*!40000 ALTER TABLE `subtype` DISABLE KEYS */;
+INSERT INTO `subtype` VALUES (1,'Test');
 /*!40000 ALTER TABLE `subtype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -512,4 +514,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 22:07:50
+-- Dump completed on 2017-11-08 23:46:24
