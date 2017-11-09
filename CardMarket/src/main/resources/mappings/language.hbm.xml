@@ -14,6 +14,11 @@
             <generator class="native"/>
         </id>
 
+        <set name="cards" cascade="save-update">
+            <key column="languageID"/>
+            <one-to-many class="models.Card"/>
+        </set>
+
         <property name = "name" column = "name" type = "string"/>
         <property name = "abbr" column = "abbr" type = "string"/>
 

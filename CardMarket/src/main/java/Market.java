@@ -1,5 +1,9 @@
 import com.jfoenix.controls.JFXMasonryPane;
 import com.sun.istack.internal.Nullable;
+import dao.implementations.CardDao;
+import dao.implementations.CardSetDao;
+import dao.interfaces.ICardDao;
+import dao.interfaces.ICardSetDao;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -11,6 +15,7 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import models.Card;
 import models.Cardset;
+import models.Condition;
 import models.Rarity;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -83,7 +88,29 @@ public class Market extends Application
    public static void main(String[] args)
    {
       //TestHibernateConnection();
+      testCardDao();
       launch(args);
+   }
+
+   private static void testCardDao()
+   {
+      ICardDao karta = new CardDao();
+      List<Card> karteee = karta.getAllCards(0, 15);
+
+      for (int i = 0; i < karteee.size(); i++)
+      {
+         System.out.println(karteee.get(i).getName() + " | " + karteee.get(i).getType().getName() + " | " + karteee.get(i).getSubtype().getName() + " | "
+                 + karteee.get(i).getRarity().getName() + " | " + karteee.get(i).getLanguage().getName() + " | "
+                 + karteee.get(i).getSet().getName() + " | " + karteee.get(i).getCondition().getName());
+      }
+
+      ICardSetDao set = new CardSetDao();
+      List<Cardset> setooo = set.getAllSets();
+
+      for (Cardset cardset: setooo)
+      {
+         System.out.println(cardset.getName());
+      }
    }
 
    @Nullable
@@ -110,8 +137,8 @@ public class Market extends Application
          for (int i = 0; i < rarities2.size(); ++i)
          {
             Rarity rarity = rarities2.get(i);
-            System.out.print(rarity.getRarityID() +". ");
-            System.out.println(rarity.getName());
+            //System.out.print(rarity.getRarityID() +". ");
+            //System.out.println(rarity.getName());
          }
 
          /*List rarities = session.createQuery("FROM Rarity").list();
@@ -135,13 +162,13 @@ public class Market extends Application
          for (int i = 0; i < sets.size(); ++i)
          {
             Cardset set = (Cardset) sets.get(i);
-            System.out.println("Cardset name: " +set.getName() +"; ");
+            //System.out.println("Cardset name: " +set.getName() +"; ");
             Set cards = set.getCards();
 
             for (Iterator iterator = cards.iterator(); iterator.hasNext();)
             {
                Card card = (Card) iterator.next();
-               System.out.println("\t Card name: " +card.getName());
+               //System.out.println("\t Card name: " +card.getName());
             }
          }
 

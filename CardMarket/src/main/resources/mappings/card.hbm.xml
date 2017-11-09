@@ -18,6 +18,12 @@
         <property name = "firstEd" column = "firstEd" type = "boolean"/>
         <property name = "description" column = "description" type = "string"/>
         <property name = "imageUrl" column = "imageUrl" type = "string"/>
+        <many-to-one name="type" column="typeID" class="models.Type" not-null="true"/>
+        <many-to-one name="subtype" column="subTypeID" class="models.Subtype" not-null="true"/>
+        <many-to-one name="rarity" column="rarityID" class="models.Rarity" not-null="true"/>
+        <many-to-one name="language" column="languageID" class="models.Language" not-null="true"/>
+        <many-to-one name="set" column="setID" class="models.Cardset" not-null="true"/>
+        <many-to-one name="condition" column="conditionId" class="models.Condition" not-null="true"/>
 
     </class>
 </hibernate-mapping>

@@ -7,19 +7,13 @@ public class Card
    private boolean firstEd;
    private String description;
    private String imageUrl;
-   /*private Type type;
+   private Type type;
    private Subtype subtype;
    private Rarity rarity;
    private Language language;
    private Cardset set;
-   private Condition condition;*/
+   private Condition condition;
 
-   /*private int typeID;
-   private int subTypeID;
-   private int rarityID;
-   private int languageID;
-   private int setID;
-   private int conditionId;*/
 
    public int getCardID()
    {
@@ -69,5 +63,65 @@ public class Card
    public void setImageUrl(String imageUrl)
    {
       this.imageUrl = imageUrl;
+   }
+
+   public Type getType()
+   {
+      return type;
+   }
+
+   public void setType(Type type)
+   {
+      this.type = type;
+   }
+
+   public Subtype getSubtype()
+   {
+      return subtype;
+   }
+
+   public void setSubtype(Subtype subtype)
+   {
+      this.subtype = subtype;
+   }
+
+   public Rarity getRarity()
+   {
+      return rarity;
+   }
+
+   public void setRarity(Rarity rarity)
+   {
+      this.rarity = rarity;
+   }
+
+   public Language getLanguage()
+   {
+      return language;
+   }
+
+   public void setLanguage(Language language)
+   {
+      this.language = language;
+   }
+
+   public Cardset getSet()
+   {
+      return set;
+   }
+
+   public void setSet(Cardset set)
+   {
+      this.set = set;
+   }
+
+   public Condition getCondition()
+   {
+      return condition;
+   }
+
+   public void setCondition(Condition condition)
+   {
+      this.condition = condition;
    }
 }

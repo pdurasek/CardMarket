@@ -1,9 +1,12 @@
 package models;
 
+import java.util.Set;
+
 public class Subtype
 {
    private int subTypeID;
    private String name;
+   private Set cards;
 
    public Subtype()
    {
@@ -33,5 +36,15 @@ public class Subtype
    public void setName(String name)
    {
       this.name = name;
+   }
+
+   public Set getCards()
+   {
+      return cards;
+   }
+
+   public void setCards(Set cards)
+   {
+      this.cards = cards;
    }
 }

@@ -4,34 +4,36 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name = "hibernate.dialect">
+        <property name="hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
         </property>
 
-        <property name = "hibernate.connection.driver_class">
+        <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+
+        <property name="hibernate.connection.driver_class">
             com.mysql.jdbc.Driver
         </property>
 
-        <property name = "hibernate.connection.url">
+        <property name="hibernate.connection.url">
             jdbc:mysql://eu-cdbr-azure-west-b.cloudapp.net:3306/card_market
         </property>
 
-        <property name = "hibernate.connection.username">
+        <property name="hibernate.connection.username">
             b1846fe151e4be
         </property>
 
-        <property name = "hibernate.connection.password">
+        <property name="hibernate.connection.password">
             89e8ce47
         </property>
 
         <!-- List of XML mapping files -->
-        <mapping resource = "mappings/rarity.hbm.xml"/>
-        <mapping resource = "mappings/condition.hbm.xml"/>
-        <mapping resource = "mappings/language.hbm.xml"/>
-        <mapping resource = "mappings/cardset.hbm.xml"/>
-        <mapping resource = "mappings/subtype.hbm.xml"/>
-        <mapping resource = "mappings/type.hbm.xml"/>
-        <mapping resource = "mappings/card.hbm.xml"/>
+        <mapping resource="mappings/rarity.hbm.xml"/>
+        <mapping resource="mappings/language.hbm.xml"/>
+        <mapping resource="mappings/cardset.hbm.xml"/>
+        <mapping resource="mappings/subtype.hbm.xml"/>
+        <mapping resource="mappings/type.hbm.xml"/>
+        <mapping resource="mappings/card.hbm.xml"/>
+        <mapping resource="mappings/condition.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

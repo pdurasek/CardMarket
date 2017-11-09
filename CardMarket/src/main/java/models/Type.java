@@ -1,9 +1,12 @@
 package models;
 
+import java.util.Set;
+
 public class Type
 {
    private int typeID;
    private String name;
+   private Set cards;
 
    public Type()
    {
@@ -33,5 +36,15 @@ public class Type
    public void setName(String name)
    {
       this.name = name;
+   }
+
+   public Set getCards()
+   {
+      return cards;
+   }
+
+   public void setCards(Set cards)
+   {
+      this.cards = cards;
    }
 }

@@ -14,6 +14,11 @@
             <generator class="native"/>
         </id>
 
+        <set name="cards" cascade="save-update">
+            <key column="subTypeID"/>
+            <one-to-many class="models.Card"/>
+        </set>
+
         <property name = "name" column = "name" type = "string"/>
 
 

@@ -1,10 +1,13 @@
 package models;
 
+import java.util.Set;
+
 public class Language
 {
    private int languageID;
    private String name;
    private String abbr;
+   private Set cards;
 
    public Language()
    {
@@ -45,5 +48,15 @@ public class Language
    public void setAbbr(String abbr)
    {
       this.abbr = abbr;
+   }
+
+   public Set getCards()
+   {
+      return cards;
+   }
+
+   public void setCards(Set cards)
+   {
+      this.cards = cards;
    }
 }

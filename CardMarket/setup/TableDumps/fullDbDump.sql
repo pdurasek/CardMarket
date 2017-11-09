@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: card_market
+-- Host: eu-cdbr-azure-west-b.cloudapp.net    Database: card_market
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.26-MariaDB
+-- Server version	5.5.56-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,13 +41,13 @@ CREATE TABLE `card` (
   KEY `fk_Card_Language1_idx` (`languageID`),
   KEY `fk_Card_Set1_idx` (`setID`),
   KEY `fk_Card_Condition1_idx` (`conditionId`),
-  CONSTRAINT `fk_Card_Condition1` FOREIGN KEY (`conditionId`) REFERENCES `condition` (`conditionId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Card_Condition1` FOREIGN KEY (`conditionId`) REFERENCES `cardcondition` (`conditionId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Language1` FOREIGN KEY (`languageID`) REFERENCES `language` (`languageID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Rarity1` FOREIGN KEY (`rarityID`) REFERENCES `rarity` (`rarityID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Set1` FOREIGN KEY (`setID`) REFERENCES `cardset` (`setID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_SubType1` FOREIGN KEY (`subTypeID`) REFERENCES `subtype` (`subTypeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Type1` FOREIGN KEY (`typeID`) REFERENCES `type` (`typeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=735 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,8 +56,33 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1);
+INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(534,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(544,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(554,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(564,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(574,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(584,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(594,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(604,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(614,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(624,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(634,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(644,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(654,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(664,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(674,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(684,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(694,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(704,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(714,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(724,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1),(734,'Lepa Karta',1,'Dost Dobra Karta','ash.png',1,1,1,1,1,1);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cardcondition`
+--
+
+DROP TABLE IF EXISTS `cardcondition`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cardcondition` (
+  `conditionId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(70) DEFAULT NULL,
+  `abbr` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`conditionId`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cardcondition`
+--
+
+LOCK TABLES `cardcondition` WRITE;
+/*!40000 ALTER TABLE `cardcondition` DISABLE KEYS */;
+INSERT INTO `cardcondition` VALUES (1,'Mint','M'),(2,'Near Mint','NM'),(3,'Excellent','E'),(4,'Good','G'),(5,'Light Played','LP'),(6,'Played','P'),(7,'Damaged','D');
+/*!40000 ALTER TABLE `cardcondition` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -141,31 +166,6 @@ CREATE TABLE `cart` (
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `condition`
---
-
-DROP TABLE IF EXISTS `condition`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `condition` (
-  `conditionId` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(70) DEFAULT NULL,
-  `abbr` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`conditionId`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `condition`
---
-
-LOCK TABLES `condition` WRITE;
-/*!40000 ALTER TABLE `condition` DISABLE KEYS */;
-INSERT INTO `condition` VALUES (1,'Mint','M'),(2,'Near Mint','NM'),(3,'Excellent','E'),(4,'Good','G'),(5,'Light Played','LP'),(6,'Played','P'),(7,'Damaged','D');
-/*!40000 ALTER TABLE `condition` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -514,4 +514,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 23:46:24
+-- Dump completed on 2017-11-09 21:03:35
