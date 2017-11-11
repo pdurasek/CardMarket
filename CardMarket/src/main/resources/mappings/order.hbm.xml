@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "models.Order" table = "order">
+
+        <meta attribute = "class-description">
+            This class contains the order detail.
+        </meta>
+
+        <id name = "orderID" type = "int" column = "orderID">
+            <generator class="native"/>
+        </id>
+
+        <property name = "details" column = "details" type = "string"/>
+        <many-to-one name="user" column="userID" class="models.User" not-null="true"/>
+        <many-to-one name="paymentMethod" column="paymentMethodID" class="models.PaymentMethod" not-null="true"/>
+        <one-to-one name="shippingAddress" class="models.ShippingAddress"/>
+
+    </class>
+</hibernate-mapping>

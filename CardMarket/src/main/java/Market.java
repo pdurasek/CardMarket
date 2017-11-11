@@ -1,9 +1,7 @@
 import com.jfoenix.controls.JFXMasonryPane;
 import com.sun.istack.internal.Nullable;
-import dao.implementations.CardDao;
-import dao.implementations.CardSetDao;
-import dao.interfaces.ICardDao;
-import dao.interfaces.ICardSetDao;
+import dao.implementations.*;
+import dao.interfaces.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,10 +11,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-import models.Card;
-import models.Cardset;
-import models.Condition;
-import models.Rarity;
+import models.*;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -89,7 +84,49 @@ public class Market extends Application
    {
       //TestHibernateConnection();
       testCardDao();
+      testCountryDao();
+      testPaymentMethodDao();
+      testCredibilityDao();
       launch(args);
+   }
+
+   private static void testCredibilityDao()
+   {
+      ICredibilityDao crediblityDao = new CrediblityDao();
+      List<Credibility> credibilities = crediblityDao.getAllCredibilities();
+
+      System.out.println("Credibilities: ");
+
+      for (int i = 0; i < credibilities.size(); ++i)
+      {
+         System.out.println("\t" +credibilities.get(i).getName());
+      }
+   }
+
+   private static void testPaymentMethodDao()
+   {
+      IPaymentMethodDao paymentMethodDao = new PaymentMethodDao();
+      List<PaymentMethod> payments = paymentMethodDao.getAllPaymentMethods();
+
+      System.out.println("Payment Methods: ");
+
+      for (int i = 0; i < payments.size(); ++i)
+      {
+         System.out.println("\t" +payments.get(i).getName());
+      }
+   }
+
+   private static void testCountryDao()
+   {
+      ICountryDao countryDao = new CountryDao();
+      List<Country> countries = countryDao.getAllCountries();
+
+      System.out.println("Countries: ");
+
+      for (int i = 0; i < countries.size(); ++i)
+      {
+         System.out.println("\t" +countries.get(i).getName());
+      }
    }
 
    private static void testCardDao()

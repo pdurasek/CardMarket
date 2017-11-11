@@ -25,18 +25,18 @@ public class CardSetDao implements ICardSetDao
    @Override
    public Cardset getCardSet(int cardSetID)
    {
-      return null;
+      return session.get(Cardset.class, cardSetID);
    }
 
    @Override
    public void updateCardSet(Cardset cardset)
    {
-
+      session.update(cardset);
    }
 
    @Override
    public void deleteCardSet(Cardset cardset)
    {
-
+      session.delete(cardset);
    }
 }

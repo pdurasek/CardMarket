@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "models.Language" table = "language">
+
+        <meta attribute = "class-description">
+            This class contains the language detail.
+        </meta>
+
+        <id name = "languageID" type = "int" column = "languageID">
+            <generator class="native"/>
+        </id>
+
+        <set name="cards" cascade="save-update">
+            <key column="languageID"/>
+            <one-to-many class="models.Card"/>
+        </set>
+
+        <property name = "name" column = "name" type = "string"/>
+        <property name = "abbr" column = "abbr" type = "string"/>
+
+
+    </class>
+</hibernate-mapping>

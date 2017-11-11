@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "models.Credibility" table = "credibility">
+
+        <meta attribute = "class-description">
+            This class contains the credibility detail.
+        </meta>
+
+        <id name = "credibilityID" type = "int" column = "credibilityID">
+            <generator class="native"/>
+        </id>
+
+        <property name = "name" column = "name" type = "string"/>
+        <property name = "description" column = "description" type = "string"/>
+
+    </class>
+</hibernate-mapping>
