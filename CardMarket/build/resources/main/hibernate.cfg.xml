@@ -34,6 +34,14 @@
         <mapping resource="mappings/type.hbm.xml"/>
         <mapping resource="mappings/card.hbm.xml"/>
         <mapping resource="mappings/condition.hbm.xml"/>
+        <mapping resource="mappings/cart.hbm.xml"/>
+        <mapping resource="mappings/country.hbm.xml"/>
+        <mapping resource="mappings/credibility.hbm.xml"/>
+        <mapping resource="mappings/order.hbm.xml"/>
+        <mapping resource="mappings/paymentmethod.hbm.xml"/>
+        <mapping resource="mappings/shippingaddress.hbm.xml"/>
+        <mapping resource="mappings/shippingaddresstemplate.hbm.xml"/>
+        <mapping resource="mappings/user.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -4,18 +4,18 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "model.Rarity" table = "rarity">
+    <class name = "models.Country" table = "country">
 
         <meta attribute = "class-description">
-            This class contains the rarity detail.
+            This class contains the country detail.
         </meta>
 
-        <id name = "rarityID" type = "int" column = "rarityID">
+        <id name = "countryID" type = "int" column = "countryID">
             <generator class="native"/>
         </id>
 
         <property name = "name" column = "name" type = "string"/>
-
+        <property name = "abbr" column = "abbr" type = "string"/>
 
     </class>
 </hibernate-mapping>
