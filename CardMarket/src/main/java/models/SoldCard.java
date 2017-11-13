@@ -5,7 +5,6 @@ public class SoldCard
    private int soldCardID;
    private int quantity;
    private double price;
-   private boolean reserved;
    private Card card;
    private User buyer;
    private User seller;
@@ -39,16 +38,6 @@ public class SoldCard
    public void setPrice(double price)
    {
       this.price = price;
-   }
-
-   public boolean isReserved()
-   {
-      return reserved;
-   }
-
-   public void setReserved(boolean reserved)
-   {
-      this.reserved = reserved;
    }
 
    public Card getCard()

@@ -43,6 +43,7 @@
         <mapping resource="mappings/shippingaddresstemplate.hbm.xml"/>
         <mapping resource="mappings/user.hbm.xml"/>
         <mapping resource="mappings/soldcard.hbm.xml"/>
+        <mapping resource="mappings/cardoffer.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

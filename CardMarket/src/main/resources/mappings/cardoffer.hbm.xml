@@ -4,22 +4,22 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.SoldCard" table = "soldcard">
+    <class name = "models.CardOffer" table = "cardoffer">
 
         <meta attribute = "class-description">
             This class contains the sold card detail.
         </meta>
 
-        <id name = "soldCardID" type = "int" column = "soldCardID">
+        <id name = "cardOfferID" type = "int" column = "cardOfferID">
             <generator class="native"/>
         </id>
 
         <property name = "quantity" column = "quantity" type = "int"/>
         <property name = "price" column = "price" type = "double"/>
+        <property name="reserved" column="reserved" type="boolean"/>
         <many-to-one name="card" column="card_cardid" class="models.Card" not-null="true"/>
-        <many-to-one name="buyer" column="buyerID" class="models.User" not-null="true"/>
-        <many-to-one name="seller" column="sellerID" class="models.User" not-null="true"/>
-        <many-to-one name="order" column="orderID" class="models.Order" not-null="true"/>
+        <many-to-one name="user" column="user_userid" class="models.User" not-null="true"/>
+        <many-to-one name="cart" column="cartID" class="models.Cart" not-null="false"/>
 
     </class>
 </hibernate-mapping>

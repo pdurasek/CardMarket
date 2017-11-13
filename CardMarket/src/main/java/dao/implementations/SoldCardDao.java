@@ -1,14 +1,14 @@
 package dao.implementations;
 
 import dao.SessionCreator;
-import dao.interfaces.ISoldCard;
+import dao.interfaces.ISoldCardDao;
 import models.SoldCard;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class SoldCardDao implements ISoldCard
+public class SoldCardDao implements ISoldCardDao
 {
    private Session session = null;
 

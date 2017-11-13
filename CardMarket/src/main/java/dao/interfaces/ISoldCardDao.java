@@ -4,7 +4,7 @@ import models.SoldCard;
 
 import java.util.List;
 
-public interface ISoldCard
+public interface ISoldCardDao
 {
    public List getAllSoldCards();
 

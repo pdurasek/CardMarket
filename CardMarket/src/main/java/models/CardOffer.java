@@ -2,12 +2,23 @@ package models;
 
 public class CardOffer
 {
+   private int cardOfferID;
    private Card card;
    private User user;
    private int quantity;
    private double price;
    private boolean reserved;
    private Cart cart;
+
+   public int getCardOfferID()
+   {
+      return cardOfferID;
+   }
+
+   public void setCardOfferID(int cardOfferID)
+   {
+      this.cardOfferID = cardOfferID;
+   }
 
    public Card getCard()
    {
