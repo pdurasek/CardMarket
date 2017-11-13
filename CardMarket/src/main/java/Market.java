@@ -69,6 +69,7 @@ public class Market extends Application
       testCountryDao();
       testPaymentMethodDao();
       testCredibilityDao();
+      testSoldCardDao();
       launch(args);
    }
 
@@ -129,6 +130,20 @@ public class Market extends Application
       for (Cardset cardset: setooo)
       {
          System.out.println(cardset.getName());
+      }
+
+      return karteee;
+   }
+
+   private static List testSoldCardDao()
+   {
+      ISoldCard karta = new SoldCardDao();
+      List<SoldCard> karteee = karta.getAllSoldCards();
+
+      for (int i = 0; i < karteee.size(); i++)
+      {
+         System.out.println(karteee.get(i).getCard().getName() +" was bought by " +karteee.get(i).getBuyer().getUsername()
+                 + " from " +karteee.get(i).getSeller().getUsername());
       }
 
       return karteee;
