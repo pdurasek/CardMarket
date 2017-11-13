@@ -10,9 +10,9 @@ public interface ICardOfferDao
 
    public List getAllCardOffers(int startIndex, int pageSize);
 
-   public CardOffer getSoldCard(int cardOfferID);
+   public CardOffer getCardOffer(int cardOfferID);
 
-   public void updateSoldCard(CardOffer cardOffer);
+   public void updateCardOffer(CardOffer cardOffer);
 
-   public void deleteSoldCard(CardOffer cardOffer);
+   public void deleteCardOffer(CardOffer cardOffer);
 }

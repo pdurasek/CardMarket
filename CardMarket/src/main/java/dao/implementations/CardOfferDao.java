@@ -34,19 +34,19 @@ public class CardOfferDao implements ICardOfferDao
    }
 
    @Override
-   public CardOffer getSoldCard(int cardOfferID)
+   public CardOffer getCardOffer(int cardOfferID)
    {
       return session.get(CardOffer.class, cardOfferID);
    }
 
    @Override
-   public void updateSoldCard(CardOffer cardOffer)
+   public void updateCardOffer(CardOffer cardOffer)
    {
       session.update(cardOffer);
    }
 
    @Override
-   public void deleteSoldCard(CardOffer cardOffer)
+   public void deleteCardOffer(CardOffer cardOffer)
    {
       session.delete(cardOffer);
    }
