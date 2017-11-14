@@ -1,13 +1,13 @@
 package dao.implementations;
 
 import dao.SessionCreator;
-import dao.interfaces.IRariryDao;
+import dao.interfaces.IRarityDao;
 import models.Rarity;
 import org.hibernate.Session;
 
 import java.util.List;
 
-public class RarityDao implements IRariryDao
+public class RarityDao implements IRarityDao
 {
    private Session session = null;
 
@@ -20,6 +20,12 @@ public class RarityDao implements IRariryDao
    public List getAllRarities()
    {
       return session.createQuery("FROM Rarity ").list();
+   }
+
+   @Override
+   public List getAllRarityNames()
+   {
+      return session.createQuery("SELECT name FROM Rarity ").list();
    }
 
    @Override

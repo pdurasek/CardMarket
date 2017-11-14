@@ -7,11 +7,11 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public class CrediblityDao implements ICredibilityDao
+public class CredibilityDao implements ICredibilityDao
 {
    private Session session = null;
 
-   public CrediblityDao()
+   public CredibilityDao()
    {
       session = SessionCreator.getSession();
    }

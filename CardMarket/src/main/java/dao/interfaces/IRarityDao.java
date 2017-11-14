@@ -4,9 +4,11 @@ import models.Rarity;
 
 import java.util.List;
 
-public interface IRariryDao
+public interface IRarityDao
 {
    public List getAllRarities();
+
+   public List getAllRarityNames();
 
    public Rarity getRarity(int rarityID);
 

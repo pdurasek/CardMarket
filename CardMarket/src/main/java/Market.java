@@ -2,11 +2,14 @@ import com.jfoenix.controls.JFXMasonryPane;
 import dao.implementations.*;
 import dao.interfaces.*;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
@@ -15,10 +18,39 @@ import models.*;
 
 import java.util.List;
 
+//077097100101032098121032080097116114105107032068117114097115101107032038032076117099097110111032090103097110101099
 public class Market extends Application
 {
    @Override
    public void start(Stage primaryStage) throws Exception
+   {
+      //testMasonry(primaryStage);
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(Market.class.getResource("view_templates/Browse.fxml"));
+      AnchorPane root = loader.load();
+      Scene scene = new Scene(root);
+      primaryStage.setScene(scene);
+      primaryStage.setOnCloseRequest(event ->
+      {
+         Platform.exit();
+         System.exit(0);
+      });
+      primaryStage.show();
+   }
+
+   public static void main(String[] args)
+   {
+      testCardDao();
+      testCountryDao();
+      testPaymentMethodDao();
+      testCredibilityDao();
+      testSoldCardDao();
+      testCardOfferDao();
+      launch(args);
+
+   }
+
+   private void testMasonry(Stage primaryStage)
    {
       JFXMasonryPane jfxMasonryPane = new JFXMasonryPane();
       jfxMasonryPane.setStyle("-fx-background-color: #181818");
@@ -60,23 +92,11 @@ public class Market extends Application
       primaryStage.setScene(scene);
       primaryStage.show();
       primaryStage.requestFocus(); // TODO fix scroll not appearing on start even though it is focused
-      primaryStage.getIcons().add(new Image("images/icon.png"));
-   }
-
-   public static void main(String[] args)
-   {
-      testCardDao();
-      testCountryDao();
-      testPaymentMethodDao();
-      testCredibilityDao();
-      testSoldCardDao();
-      testCardOfferDao();
-      launch(args);
-   }
+      primaryStage.getIcons().add(new Image("images/icon.png"));   }
 
    private static void testCredibilityDao()
    {
-      ICredibilityDao crediblityDao = new CrediblityDao();
+      ICredibilityDao crediblityDao = new CredibilityDao();
       List<Credibility> credibilities = crediblityDao.getAllCredibilities();
 
       System.out.println("Credibilities: ");
