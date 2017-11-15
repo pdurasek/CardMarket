@@ -5,16 +5,20 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXMasonryPane;
 import dao.implementations.*;
 import dao.interfaces.*;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import models.*;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javafx.scene.input.MouseEvent.MOUSE_PRESSED;
@@ -50,9 +54,7 @@ public class BrowseController
    private void initialize()
    {
       cardPane = new JFXMasonryPane();
-      TextFields.bindAutoCompletion(searchBar, "adaad", "asdasdasa", "asdasdasdsa", "adadasdasdas", "asdasdsa");
 
-      searchBar.setPromptText("Enter card name... ");
       filterDrawer.setSidePane(sidePane);
       filterDrawer.setDefaultDrawerSize(350);
       filterDrawer.setOverLayVisible(true);
@@ -73,6 +75,21 @@ public class BrowseController
 
       populateCardGrid();
       populateFilters();
+      populateAutoComplete();
+   }
+
+   private void populateAutoComplete()
+   {
+      searchBar.setPromptText("Enter card name... ");
+
+      searchBar.setOnKeyReleased(event ->
+      {
+         if(searchBar.getText().length() == 3)
+         {
+            ICardDao cardDao = new CardDao(); // TODO move to global?
+            TextFields.bindAutoCompletion(searchBar, cardDao.getAllCardsLike(searchBar.getText()));
+         }
+      });
    }
 
    public void focusMain()

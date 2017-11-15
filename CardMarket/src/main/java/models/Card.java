@@ -124,4 +124,10 @@ public class Card
    {
       this.condition = condition;
    }
+
+   @Override
+   public String toString()
+   {
+      return getName();
+   }
 }

@@ -10,6 +10,8 @@ public interface ICardDao
 
    public List getAllCards(int startIndex, int pageSize);
 
+   public List getAllCardsLike(String pattern);
+
    public Card getCard(int cardID);
 
    public void updateCard(Card card);
