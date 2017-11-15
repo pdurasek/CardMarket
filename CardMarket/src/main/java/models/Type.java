@@ -47,4 +47,10 @@ public class Type
    {
       this.cards = cards;
    }
+
+   @Override
+   public String toString()
+   {
+      return getName();
+   }
 }

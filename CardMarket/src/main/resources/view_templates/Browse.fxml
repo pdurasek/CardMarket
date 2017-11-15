@@ -76,7 +76,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0">
+                                          <ComboBox prefWidth="150.0" fx:id="rarityCombo">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -86,7 +86,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0">
+                                          <ComboBox prefWidth="150.0" fx:id="typeCombo">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -96,7 +96,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0">
+                                          <ComboBox prefWidth="150.0" fx:id="subTypeCombo">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -106,7 +106,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0">
+                                          <ComboBox prefWidth="150.0" fx:id="conditionCombo">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -116,7 +116,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0">
+                                          <ComboBox prefWidth="150.0" fx:id="languageCombo">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>

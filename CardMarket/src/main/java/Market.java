@@ -1,4 +1,5 @@
 import com.jfoenix.controls.JFXMasonryPane;
+import controllers.BrowseController;
 import dao.implementations.*;
 import dao.interfaces.*;
 import javafx.application.Application;
@@ -24,7 +25,6 @@ public class Market extends Application
    @Override
    public void start(Stage primaryStage) throws Exception
    {
-      //testMasonry(primaryStage);
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(Market.class.getResource("view_templates/Browse.fxml"));
       AnchorPane root = loader.load();
@@ -36,6 +36,9 @@ public class Market extends Application
          System.exit(0);
       });
       primaryStage.show();
+
+      BrowseController browseController = loader.getController();
+      browseController.focusMain();
    }
 
    public static void main(String[] args)
@@ -48,51 +51,6 @@ public class Market extends Application
       testCardOfferDao();
       launch(args);
 
-   }
-
-   private void testMasonry(Stage primaryStage)
-   {
-      JFXMasonryPane jfxMasonryPane = new JFXMasonryPane();
-      jfxMasonryPane.setStyle("-fx-background-color: #181818");
-
-      List karteee = testCardDao();
-
-      for (int i = 0; i < karteee.size(); ++i)
-      {
-         Card card = (Card) karteee.get(i);
-
-         VBox cardBox = new VBox();
-         String imgName = card.getImageUrl();
-
-         ImageView slikica = new ImageView("images/" + imgName);
-
-         Label label = new Label(card.getName());
-         Label label2 = new Label(card.getDescription());
-         label.setTextFill(Paint.valueOf("#bfbfbf"));
-         label2.setTextFill(Paint.valueOf("#bfbfbf"));
-         cardBox.getChildren().addAll(slikica, label, label2);
-         cardBox.setPrefSize(171, 243);
-
-         jfxMasonryPane.getChildren().add(cardBox);
-
-      }
-
-      jfxMasonryPane.setCellHeight(150);
-      jfxMasonryPane.setHSpacing(20);
-      jfxMasonryPane.setVSpacing(1);
-      ScrollPane scrollPane = new ScrollPane(jfxMasonryPane);
-      scrollPane.setFitToHeight(true);
-      scrollPane.setFitToWidth(true);
-      scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-      StackPane root = new StackPane(scrollPane);
-
-      Scene scene = new Scene(root, 1150, 800);
-
-      primaryStage.setTitle("Ayyyy Masonry Pane bby");
-      primaryStage.setScene(scene);
-      primaryStage.show();
-      primaryStage.requestFocus(); // TODO fix scroll not appearing on start even though it is focused
-      primaryStage.getIcons().add(new Image("images/icon.png"));
    }
 
    private static void testCredibilityDao()

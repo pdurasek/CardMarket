@@ -59,4 +59,10 @@ public class Language
    {
       this.cards = cards;
    }
+
+   @Override
+   public String toString()
+   {
+      return getName();
+   }
 }
