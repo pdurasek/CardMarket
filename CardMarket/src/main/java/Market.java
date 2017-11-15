@@ -64,14 +64,14 @@ public class Market extends Application
          VBox cardBox = new VBox();
          String imgName = card.getImageUrl();
 
-         ImageView slikica = new ImageView("images/" +imgName);
+         ImageView slikica = new ImageView("images/" + imgName);
 
          Label label = new Label(card.getName());
          Label label2 = new Label(card.getDescription());
          label.setTextFill(Paint.valueOf("#bfbfbf"));
          label2.setTextFill(Paint.valueOf("#bfbfbf"));
          cardBox.getChildren().addAll(slikica, label, label2);
-         cardBox.setPrefSize(171,243 );
+         cardBox.setPrefSize(171, 243);
 
          jfxMasonryPane.getChildren().add(cardBox);
 
@@ -86,13 +86,14 @@ public class Market extends Application
       scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
       StackPane root = new StackPane(scrollPane);
 
-      Scene scene = new Scene(root, 1150 , 800);
+      Scene scene = new Scene(root, 1150, 800);
 
       primaryStage.setTitle("Ayyyy Masonry Pane bby");
       primaryStage.setScene(scene);
       primaryStage.show();
       primaryStage.requestFocus(); // TODO fix scroll not appearing on start even though it is focused
-      primaryStage.getIcons().add(new Image("images/icon.png"));   }
+      primaryStage.getIcons().add(new Image("images/icon.png"));
+   }
 
    private static void testCredibilityDao()
    {
@@ -103,7 +104,7 @@ public class Market extends Application
 
       for (int i = 0; i < credibilities.size(); ++i)
       {
-         System.out.println("\t" +credibilities.get(i).getName());
+         System.out.println("\t" + credibilities.get(i).getName());
       }
    }
 
@@ -116,7 +117,7 @@ public class Market extends Application
 
       for (int i = 0; i < payments.size(); ++i)
       {
-         System.out.println("\t" +payments.get(i).getName());
+         System.out.println("\t" + payments.get(i).getName());
       }
    }
 
@@ -129,7 +130,7 @@ public class Market extends Application
 
       for (int i = 0; i < countries.size(); ++i)
       {
-         System.out.println("\t" +countries.get(i).getName());
+         System.out.println("\t" + countries.get(i).getName());
       }
    }
 
@@ -148,7 +149,7 @@ public class Market extends Application
       ICardSetDao set = new CardSetDao();
       List<Cardset> setooo = set.getAllSets();
 
-      for (Cardset cardset: setooo)
+      for (Cardset cardset : setooo)
       {
          System.out.println(cardset.getName());
       }
@@ -163,8 +164,8 @@ public class Market extends Application
 
       for (int i = 0; i < karteee.size(); i++)
       {
-         System.out.println(karteee.get(i).getCard().getName() +" was bought by " +karteee.get(i).getBuyer().getUsername()
-                 + " from " +karteee.get(i).getSeller().getUsername());
+         System.out.println(karteee.get(i).getCard().getName() + " was bought by " + karteee.get(i).getBuyer().getUsername()
+                 + " from " + karteee.get(i).getSeller().getUsername());
       }
 
       return karteee;
@@ -177,7 +178,7 @@ public class Market extends Application
 
       for (int i = 0; i < karteee.size(); i++)
       {
-         System.out.println(karteee.get(i).getCard().getName() +" is being sold by " + karteee.get(i).getUser().getUsername());
+         System.out.println(karteee.get(i).getCard().getName() + " is being sold by " + karteee.get(i).getUser().getUsername());
       }
 
       return karteee;
