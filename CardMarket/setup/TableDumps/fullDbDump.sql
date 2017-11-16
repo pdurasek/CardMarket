@@ -56,7 +56,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(534,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(544,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(554,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(564,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(574,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(584,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(594,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(604,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(614,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(624,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(634,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(644,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(654,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(664,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(674,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(684,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(694,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(704,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(714,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(724,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(734,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1);
+INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(534,'Azdaja',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(544,'Leva Ko Desna',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(554,'Zmaj',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(564,'Ruka',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(574,'Lepa Mara',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(584,'Beba',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(594,'Bik',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(604,'Kurati Bik',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(614,'Heri Poter',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(624,'Brat Od Hulka',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(634,'Undergdoun',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(644,'Benzinska',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(654,'Pumpa',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(664,'Macka',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(674,'Pas s Nogom',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(684,'Ruzni Zmaj',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(694,'Lepi Zmaj',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(704,'Kek',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(714,'Bone',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(724,'Zdravko',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(734,'Suq Madiq',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -493,7 +493,7 @@ CREATE TABLE `type` (
 
 LOCK TABLES `type` WRITE;
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
-INSERT INTO `type` VALUES (4,'Syncrho'),(14,'Pendulum');
+INSERT INTO `type` VALUES (4,'Synchro'),(14,'Pendulum');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -547,4 +547,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-14 19:39:43
+-- Dump completed on 2017-11-16 22:28:22
