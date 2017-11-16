@@ -8,7 +8,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -62,9 +61,8 @@
                   </BorderPane>
                </top>
                <center>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="mainPane">
                      <children>
-                        <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" />
                         <JFXDrawer fx:id="filterDrawer" maxWidth="250.0" prefWidth="250.0" StackPane.alignment="CENTER_LEFT">
                            <children>
                               <StackPane fx:id="sidePane">
@@ -76,7 +74,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0" fx:id="rarityCombo">
+                                          <ComboBox fx:id="rarityCombo" prefWidth="150.0">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -86,7 +84,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0" fx:id="typeCombo">
+                                          <ComboBox fx:id="typeCombo" prefWidth="150.0">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -96,7 +94,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0" fx:id="subTypeCombo">
+                                          <ComboBox fx:id="subTypeCombo" prefWidth="150.0">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -106,7 +104,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0" fx:id="conditionCombo">
+                                          <ComboBox fx:id="conditionCombo" prefWidth="150.0">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>
@@ -116,7 +114,7 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </Label>
-                                          <ComboBox prefWidth="150.0" fx:id="languageCombo">
+                                          <ComboBox fx:id="languageCombo" prefWidth="150.0">
                                              <VBox.margin>
                                                 <Insets bottom="20.0" />
                                              </VBox.margin>

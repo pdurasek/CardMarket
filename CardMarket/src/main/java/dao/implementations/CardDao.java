@@ -44,6 +44,12 @@ public class CardDao implements ICardDao
    }
 
    @Override
+   public int getAllCardsCount()
+   {
+      return ((Long) session.createQuery("SELECT COUNT(DISTINCT name) FROM Card ").uniqueResult()).intValue();
+   }
+
+   @Override
    public Card getCard(int cardID)
    {
       return session.get(Card.class, cardID);

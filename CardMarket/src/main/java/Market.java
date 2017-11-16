@@ -1,4 +1,3 @@
-import com.jfoenix.controls.JFXMasonryPane;
 import controllers.BrowseController;
 import dao.implementations.*;
 import dao.interfaces.*;
@@ -6,14 +5,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import models.*;
 
@@ -29,6 +21,7 @@ public class Market extends Application
       loader.setLocation(Market.class.getResource("view_templates/Browse.fxml"));
       AnchorPane root = loader.load();
       Scene scene = new Scene(root);
+      scene.getStylesheets().add(getClass().getResource("css/components.css").toExternalForm());
       primaryStage.setScene(scene);
       primaryStage.setOnCloseRequest(event ->
       {
@@ -38,7 +31,6 @@ public class Market extends Application
       primaryStage.show();
 
       BrowseController browseController = loader.getController();
-      browseController.focusMain();
    }
 
    public static void main(String[] args)

@@ -12,6 +12,8 @@ public interface ICardDao
 
    public List getAllCardsLike(String pattern);
 
+   public int getAllCardsCount();
+
    public Card getCard(int cardID);
 
    public void updateCard(Card card);
