@@ -8,3 +8,11 @@
 {
     -fx-background-color: #181818;
 }
+
+.jfx-hamburger-icon{
+    -fx-cursor: hand;
+    -fx-background-color: #181818;
+}
+.jfx-hamburger-icon StackPane{
+    -fx-background-color : white;
+}

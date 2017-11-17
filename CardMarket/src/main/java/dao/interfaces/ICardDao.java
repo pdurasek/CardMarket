@@ -12,7 +12,11 @@ public interface ICardDao
 
    public List getAllCardsLike(String pattern);
 
+   public List getAllCardsLike(String pattern, int startIndex, int pageSize);
+
    public int getAllCardsCount();
+
+   public int getAllCardsCount(String pattern);
 
    public Card getCard(int cardID);
 

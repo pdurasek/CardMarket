@@ -44,9 +44,30 @@ public class CardDao implements ICardDao
    }
 
    @Override
+   public List getAllCardsLike(String pattern, int startIndex, int pageSize)
+   {
+      Query query = session.createQuery("FROM Card WHERE name LIKE :pattern");
+      query.setParameter("pattern", "%" +pattern +"%");
+      query.setFirstResult(startIndex);
+      query.setMaxResults(pageSize);
+
+      return query.list();
+   }
+
+   @Override
    public int getAllCardsCount()
    {
       return ((Long) session.createQuery("SELECT COUNT(DISTINCT name) FROM Card ").uniqueResult()).intValue();
+   }
+
+   @Override
+   public int getAllCardsCount(String pattern)
+   {
+      Query query = session.createQuery("SELECT COUNT(DISTINCT name) FROM Card WHERE name LIKE :pattern");
+      query.setParameter("pattern", "%" +pattern +"%");
+
+
+      return ((Long) query.uniqueResult()).intValue();
    }
 
    @Override
