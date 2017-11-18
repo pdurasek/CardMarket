@@ -57,7 +57,7 @@ public class BrowseController
    private AutoCompletionBinding bind = null;
    private boolean isSearching = false;
    private List<Card> lastSearchCardList;
-   private List<Card> filteredCardList = new ArrayList<>();
+   private ICardDao cardDao = new CardDao();
 
    private final int IMAGE_CARDS_PER_PAGE = 15;
 
@@ -77,12 +77,12 @@ public class BrowseController
          if (searchBar.getLength() > 0)
          {
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), false), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), false,"",-1), filterDrawer);
          }
       });
 
       mainPane.getChildren().clear();
-      mainPane.getChildren().addAll(createCardGrid("", false), filterDrawer);
+      mainPane.getChildren().addAll(createCardGrid("", false,"",-1), filterDrawer);
       createHamburgerMenu();
       populateFilters();
       populateAutoComplete();
@@ -128,24 +128,22 @@ public class BrowseController
                bind.dispose();
             }
 
-            ICardDao cardDao = new CardDao(); // TODO move to global?
             bind = TextFields.bindAutoCompletion(searchBar, cardDao.getAllCardsLike(searchBar.getText()));
          }
       });
    }
 
-   private Pagination createCardGrid(String pattern, boolean update)
+   private Pagination createCardGrid(String pattern, boolean isFiltered, String filterColumn, int filterValue)
    {
-      ICardDao cardDao = new CardDao();
       int uniqueCardsCount;
 
-      if (pattern.length() > 0)
+      if (isFiltered)
+      {
+         uniqueCardsCount = cardDao.getAllCardsFilteredCount(pattern, filterColumn, filterValue);
+      }
+      else if (pattern.length() > 0)
       {
          uniqueCardsCount = cardDao.getAllCardsCount(pattern);
-      }
-      else if (update)
-      {
-         uniqueCardsCount = filteredCardList.size();
       }
       else
       {
@@ -159,103 +157,30 @@ public class BrowseController
       }
 
       Pagination pagination = new Pagination(pageCount, 0);
-      pagination.setPageFactory(param -> populateCardGrid(param, "", update));
+      pagination.setPageFactory(param -> populateCardGrid(param, pattern, isFiltered, filterColumn, filterValue));
       pagination.setStyle("-fx-background-color: #181818");
 
       return pagination;
    }
 
-   private void createFilteredCardGrid(Object object, int objectID) // TODO Implement this using command pattern
+   private ScrollPane populateCardGrid(int pageIndex, String pattern, boolean isFiltered, String filterColumn, int filterValue)
    {
-      filteredCardList.clear();
-      mainPane.getChildren().clear();
-
-      if (objectID != -1)
-      {
-         if (object instanceof Rarity)
-         {
-            for (Card card : lastSearchCardList)
-            {
-               if (card.getRarity().getName().equalsIgnoreCase(((Rarity) object).getName()))
-               {
-                  filteredCardList.add(card);
-               }
-            }
-         }
-         else if (object instanceof Type)
-         {
-            for (Card card : lastSearchCardList)
-            {
-               if (card.getType().getName().equalsIgnoreCase(((Type) object).getName()) && ((Type) object).getTypeID() != -1)
-               {
-                  filteredCardList.add(card);
-               }
-            }
-         }
-         else if (object instanceof Subtype)
-         {
-            for (Card card : lastSearchCardList)
-            {
-               if (card.getSubtype().getName().equalsIgnoreCase(((Subtype) object).getName()) && ((Subtype) object).getSubTypeID() != -1)
-               {
-                  filteredCardList.add(card);
-               }
-            }
-         }
-         else if (object instanceof Condition)
-         {
-            for (Card card : lastSearchCardList)
-            {
-               if (card.getCondition().getName().equalsIgnoreCase(((Condition) object).getName()) && ((Condition) object).getConditionId() != -1)
-               {
-                  filteredCardList.add(card);
-               }
-            }
-         }
-         else if (object instanceof Language)
-         {
-            for (Card card : lastSearchCardList)
-            {
-               if (card.getLanguage().getName().equalsIgnoreCase(((Language) object).getName()) && ((Language) object).getLanguageID() != -1)
-               {
-                  filteredCardList.add(card);
-               }
-            }
-         }
-         else
-         {
-            System.err.println("Invalid filter!");
-         }
-         mainPane.getChildren().addAll(createCardGrid("", true), filterDrawer);
-      }
-      else
-      {
-         mainPane.getChildren().addAll(createCardGrid("", false), filterDrawer);
-      }
-   }
-
-   private ScrollPane populateCardGrid(int pageIndex, String pattern, boolean update)
-   {
-      ICardDao cardDao = new CardDao();
       JFXMasonryPane masonryCardPane;
 
-      if (update)
+      if (isFiltered)
       {
-         masonryCardPane = populateMasonryPane(filteredCardList);
+         lastSearchCardList = cardDao.getAllCardsFiltered(pattern, pageIndex*IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE, filterColumn, filterValue);
+      }
+      else if (pattern.length() > 0)
+      {
+         lastSearchCardList = cardDao.getAllCardsLike(pattern, pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE);
       }
       else
       {
-         if (pattern.length() > 0)
-         {
-            lastSearchCardList = cardDao.getAllCardsLike(pattern, pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE);
-         }
-         else
-         {
-            lastSearchCardList = cardDao.getAllCards(pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE);
-         }
-
-         masonryCardPane = populateMasonryPane(lastSearchCardList);
+         lastSearchCardList = cardDao.getAllCards(pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE);
       }
+
+      masonryCardPane = populateMasonryPane(lastSearchCardList);
 
       ScrollPane scrollPane = new ScrollPane();
       scrollPane.getStyleClass().add("jfx-masonry-pane");
@@ -328,26 +253,46 @@ public class BrowseController
       rarityCombo.getItems().add(new Rarity(-1, "All Rarities", ""));
       rarityCombo.getSelectionModel().selectFirst();
       rarityCombo.getItems().addAll(rarityList);
-      rarityCombo.valueProperty().addListener((observable, oldValue, newValue) -> createFilteredCardGrid(newValue, newValue.getRarityID()));
+      rarityCombo.valueProperty().addListener((observable, oldValue, newValue) ->
+      {
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "rarity", newValue.getRarityID()), filterDrawer);
+      });
 
       typeCombo.getItems().add(new Type(-1, "All Types"));
       typeCombo.getSelectionModel().selectFirst();
       typeCombo.getItems().addAll(typeList);
-      typeCombo.valueProperty().addListener((observable, oldValue, newValue) -> createFilteredCardGrid(newValue, newValue.getTypeID()));
+      typeCombo.valueProperty().addListener((observable, oldValue, newValue) ->
+      {
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "type", newValue.getTypeID()), filterDrawer);
+      });
 
       subTypeCombo.getItems().add(new Subtype(-1, "All Sub Types"));
       subTypeCombo.getSelectionModel().selectFirst();
       subTypeCombo.getItems().addAll(subtypeList);
-      subTypeCombo.valueProperty().addListener((observable, oldValue, newValue) -> createFilteredCardGrid(newValue, newValue.getSubTypeID()));
+      subTypeCombo.valueProperty().addListener((observable, oldValue, newValue) ->
+      {
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "subtype", newValue.getSubTypeID()), filterDrawer);
+      });
 
       conditionCombo.getItems().add(new Condition(-1, "All Conditions", ""));
       conditionCombo.getSelectionModel().selectFirst();
       conditionCombo.getItems().addAll(conditionList);
-      conditionCombo.valueProperty().addListener((observable, oldValue, newValue) -> createFilteredCardGrid(newValue, newValue.getConditionId()));
+      conditionCombo.valueProperty().addListener((observable, oldValue, newValue) ->
+      {
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "condition", newValue.getConditionId()), filterDrawer);
+      });
 
       languageCombo.getItems().add(new Language(-1, "All Languages", ""));
       languageCombo.getSelectionModel().selectFirst();
       languageCombo.getItems().addAll(languageList);
-      languageCombo.valueProperty().addListener((observable, oldValue, newValue) -> createFilteredCardGrid(newValue, newValue.getLanguageID()));
+      languageCombo.valueProperty().addListener((observable, oldValue, newValue) ->
+      {
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "language", newValue.getLanguageID()), filterDrawer);
+      });
    }
 }
