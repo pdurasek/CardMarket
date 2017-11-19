@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.Rarity" table = "rarity">
+    <class name = "CardMarket.models.Rarity" table = "rarity">
 
         <meta attribute = "class-description">
             This class contains the rarity detail.
@@ -16,7 +16,7 @@
 
         <set name="cards" cascade="save-update">
             <key column="rarityID"/>
-            <one-to-many class="models.Card"/>
+            <one-to-many class="CardMarket.models.Card"/>
         </set>
 
         <property name = "name" column = "name" type = "string"/>

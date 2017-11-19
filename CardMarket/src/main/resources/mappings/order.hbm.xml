@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.Order" table = "order">
+    <class name = "CardMarket.models.Order" table = "order">
 
         <meta attribute = "class-description">
             This class contains the order detail.
@@ -15,9 +15,9 @@
         </id>
 
         <property name = "details" column = "details" type = "string"/>
-        <many-to-one name="user" column="userID" class="models.User" not-null="true"/>
-        <many-to-one name="paymentMethod" column="paymentMethodID" class="models.PaymentMethod" not-null="true"/>
-        <one-to-one name="shippingAddress" class="models.ShippingAddress"/>
+        <many-to-one name="user" column="userID" class="CardMarket.models.User" not-null="true"/>
+        <many-to-one name="paymentMethod" column="paymentMethodID" class="CardMarket.models.PaymentMethod" not-null="true"/>
+        <one-to-one name="shippingAddress" class="CardMarket.models.ShippingAddress"/>
 
     </class>
 </hibernate-mapping>

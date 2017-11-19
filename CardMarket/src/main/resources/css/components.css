@@ -16,3 +16,7 @@
 .jfx-hamburger-icon StackPane{
     -fx-background-color : white;
 }
+
+.jfx-text-area ScrollPane{
+    -fx-background-color : white;
+}

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.CardOffer" table = "cardoffer">
+    <class name = "CardMarket.models.CardOffer" table = "cardoffer">
 
         <meta attribute = "class-description">
             This class contains the sold card detail.
@@ -17,9 +17,9 @@
         <property name = "quantity" column = "quantity" type = "int"/>
         <property name = "price" column = "price" type = "double"/>
         <property name="reserved" column="reserved" type="boolean"/>
-        <many-to-one name="card" column="card_cardid" class="models.Card" not-null="true"/>
-        <many-to-one name="user" column="user_userid" class="models.User" not-null="true"/>
-        <many-to-one name="cart" column="cartID" class="models.Cart" not-null="false"/>
+        <many-to-one name="card" column="card_cardid" class="CardMarket.models.Card" not-null="true"/>
+        <many-to-one name="user" column="user_userid" class="CardMarket.models.User" not-null="true"/>
+        <many-to-one name="cart" column="cartID" class="CardMarket.models.Cart" not-null="false"/>
 
     </class>
 </hibernate-mapping>

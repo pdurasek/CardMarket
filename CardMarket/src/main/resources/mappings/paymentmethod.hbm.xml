@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.PaymentMethod" table = "paymentmethod">
+    <class name = "CardMarket.models.PaymentMethod" table = "paymentmethod">
 
         <meta attribute = "class-description">
             This class contains the payment method detail.

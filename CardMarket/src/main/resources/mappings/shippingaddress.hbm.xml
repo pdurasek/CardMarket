@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.ShippingAddress" table = "shippingaddress">
+    <class name = "CardMarket.models.ShippingAddress" table = "shippingaddress">
 
         <meta attribute = "class-description">
             This class contains the shipping address detail.
@@ -17,7 +17,7 @@
         <property name = "address" column = "address" type = "string"/>
         <property name = "zipcode" column = "zipcode" type = "string"/>
         <property name = "city" column = "city" type = "string"/>
-        <one-to-one name="country" class="models.Country"/>
+        <one-to-one name="country" class="CardMarket.models.Country"/>
 
     </class>
 </hibernate-mapping>

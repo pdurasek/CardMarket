@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "models.Credibility" table = "credibility">
+    <class name = "CardMarket.models.Credibility" table = "credibility">
 
         <meta attribute = "class-description">
             This class contains the credibility detail.
