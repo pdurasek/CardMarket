@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -12,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
    <children>
       <BorderPane prefHeight="800.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <Label fx:id="bigName" alignment="CENTER" text="Card Name" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </BorderPane.margin>
                <font>
                   <Font size="24.0" />
@@ -120,11 +119,7 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <BorderPane prefHeight="663.0" prefWidth="557.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <center>
-                              <JFXTreeTableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="offerList"/>
-                           </center>
-                        </BorderPane>
+                        <BorderPane fx:id="tablePane" prefHeight="663.0" prefWidth="557.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
               </items>
