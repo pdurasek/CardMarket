@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
    <children>
       <BorderPane prefHeight="800.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Label alignment="CENTER" text="Card Name" BorderPane.alignment="CENTER">
+            <Label fx:id="bigName" alignment="CENTER" text="Card Name" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
                </BorderPane.margin>
@@ -32,7 +32,10 @@
                      <children>
                         <BorderPane prefHeight="663.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <top>
-                              <ImageView fitHeight="243.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                              <ImageView fx:id="imageView" fitHeight="243.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets top="10.0" />
+                                 </BorderPane.margin></ImageView>
                            </top>
                            <center>
                               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -44,7 +47,7 @@
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label text="Label" />
+                                          <Label fx:id="name" text="Label" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -65,7 +68,7 @@
                                           <Insets left="20.0" />
                                        </VBox.margin>
                                     </FlowPane>
-                                    <JFXTextArea fx:id="textArea" editable="false">
+                                    <JFXTextArea fx:id="description" editable="false">
                                        <VBox.margin>
                                           <Insets left="25.0" right="25.0" top="5.0" />
                                        </VBox.margin>
@@ -77,7 +80,7 @@
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label text="Label" />
+                                          <Label fx:id="type" text="Label" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -90,7 +93,7 @@
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label text="Label" />
+                                          <Label fx:id="subType" text="Label" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -103,7 +106,7 @@
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label text="Label" />
+                                          <Label fx:id="averageCost" text="Label" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -119,7 +122,7 @@
                      <children>
                         <BorderPane prefHeight="663.0" prefWidth="557.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <center>
-                              <JFXListView BorderPane.alignment="CENTER" />
+                              <JFXTreeTableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="offerList"/>
                            </center>
                         </BorderPane>
                      </children>

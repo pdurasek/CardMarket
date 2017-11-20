@@ -82,12 +82,14 @@ public class Market extends Application
          modalStage.setScene(scene);
          modalStage.initModality(Modality.APPLICATION_MODAL);
          modalStage.setTitle(card.getName());
-         modalStage.showAndWait();
+         modalStage.show();
 
 
          // Create controller + methods
          UniqueCardController uniqueCardController = loader.getController();
-         //uniqueCardController
+         uniqueCardController.setUniqueCard(card);
+         uniqueCardController.updateCardInfo();
+         uniqueCardController.updateOfferList();
       }
       catch (IOException e)
       {
