@@ -47,7 +47,7 @@ CREATE TABLE `card` (
   CONSTRAINT `fk_Card_Set1` FOREIGN KEY (`setID`) REFERENCES `cardset` (`setID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_SubType1` FOREIGN KEY (`subTypeID`) REFERENCES `subtype` (`subTypeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_Type1` FOREIGN KEY (`typeID`) REFERENCES `type` (`typeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=735 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=754 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `card` (
 
 LOCK TABLES `card` WRITE;
 /*!40000 ALTER TABLE `card` DISABLE KEYS */;
-INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(534,'Azdaja',1,'Dost Dobra Karta','ash.png',4,1,2,1,1,1),(544,'Leva Ko Desna',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(554,'Zmaj',1,'Dost Dobra Karta','ash.png',4,1,2,1,1,1),(564,'Ruka',1,'Dost Dobra Karta','ash.png',4,1,3,1,1,1),(574,'Lepa Mara',1,'Dost Dobra Karta','ash.png',4,1,4,1,1,1),(584,'Beba',1,'Dost Dobra Karta','ash.png',4,1,5,1,1,1),(594,'Bik',1,'Dost Dobra Karta','ash.png',4,1,2,1,1,1),(604,'Kurati Bik',1,'Dost Dobra Karta','ash.png',4,1,3,1,1,1),(614,'Heri Poter',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(624,'Brat Od Hulka',1,'Dost Dobra Karta','ash.png',4,1,4,1,1,1),(634,'Undergdoun',1,'Dost Dobra Karta','ash.png',4,1,5,1,1,1),(644,'Benzinska',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(654,'Pumpa',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(664,'Macka',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(674,'Pas s Nogom',1,'Dost Dobra Karta','ash.png',4,1,2,1,1,1),(684,'Ruzni Zmaj',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(694,'Lepi Zmaj',1,'Dost Dobra Karta','ash.png',4,1,3,1,1,1),(704,'Kek',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(714,'Bone',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(724,'Zdravko',1,'Dost Dobra Karta','ash.png',4,1,3,1,1,1),(734,'Suq Madiq',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1);
+INSERT INTO `card` VALUES (1,'Lepa Karta',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(534,'Azdaja',1,'Dost Dobra Karta','ash.png',4,1,2,1,2,1),(544,'Leva Ko Desna',1,'Dost Dobra Karta','ash.png',4,1,1,1,3,1),(554,'Zmaj',1,'Dost Dobra Karta','ash.png',4,1,2,1,4,1),(564,'Ruka',1,'Dost Dobra Karta','ash.png',4,1,3,1,1,1),(574,'Lepa Mara',1,'Dost Dobra Karta','ash.png',4,1,4,1,2,1),(584,'Beba',1,'Dost Dobra Karta','ash.png',4,1,5,1,3,1),(594,'Bik',1,'Dost Dobra Karta','ash.png',4,1,2,1,4,1),(604,'Kurati Bik',1,'Dost Dobra Karta','ash.png',4,1,3,1,2,1),(614,'Heri Poter',1,'Dost Dobra Karta','ash.png',4,1,1,1,1,1),(624,'Brat Od Hulka',1,'Dost Dobra Karta','ash.png',4,1,4,1,1,1),(634,'Undergdoun',1,'Dost Dobra Karta','ash.png',4,1,5,1,2,1),(644,'Benzinska',1,'Dost Dobra Karta','ash.png',4,1,1,1,4,1),(654,'Pumpa',1,'Dost Dobra Karta','ash.png',4,1,1,1,5,1),(664,'Macka',1,'Dost Dobra Karta','ash.png',4,1,1,1,6,1),(674,'Pas s Nogom',1,'Dost Dobra Karta','ash.png',4,1,2,1,7,1),(684,'Ruzni Zmaj',1,'Dost Dobra Karta','ash.png',4,1,1,1,4,1),(694,'Lepi Zmaj',1,'Dost Dobra Karta','ash.png',4,1,3,1,2,1),(704,'Kek',1,'Dost Dobra Karta','ash.png',4,1,1,1,2,1),(714,'Bone',1,'Dost Dobra Karta','ash.png',4,1,1,1,4,1),(724,'Zdravko',1,'Dost Dobra Karta','ash.png',4,1,3,1,8,1),(734,'Suq Madiq',1,'Dost Dobra Karta','ash.png',4,1,1,1,5,1),(744,'Heri Poter',0,'Nelosa Karta','ghost.png',4,1,3,1,2,3);
 /*!40000 ALTER TABLE `card` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +107,7 @@ CREATE TABLE `cardoffer` (
   CONSTRAINT `fk_Card_has_User_Card1` FOREIGN KEY (`Card_cardID`) REFERENCES `card` (`cardID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_has_User_Cart1` FOREIGN KEY (`cartID`) REFERENCES `cart` (`cartID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_has_User_User1` FOREIGN KEY (`User_userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `cardoffer` (
 
 LOCK TABLES `cardoffer` WRITE;
 /*!40000 ALTER TABLE `cardoffer` DISABLE KEYS */;
-INSERT INTO `cardoffer` VALUES (3,1,3,2,10,0,NULL),(4,534,4,3,15,1,2);
+INSERT INTO `cardoffer` VALUES (3,1,3,2,10,0,NULL),(4,534,4,3,15,1,2),(14,614,3,5,1,0,NULL),(24,614,4,10,2,0,NULL),(34,744,4,5,5,0,NULL);
 /*!40000 ALTER TABLE `cardoffer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -547,4 +547,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-18 17:16:46
+-- Dump completed on 2017-11-21 21:39:55
