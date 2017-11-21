@@ -1,21 +1,26 @@
 package CardMarket.controllers;
 
+import CardMarket.dao.implementations.CardOfferDao;
+import CardMarket.dao.interfaces.ICardOfferDao;
 import CardMarket.models.Card;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
+import CardMarket.models.CardOffer;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class UniqueCardController
 {
@@ -37,6 +42,7 @@ public class UniqueCardController
    private BorderPane tablePane;
 
    private Card card;
+   private ICardOfferDao cardOfferDao = new CardOfferDao();
 
    @FXML
    private void initialize()
@@ -91,23 +97,51 @@ public class UniqueCardController
 
       final TreeItem<CardOfferRecord> root = new RecursiveTreeItem<>(cardOfferList, RecursiveTreeObject::getChildren);
       JFXTreeTableView<CardOfferRecord> offerList = new JFXTreeTableView<>(root);
-      offerList.setOnMouseClicked(event -> System.out.println("Card " + offerList.getSelectionModel().getSelectedItem().getValue().cardname + " with ID: " +
-              offerList.getSelectionModel().getSelectedItem().getValue().id));
+      offerList.setOnMouseClicked(event ->
+      {
+         CardOfferRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
+         int quantity = aRecord.quantity.getValue();
+         List<Integer> quantityList = new ArrayList<>(quantity);
+         for (int i = 1; i <= quantity; i++)
+         {
+            quantityList.add(i);
+         }
+         ChoiceDialog addToCardDialog = new ChoiceDialog(quantityList.get(0), quantityList);
+         addToCardDialog.setTitle("Add to Cart");
+         addToCardDialog.setHeaderText("Select quantity");
+         Optional<Integer> result = addToCardDialog.showAndWait();
+         if (result.isPresent())
+         {
+
+            if (quantity - result.get() > 0)
+            {
+               System.out.println(result.get());
+               CardOffer offer = cardOfferDao.getCardOffer(aRecord.id.getValue());
+               offer.setQuantity(offer.getQuantity() - result.get());
+               cardOfferDao.updateCardOffer(offer); // TODO change commit mode
+            }
+         }
+                 /*System.out.println("Card " + offerList.getSelectionModel().getSelectedItem().getValue().cardname + " with ID: " +
+                         offerList.getSelectionModel().getSelectedItem().getValue().id);*/
+      });
+
       offerList.setShowRoot(false);
       offerList.setEditable(false);
       offerList.getColumns().setAll(cardsetColumn, cardColumn, rarityColumn, conditionColumn, languageColumn, priceColumn, quantityColumn);
       tablePane.setCenter(offerList);
    }
 
-   private ObservableList<CardOfferRecord> generateOffers()
+   private ObservableList<CardOfferRecord> generateOffers() // TODO add pagination on loading?
    {
       ObservableList<CardOfferRecord> cardOfferList = FXCollections.observableArrayList();
-
-      for (int i = 0; i < 50; i++)
+      List<CardOffer> tempOfferList = cardOfferDao.getAllCardOffers(card.getName());
+      for (CardOffer offer : tempOfferList)
       {
-         cardOfferList.add(new CardOfferRecord(i, card.getCardset().getName(), card.getName()+i, card.getRarity().getName(),
-                 card.getCondition().getName(), card.getLanguage().getName(), 50.0, 11));
+         cardOfferList.add(new CardOfferRecord(offer.getCardOfferID(), offer.getCard().getCardset().getName(), offer.getCard().getName(),
+                 offer.getCard().getRarity().getName(), offer.getCard().getCondition().getName(), offer.getCard().getLanguage().getName(),
+                 offer.getPrice(), offer.getQuantity()));
       }
+
 
       return cardOfferList;
    }

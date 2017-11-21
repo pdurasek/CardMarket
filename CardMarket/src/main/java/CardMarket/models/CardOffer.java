@@ -10,6 +10,21 @@ public class CardOffer
    private boolean reserved;
    private Cart cart;
 
+   public CardOffer()
+   {
+   }
+
+   public CardOffer(int cardOfferID, Card card, User user, int quantity, double price, boolean reserved, Cart cart)
+   {
+      this.cardOfferID = cardOfferID;
+      this.card = card;
+      this.user = user;
+      this.quantity = quantity;
+      this.price = price;
+      this.reserved = reserved;
+      this.cart = cart;
+   }
+
    public int getCardOfferID()
    {
       return cardOfferID;

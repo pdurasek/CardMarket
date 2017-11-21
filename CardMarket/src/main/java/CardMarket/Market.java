@@ -111,17 +111,4 @@ public class Market extends Application
 
       return karteee;
    }
-
-   private static List testCardOfferDao()
-   {
-      ICardOfferDao karta = new CardOfferDao();
-      List<CardOffer> karteee = karta.getAllCardOffers();
-
-      for (int i = 0; i < karteee.size(); i++)
-      {
-         System.out.println(karteee.get(i).getCard().getName() + " is being sold by " + karteee.get(i).getUser().getUsername());
-      }
-
-      return karteee;
-   }
 }

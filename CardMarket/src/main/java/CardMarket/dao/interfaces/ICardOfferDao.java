@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ICardOfferDao
 {
-   public List getAllCardOffers();
+   public List getAllCardOffers(String cardName);
 
-   public List getAllCardOffers(int startIndex, int pageSize);
+   public List getAllCardOffers(int startIndex, int pageSize, String cardName);
 
    public CardOffer getCardOffer(int cardOfferID);
 

@@ -18,13 +18,16 @@ public class CardOfferDao implements ICardOfferDao
    }
 
    @Override
-   public List getAllCardOffers()
+   public List getAllCardOffers(String cardName)
    {
-      return session.createQuery("FROM CardOffer ").list();
+      Query query = session.createQuery("FROM CardOffer WHERE card.name = :cardName");
+      query.setParameter("cardName", cardName);
+
+      return query.list();
    }
 
    @Override
-   public List getAllCardOffers(int startIndex, int pageSize)
+   public List getAllCardOffers(int startIndex, int pageSize, String cardName)
    {
       Query query = session.createQuery("FROM SoldCard ");
       query.setFirstResult(startIndex);
