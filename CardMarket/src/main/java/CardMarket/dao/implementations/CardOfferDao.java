@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.ICardOfferDao;
 import CardMarket.models.CardOffer;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -43,9 +44,26 @@ public class CardOfferDao implements ICardOfferDao
    }
 
    @Override
-   public void updateCardOffer(CardOffer cardOffer)
+   public boolean updateCardOffer(CardOffer cardOffer)
    {
-      session.update(cardOffer);
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.update(cardOffer);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

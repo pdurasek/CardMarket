@@ -95,6 +95,9 @@ public class UniqueCardController
       JFXTreeTableColumn<CardOfferRecord, Number> quantityColumn = new JFXTreeTableColumn<>("Quantity");
       quantityColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, Number> col) -> col.getValue().getValue().quantity);
 
+      JFXTreeTableColumn<CardOfferRecord, String> sellerColumn = new JFXTreeTableColumn<>("Seller");
+      sellerColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().seller);
+
       final TreeItem<CardOfferRecord> root = new RecursiveTreeItem<>(cardOfferList, RecursiveTreeObject::getChildren);
       JFXTreeTableView<CardOfferRecord> offerList = new JFXTreeTableView<>(root);
       offerList.setOnMouseClicked(event ->
@@ -112,22 +115,24 @@ public class UniqueCardController
          Optional<Integer> result = addToCardDialog.showAndWait();
          if (result.isPresent())
          {
+            int quantityRemaining = quantity - result.get();
 
-            if (quantity - result.get() > 0)
+            if (quantityRemaining > 0)
             {
                System.out.println(result.get());
                CardOffer offer = cardOfferDao.getCardOffer(aRecord.id.getValue());
                offer.setQuantity(offer.getQuantity() - result.get());
-               cardOfferDao.updateCardOffer(offer); // TODO change commit mode
+               if (cardOfferDao.updateCardOffer(offer))
+               {
+                  aRecord.quantity.setValue(quantityRemaining);
+               }
             }
          }
-                 /*System.out.println("Card " + offerList.getSelectionModel().getSelectedItem().getValue().cardname + " with ID: " +
-                         offerList.getSelectionModel().getSelectedItem().getValue().id);*/
       });
 
       offerList.setShowRoot(false);
       offerList.setEditable(false);
-      offerList.getColumns().setAll(cardsetColumn, cardColumn, rarityColumn, conditionColumn, languageColumn, priceColumn, quantityColumn);
+      offerList.getColumns().setAll(cardsetColumn, cardColumn, rarityColumn, conditionColumn, languageColumn, priceColumn, quantityColumn, sellerColumn);
       tablePane.setCenter(offerList);
    }
 
@@ -139,7 +144,7 @@ public class UniqueCardController
       {
          cardOfferList.add(new CardOfferRecord(offer.getCardOfferID(), offer.getCard().getCardset().getName(), offer.getCard().getName(),
                  offer.getCard().getRarity().getName(), offer.getCard().getCondition().getName(), offer.getCard().getLanguage().getName(),
-                 offer.getPrice(), offer.getQuantity()));
+                 offer.getPrice(), offer.getQuantity(), offer.getUser().getUsername()));
       }
 
 
@@ -156,9 +161,10 @@ public class UniqueCardController
       final StringProperty language;
       final DoubleProperty price;
       final IntegerProperty quantity;
+      final StringProperty seller;
 
       public CardOfferRecord(int id, String cardset, String cardname, String rarity, String condition, String language,
-                             double price, int quantity)
+                             double price, int quantity, String seller)
       {
          this.id = new SimpleIntegerProperty(id);
          this.cardset = new SimpleStringProperty(cardset);
@@ -168,6 +174,7 @@ public class UniqueCardController
          this.language = new SimpleStringProperty(language);
          this.price = new SimpleDoubleProperty(price);
          this.quantity = new SimpleIntegerProperty(quantity);
+         this.seller = new SimpleStringProperty(seller);
       }
    }
 }

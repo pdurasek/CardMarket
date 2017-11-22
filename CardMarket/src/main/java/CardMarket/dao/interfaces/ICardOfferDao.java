@@ -12,7 +12,7 @@ public interface ICardOfferDao
 
    public CardOffer getCardOffer(int cardOfferID);
 
-   public void updateCardOffer(CardOffer cardOffer);
+   public boolean updateCardOffer(CardOffer cardOffer);
 
    public void deleteCardOffer(CardOffer cardOffer);
 }
