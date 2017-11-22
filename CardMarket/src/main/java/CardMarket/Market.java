@@ -34,9 +34,19 @@ public class Market extends Application
    @Override
    public void start(Stage primaryStage)
    {
-      FXMLLoader loader = new FXMLLoader();
       mainStage = primaryStage;
-      System.out.println(Market.class.getResource("/view_templates/Browse.fxml"));
+      showRegister();
+      System.out.println("testis");
+   }
+
+   public static void main(String[] args)
+   {
+      launch(args);
+   }
+
+   public void showBrowse()
+   {
+      FXMLLoader loader = new FXMLLoader();
       loader.setLocation(Market.class.getResource("/view_templates/Browse.fxml"));
       try
       {
@@ -62,16 +72,10 @@ public class Market extends Application
       browseController.setMarket(this);
    }
 
-   public static void main(String[] args)
-   {
-      launch(args);
-   }
-
    public void showUniqueCard(Card card)
    {
       try
       {
-         System.out.println(card.getCardID());
          FXMLLoader loader = new FXMLLoader();
          loader.setLocation(Market.class.getResource("/view_templates/UniqueCard.fxml"));
          AnchorPane anchorPane = loader.load();
@@ -95,6 +99,28 @@ public class Market extends Application
       {
          e.printStackTrace();
          System.err.println("Error while loading the scene template");
+      }
+   }
+
+   public void showRegister()
+   {
+      try
+      {
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(Market.class.getResource("/view_templates/Register.fxml"));
+         root = loader.load();
+
+         mainStage.setScene(new Scene(root));
+         mainStage.setOnCloseRequest(event ->
+         {
+            Platform.exit();
+            System.exit(0);
+         });
+         mainStage.show();
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
       }
    }
 
