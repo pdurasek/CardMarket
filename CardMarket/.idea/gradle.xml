@@ -10,8 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
           </set>
-        </option>
-        <option name="useAutoImport" value="true" />
+        </option>      
       </GradleProjectSettings>
     </option>
   </component>
