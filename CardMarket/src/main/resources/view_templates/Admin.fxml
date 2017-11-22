@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.AdminController">
+<BorderPane stylesheets="@../css/components.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.AdminController">
    <center>
       <JFXTabPane BorderPane.alignment="CENTER">
          <tabs>
@@ -63,7 +63,7 @@
                      <bottom>
                         <BorderPane BorderPane.alignment="CENTER">
                            <center>
-                              <JFXTreeTableView id="treeTableView" fx:id="treeTableView" prefHeight="220.0" prefWidth="1110.0">
+                              <JFXTreeTableView id="treeTableView" fx:id="treeTableView" maxHeight="1.7976931348623157E308" prefHeight="220.0" prefWidth="1110.0">
                                  <columns>
                                     <JFXTreeTableColumn id="id" fx:id="id" prefWidth="75.0" text="ID" />
                                     <JFXTreeTableColumn id="name" fx:id="name" prefWidth="75.0" text="Name" />
@@ -95,16 +95,25 @@
                         </BorderPane>
                      </bottom>
                      <left>
-                        <VBox prefWidth="520.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
+                        <VBox prefWidth="450.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Name" textFill="#f08324" />
+                              <Label text="Name" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
                               <TextField fx:id="textName" prefHeight="31.0" prefWidth="235.0" />
-                              <Label text="First Ed." textFill="#f08324" />
+                              <Label text="First Ed." textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
                               <JFXToggleButton id="toggleBtn" fx:id="toggleBtn" mnemonicParsing="false" text="Yes" textFill="#f08324">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></JFXToggleButton>
-                              <Label text="Description" textFill="#f08324" />
+                              <Label text="Description" textFill="#f08324">
+                              <font>
+                                 <Font name="System Bold" size="15.0" />
+                              </font></Label>
                               <TextArea fx:id="textAreaDesc" prefHeight="207.0" prefWidth="646.0" />
                            </children>
                            <BorderPane.margin>
@@ -116,9 +125,13 @@
                         </VBox>
                      </left>
                      <right>
-                        <VBox prefWidth="400.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
+                        <VBox prefWidth="450.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
                            <children>
-                              <Label text="Condition" textFill="#f08324" />
+                              <Label text="Condition" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="407.0" />
                               <Button id="createBtn" fx:id="createBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="65.0" prefWidth="158.0" text="Save Card">
                                  <VBox.margin>
@@ -132,9 +145,12 @@
                         </VBox>
                      </right>
                      <center>
-                        <VBox prefWidth="300.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
+                        <VBox prefWidth="388.0" style="-fx-background-color: #454545;" BorderPane.alignment="CENTER">
                            <children>
                               <Label text="Image URL" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
@@ -144,15 +160,35 @@
                                     <Insets />
                                  </opaqueInsets>
                               </TextField>
-                              <Label text="Type" textFill="#f08324" />
+                              <Label text="Type" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                              <Label text="Sub Type" textFill="#f08324" />
+                              <Label text="Sub Type" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox layoutX="10.0" layoutY="83.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                              <Label text="Rarity" textFill="#f08324" />
+                              <Label text="Rarity" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox layoutX="10.0" layoutY="135.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                              <Label text="Language" textFill="#f08324" />
+                              <Label text="Language" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox layoutX="10.0" layoutY="187.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-                              <Label text="Set" textFill="#f08324" />
+                              <Label text="Set" textFill="#f08324">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
                               <JFXComboBox layoutX="10.0" layoutY="239.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
                            </children>
                            <padding>
@@ -167,7 +203,7 @@
                <content>
                <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView maxHeight="1.7976931348623157E308" prefWidth="1110.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView maxHeight="1.7976931348623157E308" prefHeight="560.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="TypeID" />
                               <JFXTreeTableColumn prefWidth="-1.0" text="Name" />
@@ -209,7 +245,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1110.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView prefHeight="560.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="Sub-TypeID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -253,7 +289,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1110.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView prefHeight="500.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="SetID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -310,7 +346,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1150.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="1150.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="RarityID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -367,7 +403,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1150.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView prefHeight="500.0" prefWidth="1150.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="ConditionID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -502,6 +538,11 @@
                                     <Insets left="20.0" />
                                  </VBox.margin>
                               </TextField>
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="164.0" text="Save User">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
                            </children></VBox>
                      </left>
                      <right>
@@ -533,11 +574,6 @@
                                     <Insets left="20.0" right="20.0" />
                                  </VBox.margin>
                               </TextField>
-                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="164.0" text="Save User">
-                                 <VBox.margin>
-                                    <Insets bottom="20.0" left="20.0" top="20.0" />
-                                 </VBox.margin>
-                              </Button>
                            </children>
                            <BorderPane.margin>
                               <Insets />
@@ -587,7 +623,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1150.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView prefHeight="500.0" prefWidth="1150.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="PaymentID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -644,7 +680,7 @@
                <content>
                   <BorderPane prefHeight="573.0" prefWidth="1150.0" style="-fx-background-color: #5C5C5C;">
                      <bottom>
-                        <JFXTreeTableView prefWidth="1150.0" BorderPane.alignment="CENTER">
+                        <JFXTreeTableView maxHeight="1.7976931348623157E308" prefHeight="500.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
                            <columns>
                               <JFXTreeTableColumn prefWidth="75.0" text="CredibilityID" />
                               <JFXTreeTableColumn prefWidth="75.0" text="Name" />
@@ -659,7 +695,7 @@
                         </JFXTreeTableView>
                      </bottom>
                      <center>
-                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <VBox prefWidth="1150.0" BorderPane.alignment="CENTER">
                            <children>
                               <Label text="Credibility Name" textFill="#f08324">
                                  <VBox.margin>
