@@ -20,3 +20,30 @@
 .jfx-text-area ScrollPane{
     -fx-background-color : white;
 }
+
+/* Color of rippler in JFXTabPane */
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill : WHITE;
+}
+
+/* Font color and size of JFXTabPane */
+.jfx-tab-pane .tab .tab-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: WHITE;
+    -fx-font-size: 18;
+}
+
+/* Color of text in JFXTabPane */
+.jfx-tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #f08324;
+}
+
+/* Color of selected line in JFXTabPane */
+.jfx-tab-pane .tab-selected-line {
+    -fx-background-color: #f08324;
+}
+
+/* Color of JFXTabPane */
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color:  #454545;
+}
