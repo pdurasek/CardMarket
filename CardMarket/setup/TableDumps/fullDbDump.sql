@@ -116,7 +116,7 @@ CREATE TABLE `cardoffer` (
 
 LOCK TABLES `cardoffer` WRITE;
 /*!40000 ALTER TABLE `cardoffer` DISABLE KEYS */;
-INSERT INTO `cardoffer` VALUES (3,1,3,2,10,0,NULL),(4,534,4,3,15,1,2),(14,614,3,5,1,0,NULL),(24,614,4,10,2,0,NULL),(34,744,4,5,5,0,NULL);
+INSERT INTO `cardoffer` VALUES (3,1,3,2,10,0,NULL),(4,534,4,3,15,1,2),(14,614,3,2,1,0,NULL),(24,614,4,2,2,0,NULL),(34,744,4,3,5,0,NULL);
 /*!40000 ALTER TABLE `cardoffer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,6 +510,7 @@ CREATE TABLE `user` (
   `password` varchar(100) DEFAULT NULL,
   `cardsBought` int(11) DEFAULT NULL,
   `cardsSold` int(11) DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
   `addressID` int(11) NOT NULL,
   `credibilityID` int(11) NOT NULL,
   PRIMARY KEY (`userID`),
@@ -526,7 +527,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,'PaxKing','paco',5,10,1,1),(4,'Memfisto','memfi',10,5,1,2);
+INSERT INTO `user` VALUES (3,'PaxKing','paco',5,10,NULL,1,1),(4,'Memfisto','memfi',10,5,NULL,1,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -547,4 +548,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-21 21:39:55
+-- Dump completed on 2017-11-23 21:25:52
