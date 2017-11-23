@@ -1,6 +1,7 @@
 package CardMarket;
 
 import CardMarket.controllers.BrowseController;
+import CardMarket.controllers.RegisterController;
 import CardMarket.controllers.UniqueCardController;
 import CardMarket.dao.implementations.CardDao;
 import CardMarket.dao.implementations.CardOfferDao;
@@ -36,7 +37,6 @@ public class Market extends Application
    {
       mainStage = primaryStage;
       showRegister();
-      System.out.println("testis");
    }
 
    public static void main(String[] args)
@@ -117,6 +117,9 @@ public class Market extends Application
             System.exit(0);
          });
          mainStage.show();
+
+         RegisterController registerController = loader.getController();
+         registerController.setMarket(this);
       }
       catch (IOException e)
       {

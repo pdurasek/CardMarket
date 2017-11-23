@@ -16,10 +16,11 @@
 
         <property name = "username" column = "username" type = "string"/>
         <property name = "password" column = "password" type = "string"/>
+        <property name= "email" column="email" type="string"/>
         <property name = "cardsBought" column = "cardsBought" type = "int"/>
         <property name = "cardsSold" column = "cardsSold" type = "int"/>
-        <many-to-one name="shippingAddressTemplate" column="addressID" class="CardMarket.models.ShippingAddressTemplate" not-null="true"/>
-        <many-to-one name="credibility" column="credibilityID" class="CardMarket.models.Credibility" not-null="true"/>
+        <many-to-one name="shippingAddressTemplate" column="addressID" class="CardMarket.models.ShippingAddressTemplate" not-null="false"/>
+        <many-to-one name="credibility" column="credibilityID" class="CardMarket.models.Credibility" not-null="false"/>
 
     </class>
 </hibernate-mapping>

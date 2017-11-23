@@ -17,6 +17,13 @@ public class UserDao implements IUserDao
       session = SessionCreator.getSession();
    }
 
+   @Override
+   public boolean createUser(User user)
+   {
+      Object newUser = session.save(user);
+
+      return newUser != null;
+   }
 
    @Override
    public List getAllUsers()
@@ -38,6 +45,16 @@ public class UserDao implements IUserDao
    public User getUser(int userID)
    {
       return session.get(User.class, userID);
+   }
+
+   @Override
+   public User getAuthenticatedUser(String username, String password)
+   {
+      Query query = session.createQuery("FROM User WHERE username = :username AND password = :password");
+      query.setParameter("username", username);
+      query.setParameter("password", password);
+
+      return (User) query.uniqueResult();
    }
 
    @Override
