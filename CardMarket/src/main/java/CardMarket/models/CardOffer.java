@@ -8,13 +8,12 @@ public class CardOffer
    private int quantity;
    private double price;
    private boolean reserved;
-   private Cart cart;
 
    public CardOffer()
    {
    }
 
-   public CardOffer(int cardOfferID, Card card, User user, int quantity, double price, boolean reserved, Cart cart)
+   public CardOffer(int cardOfferID, Card card, User user, int quantity, double price, boolean reserved)
    {
       this.cardOfferID = cardOfferID;
       this.card = card;
@@ -22,7 +21,6 @@ public class CardOffer
       this.quantity = quantity;
       this.price = price;
       this.reserved = reserved;
-      this.cart = cart;
    }
 
    public int getCardOfferID()
@@ -85,13 +83,4 @@ public class CardOffer
       this.reserved = reserved;
    }
 
-   public Cart getCart()
-   {
-      return cart;
-   }
-
-   public void setCart(Cart cart)
-   {
-      this.cart = cart;
-   }
 }

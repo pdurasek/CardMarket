@@ -102,29 +102,32 @@ public class UniqueCardController
       JFXTreeTableView<CardOfferRecord> offerList = new JFXTreeTableView<>(root);
       offerList.setOnMouseClicked(event ->
       {
-         CardOfferRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
-         int quantity = aRecord.quantity.getValue();
-         List<Integer> quantityList = new ArrayList<>(quantity);
-         for (int i = 1; i <= quantity; i++)
+         if (cardOfferList.size() > 0)
          {
-            quantityList.add(i);
-         }
-         ChoiceDialog addToCardDialog = new ChoiceDialog(quantityList.get(0), quantityList);
-         addToCardDialog.setTitle("Add to Cart");
-         addToCardDialog.setHeaderText("Select quantity");
-         Optional<Integer> result = addToCardDialog.showAndWait();
-         if (result.isPresent())
-         {
-            int quantityRemaining = quantity - result.get();
-
-            if (quantityRemaining > 0)
+            CardOfferRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
+            int quantity = aRecord.quantity.getValue();
+            List<Integer> quantityList = new ArrayList<>(quantity);
+            for (int i = 1; i <= quantity; i++)
             {
-               System.out.println(result.get());
-               CardOffer offer = cardOfferDao.getCardOffer(aRecord.id.getValue());
-               offer.setQuantity(offer.getQuantity() - result.get());
-               if (cardOfferDao.updateCardOffer(offer))
+               quantityList.add(i);
+            }
+            ChoiceDialog addToCardDialog = new ChoiceDialog(quantityList.get(0), quantityList);
+            addToCardDialog.setTitle("Add to Cart");
+            addToCardDialog.setHeaderText("Select quantity");
+            Optional<Integer> result = addToCardDialog.showAndWait();
+            if (result.isPresent())
+            {
+               int quantityRemaining = quantity - result.get();
+
+               if (quantityRemaining > 0)
                {
-                  aRecord.quantity.setValue(quantityRemaining);
+                  System.out.println(result.get());
+                  CardOffer offer = cardOfferDao.getCardOffer(aRecord.id.getValue());
+                  offer.setQuantity(offer.getQuantity() - result.get());
+                  if (cardOfferDao.updateCardOffer(offer))
+                  {
+                     aRecord.quantity.setValue(quantityRemaining);
+                  }
                }
             }
          }

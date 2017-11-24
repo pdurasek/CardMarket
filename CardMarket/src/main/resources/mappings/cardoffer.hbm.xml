@@ -19,7 +19,6 @@
         <property name="reserved" column="reserved" type="boolean"/>
         <many-to-one name="card" column="card_cardid" class="CardMarket.models.Card" not-null="true"/>
         <many-to-one name="user" column="user_userid" class="CardMarket.models.User" not-null="true"/>
-        <many-to-one name="cart" column="cartID" class="CardMarket.models.Cart" not-null="false"/>
 
     </class>
 </hibernate-mapping>
