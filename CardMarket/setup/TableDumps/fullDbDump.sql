@@ -99,13 +99,13 @@ CREATE TABLE `cardoffer` (
   `quantity` int(11) DEFAULT '1',
   `price` decimal(10,0) DEFAULT '1',
   `reserved` tinyint(1) DEFAULT '0',
-  `cartID` int(11) DEFAULT NULL,
+  `reservedCardID` int(11) DEFAULT NULL,
   PRIMARY KEY (`cardOfferID`),
   KEY `fk_Card_has_User_User1_idx` (`User_userID`),
   KEY `fk_Card_has_User_Card1_idx` (`Card_cardID`),
-  KEY `fk_Card_has_User_Cart1_idx` (`cartID`),
+  KEY `fk_Card_has_User_Cart1_idx` (`reservedCardID`),
   CONSTRAINT `fk_Card_has_User_Card1` FOREIGN KEY (`Card_cardID`) REFERENCES `card` (`cardID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Card_has_User_Cart1` FOREIGN KEY (`cartID`) REFERENCES `cart` (`cartID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Card_has_User_Cart1` FOREIGN KEY (`reservedCardID`) REFERENCES `reservedCard` (`reservedCardID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_has_User_User1` FOREIGN KEY (`User_userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -146,29 +146,29 @@ INSERT INTO `cardset` VALUES (1,'Maximum Crisis','MACR'),(2,'Raging Tempest','RA
 UNLOCK TABLES;
 
 --
--- Table structure for table `cart`
+-- Table structure for table `reservedCard`
 --
 
-DROP TABLE IF EXISTS `cart`;
+DROP TABLE IF EXISTS `reservedCard`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cart` (
-  `cartID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reservedCard` (
+  `reservedCardID` int(11) NOT NULL AUTO_INCREMENT,
   `User_userID` int(11) NOT NULL,
-  PRIMARY KEY (`cartID`),
+  PRIMARY KEY (`reservedCardID`),
   KEY `fk_Cart_User1_idx` (`User_userID`),
   CONSTRAINT `fk_Cart_User1` FOREIGN KEY (`User_userID`) REFERENCES `user` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cart`
+-- Dumping data for table `reservedCard`
 --
 
-LOCK TABLES `cart` WRITE;
-/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (2,3);
-/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+LOCK TABLES `reservedCard` WRITE;
+/*!40000 ALTER TABLE `reservedCard` DISABLE KEYS */;
+INSERT INTO `reservedCard` VALUES (2,3);
+/*!40000 ALTER TABLE `reservedCard` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

@@ -232,9 +232,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `card_market`.`Cart` ;
 
 CREATE TABLE IF NOT EXISTS `card_market`.`Cart` (
-  `cartID` INT NOT NULL AUTO_INCREMENT,
+  `reservedCardID` INT NOT NULL AUTO_INCREMENT,
   `User_userID` INT NOT NULL,
-  PRIMARY KEY (`cartID`),
+  PRIMARY KEY (`reservedCardID`),
   INDEX `fk_Cart_User1_idx` (`User_userID` ASC),
   CONSTRAINT `fk_Cart_User1`
     FOREIGN KEY (`User_userID`)
@@ -323,11 +323,11 @@ CREATE TABLE IF NOT EXISTS `card_market`.`CardOffer` (
   `quantity` INT NULL DEFAULT 1,
   `price` DECIMAL NULL DEFAULT 1,
   `reserved` TINYINT(1) NULL DEFAULT 0,
-  `cartID` INT NULL,
+  `reservedCardID` INT NULL,
   PRIMARY KEY (`cardOfferID`),
   INDEX `fk_Card_has_User_User1_idx` (`User_userID` ASC),
   INDEX `fk_Card_has_User_Card1_idx` (`Card_cardID` ASC),
-  INDEX `fk_Card_has_User_Cart1_idx` (`cartID` ASC),
+  INDEX `fk_Card_has_User_Cart1_idx` (`reservedCardID` ASC),
   CONSTRAINT `fk_Card_has_User_Card1`
     FOREIGN KEY (`Card_cardID`)
     REFERENCES `card_market`.`Card` (`cardID`)
@@ -339,8 +339,8 @@ CREATE TABLE IF NOT EXISTS `card_market`.`CardOffer` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Card_has_User_Cart1`
-    FOREIGN KEY (`cartID`)
-    REFERENCES `card_market`.`Cart` (`cartID`)
+    FOREIGN KEY (`reservedCardID`)
+    REFERENCES `card_market`.`Cart` (`reservedCardID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

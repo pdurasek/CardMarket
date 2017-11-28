@@ -1,12 +1,21 @@
 package CardMarket.controllers;
 
 import CardMarket.dao.implementations.CardOfferDao;
+import CardMarket.dao.implementations.ReservedCardDao;
+import CardMarket.dao.implementations.UserDao;
 import CardMarket.dao.interfaces.ICardOfferDao;
+import CardMarket.dao.interfaces.IReservedCardDao;
+import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.Card;
 import CardMarket.models.CardOffer;
-import com.jfoenix.controls.*;
+import CardMarket.models.ReservedCard;
+import CardMarket.models.User;
+import CardMarket.util.TreeTableViewRecord;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTreeTableColumn;
+import com.jfoenix.controls.JFXTreeTableView;
+import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -43,6 +52,7 @@ public class UniqueCardController
 
    private Card card;
    private ICardOfferDao cardOfferDao = new CardOfferDao();
+   private IReservedCardDao reservedCardDao = new ReservedCardDao();
 
    @FXML
    private void initialize()
@@ -63,48 +73,48 @@ public class UniqueCardController
       description.setText(card.getDescription());
       type.setText(card.getType().getName());
       subType.setText(card.getSubtype().getName());
-      averageCost.setText("0");
+      averageCost.setText("0"); // TODO Calculate
    }
 
    public void updateOfferList()
    {
 
-      ObservableList<CardOfferRecord> cardOfferList = generateOffers();
+      ObservableList<TreeTableViewRecord> cardOfferList = generateOffers();
 
-      JFXTreeTableColumn<CardOfferRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
-      idColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().cardset);
+      JFXTreeTableColumn<TreeTableViewRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
+      idColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
 
-      JFXTreeTableColumn<CardOfferRecord, String> cardsetColumn = new JFXTreeTableColumn<>("Set");
-      cardsetColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().cardset);
+      JFXTreeTableColumn<TreeTableViewRecord, String> cardsetColumn = new JFXTreeTableColumn<>("Set");
+      cardsetColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
 
-      JFXTreeTableColumn<CardOfferRecord, String> cardColumn = new JFXTreeTableColumn<>("Card");
-      cardColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().cardname);
+      JFXTreeTableColumn<TreeTableViewRecord, String> cardColumn = new JFXTreeTableColumn<>("Card");
+      cardColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardname);
 
-      JFXTreeTableColumn<CardOfferRecord, String> rarityColumn = new JFXTreeTableColumn<>("Rarity");
-      rarityColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().rarity);
+      JFXTreeTableColumn<TreeTableViewRecord, String> rarityColumn = new JFXTreeTableColumn<>("Rarity");
+      rarityColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().rarity);
 
-      JFXTreeTableColumn<CardOfferRecord, String> conditionColumn = new JFXTreeTableColumn<>("Condition");
-      conditionColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().condition);
+      JFXTreeTableColumn<TreeTableViewRecord, String> conditionColumn = new JFXTreeTableColumn<>("Condition");
+      conditionColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().condition);
 
-      JFXTreeTableColumn<CardOfferRecord, String> languageColumn = new JFXTreeTableColumn<>("Language");
-      languageColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().language);
+      JFXTreeTableColumn<TreeTableViewRecord, String> languageColumn = new JFXTreeTableColumn<>("Language");
+      languageColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().language);
 
-      JFXTreeTableColumn<CardOfferRecord, Number> priceColumn = new JFXTreeTableColumn<>("Price");
-      priceColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, Number> col) -> col.getValue().getValue().price);
+      JFXTreeTableColumn<TreeTableViewRecord, Number> priceColumn = new JFXTreeTableColumn<>("Price");
+      priceColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, Number> col) -> col.getValue().getValue().price);
 
-      JFXTreeTableColumn<CardOfferRecord, Number> quantityColumn = new JFXTreeTableColumn<>("Quantity");
-      quantityColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, Number> col) -> col.getValue().getValue().quantity);
+      JFXTreeTableColumn<TreeTableViewRecord, Number> quantityColumn = new JFXTreeTableColumn<>("Quantity");
+      quantityColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, Number> col) -> col.getValue().getValue().quantity);
 
-      JFXTreeTableColumn<CardOfferRecord, String> sellerColumn = new JFXTreeTableColumn<>("Seller");
-      sellerColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<CardOfferRecord, String> col) -> col.getValue().getValue().seller);
+      JFXTreeTableColumn<TreeTableViewRecord, String> sellerColumn = new JFXTreeTableColumn<>("Seller");
+      sellerColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().seller);
 
-      final TreeItem<CardOfferRecord> root = new RecursiveTreeItem<>(cardOfferList, RecursiveTreeObject::getChildren);
-      JFXTreeTableView<CardOfferRecord> offerList = new JFXTreeTableView<>(root);
+      final TreeItem<TreeTableViewRecord> root = new RecursiveTreeItem<>(cardOfferList, RecursiveTreeObject::getChildren);
+      JFXTreeTableView<TreeTableViewRecord> offerList = new JFXTreeTableView<>(root);
       offerList.setOnMouseClicked(event ->
       {
          if (cardOfferList.size() > 0)
          {
-            CardOfferRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
+            TreeTableViewRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
             int quantity = aRecord.quantity.getValue();
             List<Integer> quantityList = new ArrayList<>(quantity);
             for (int i = 1; i <= quantity; i++)
@@ -112,7 +122,7 @@ public class UniqueCardController
                quantityList.add(i);
             }
             ChoiceDialog addToCardDialog = new ChoiceDialog(quantityList.get(0), quantityList);
-            addToCardDialog.setTitle("Add to Cart");
+            addToCardDialog.setTitle("Add to ReservedCard");
             addToCardDialog.setHeaderText("Select quantity");
             Optional<Integer> result = addToCardDialog.showAndWait();
             if (result.isPresent())
@@ -127,6 +137,18 @@ public class UniqueCardController
                   if (cardOfferDao.updateCardOffer(offer))
                   {
                      aRecord.quantity.setValue(quantityRemaining);
+                     IUserDao userDao = new UserDao();
+                     User user = userDao.getUser(14);
+                     ReservedCard reservedCard = reservedCardDao.getReservedCard(offer.getCardOfferID(), 14);
+                     if (reservedCard != null)
+                     {
+                        reservedCard.setQuantity(reservedCard.getQuantity() + result.get());
+                        reservedCardDao.updateReservedCard(reservedCard);
+                     }
+                     else
+                     {
+                        System.out.println(reservedCardDao.createReservedCard(new ReservedCard(offer, user, result.get())));
+                     }
                   }
                }
             }
@@ -139,45 +161,17 @@ public class UniqueCardController
       tablePane.setCenter(offerList);
    }
 
-   private ObservableList<CardOfferRecord> generateOffers() // TODO add pagination on loading?
+   private ObservableList<TreeTableViewRecord> generateOffers() // TODO add pagination on loading?
    {
-      ObservableList<CardOfferRecord> cardOfferList = FXCollections.observableArrayList();
+      ObservableList<TreeTableViewRecord> cardOfferList = FXCollections.observableArrayList();
       List<CardOffer> tempOfferList = cardOfferDao.getAllCardOffers(card.getName());
       for (CardOffer offer : tempOfferList)
       {
-         cardOfferList.add(new CardOfferRecord(offer.getCardOfferID(), offer.getCard().getCardset().getName(), offer.getCard().getName(),
+         cardOfferList.add(new TreeTableViewRecord(offer.getCardOfferID(), offer.getCard().getCardset().getName(), offer.getCard().getName(),
                  offer.getCard().getRarity().getName(), offer.getCard().getCondition().getName(), offer.getCard().getLanguage().getName(),
                  offer.getPrice(), offer.getQuantity(), offer.getUser().getUsername()));
       }
 
-
       return cardOfferList;
-   }
-
-   private static final class CardOfferRecord extends RecursiveTreeObject<CardOfferRecord>
-   {
-      final IntegerProperty id;
-      final StringProperty cardset;
-      final StringProperty cardname;
-      final StringProperty rarity;
-      final StringProperty condition;
-      final StringProperty language;
-      final DoubleProperty price;
-      final IntegerProperty quantity;
-      final StringProperty seller;
-
-      public CardOfferRecord(int id, String cardset, String cardname, String rarity, String condition, String language,
-                             double price, int quantity, String seller)
-      {
-         this.id = new SimpleIntegerProperty(id);
-         this.cardset = new SimpleStringProperty(cardset);
-         this.cardname = new SimpleStringProperty(cardname);
-         this.rarity = new SimpleStringProperty(rarity);
-         this.condition = new SimpleStringProperty(condition);
-         this.language = new SimpleStringProperty(language);
-         this.price = new SimpleDoubleProperty(price);
-         this.quantity = new SimpleIntegerProperty(quantity);
-         this.seller = new SimpleStringProperty(seller);
-      }
    }
 }

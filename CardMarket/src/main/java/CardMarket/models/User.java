@@ -1,5 +1,7 @@
 package CardMarket.models;
 
+import java.util.Set;
+
 public class User
 {
    private int userID;
@@ -10,6 +12,7 @@ public class User
    private int cardsSold;
    private ShippingAddressTemplate shippingAddressTemplate;
    private Credibility credibility;
+   private Set reservedCards;
 
    public User()
    {
@@ -106,5 +109,15 @@ public class User
    public void setEmail(String email)
    {
       this.email = email;
+   }
+
+   public Set getReservedCards()
+   {
+      return reservedCards;
+   }
+
+   public void setReservedCards(Set reservedCards)
+   {
+      this.reservedCards = reservedCards;
    }
 }

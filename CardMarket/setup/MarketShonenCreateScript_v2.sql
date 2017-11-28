@@ -265,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `card_market`.`cardoffer` (
   `quantity` INT(11) NULL DEFAULT '1',
   `price` DECIMAL(10,0) NULL DEFAULT '1',
   `reserved` TINYINT(1) NULL DEFAULT '0',
-  `cartID` INT(11) NULL DEFAULT NULL,
+  `reservedCardID` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`cardOfferID`),
   INDEX `fk_Card_has_User_User1_idx` (`User_userID` ASC),
   INDEX `fk_Card_has_User_Card1_idx` (`Card_cardID` ASC),

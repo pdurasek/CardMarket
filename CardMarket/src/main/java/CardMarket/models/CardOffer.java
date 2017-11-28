@@ -1,5 +1,7 @@
 package CardMarket.models;
 
+import java.util.Set;
+
 public class CardOffer
 {
    private int cardOfferID;
@@ -8,6 +10,7 @@ public class CardOffer
    private int quantity;
    private double price;
    private boolean reserved;
+   private Set reservedCards;
 
    public CardOffer()
    {
@@ -83,4 +86,13 @@ public class CardOffer
       this.reserved = reserved;
    }
 
+   public Set getReservedCards()
+   {
+      return reservedCards;
+   }
+
+   public void setReservedCards(Set reservedCards)
+   {
+      this.reservedCards = reservedCards;
+   }
 }

@@ -14,6 +14,11 @@
             <generator class="native"/>
         </id>
 
+        <set name="reservedCards" cascade="save-update">
+            <key column="reservedCardID"/>
+            <one-to-many class="CardMarket.models.ReservedCard"/>
+        </set>
+
         <property name = "quantity" column = "quantity" type = "int"/>
         <property name = "price" column = "price" type = "double"/>
         <property name="reserved" column="reserved" type="boolean"/>

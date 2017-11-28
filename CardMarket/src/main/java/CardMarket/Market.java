@@ -66,6 +66,7 @@ public class Market extends Application
          Platform.exit();
          System.exit(0);
       });
+      mainStage.centerOnScreen();
       mainStage.show();
 
       BrowseController browseController = loader.getController();

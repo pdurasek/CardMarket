@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.User;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -20,9 +21,24 @@ public class UserDao implements IUserDao
    @Override
    public boolean createUser(User user)
    {
-      Object newUser = session.save(user);
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(user);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
 
-      return newUser != null;
+         return false;
+      }
+
+      return true;
    }
 
    @Override
