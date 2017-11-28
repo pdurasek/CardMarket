@@ -1,6 +1,7 @@
 package CardMarket.dao.interfaces;
 
 import CardMarket.models.ReservedCard;
+import CardMarket.models.User;
 
 import java.util.List;
 
@@ -10,11 +11,13 @@ public interface IReservedCardDao
 
    public List getAllReservedCards();
 
+   public List getAllReservedCards(User user);
+
    public ReservedCard getReservedCard(int reservedCardID);
 
    public ReservedCard getReservedCard(int cardOfferID, int userID);
 
    public boolean updateReservedCard(ReservedCard reservedCard);
 
-   public void deleteReservedCard(ReservedCard reservedCard);
+   public boolean deleteReservedCard(ReservedCard reservedCard);
 }

@@ -3,6 +3,7 @@ package CardMarket.dao.implementations;
 import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IReservedCardDao;
 import CardMarket.models.ReservedCard;
+import CardMarket.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -48,6 +49,15 @@ public class ReservedCardDao implements IReservedCardDao
    }
 
    @Override
+   public List getAllReservedCards(User user)
+   {
+      Query query = session.createQuery("FROM ReservedCard WHERE user.userID = :userID");
+      query.setParameter("userID", user.getUserID());
+
+      return query.list();
+   }
+
+   @Override
    public ReservedCard getReservedCard(int reservedCardID)
    {
       return session.get(ReservedCard.class, reservedCardID);
@@ -59,7 +69,6 @@ public class ReservedCardDao implements IReservedCardDao
       Query query = session.createQuery("FROM ReservedCard WHERE cardOffer.cardOfferID = :cardOfferID AND user.userID = :userID");
       query.setParameter("cardOfferID", cardOfferID);
       query.setParameter("userID", userID);
-      System.out.println(query.uniqueResult());
 
       return (ReservedCard) query.uniqueResult();
    }
@@ -88,8 +97,26 @@ public class ReservedCardDao implements IReservedCardDao
    }
 
    @Override
-   public void deleteReservedCard(ReservedCard reservedCard)
+   public boolean deleteReservedCard(ReservedCard reservedCard)
    {
-      session.delete(reservedCard);
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.delete(reservedCard);
+
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 }

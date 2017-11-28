@@ -9,11 +9,10 @@ import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.controls.JFXMasonryPane;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Pagination;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -53,6 +52,8 @@ public class BrowseController
    private ComboBox<Language> languageCombo;
    @FXML
    private JFXHamburger hamburgerMenu;
+   @FXML
+   private MenuItem profileMenuItem, cartMenuItem, aboutMenuItem, exitMenuItem;
 
    private AutoCompletionBinding bind = null;
    private boolean isSearching = false;
@@ -317,5 +318,13 @@ public class BrowseController
    public void setMarket(Market market)
    {
       this.market = market;
+   }
+
+   public void setEvents()
+   {
+      cartMenuItem.setOnAction(event ->
+      {
+         market.showCart();
+      });
    }
 }

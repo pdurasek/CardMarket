@@ -78,7 +78,6 @@ public class UniqueCardController
 
    public void updateOfferList()
    {
-
       ObservableList<TreeTableViewRecord> cardOfferList = generateOffers();
 
       JFXTreeTableColumn<TreeTableViewRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
@@ -138,7 +137,7 @@ public class UniqueCardController
                   {
                      aRecord.quantity.setValue(quantityRemaining);
                      IUserDao userDao = new UserDao();
-                     User user = userDao.getUser(14);
+                     User user = userDao.getUser(14); // TODO handle with real user
                      ReservedCard reservedCard = reservedCardDao.getReservedCard(offer.getCardOfferID(), 14);
                      if (reservedCard != null)
                      {
@@ -147,7 +146,7 @@ public class UniqueCardController
                      }
                      else
                      {
-                        System.out.println(reservedCardDao.createReservedCard(new ReservedCard(offer, user, result.get())));
+                        reservedCardDao.createReservedCard(new ReservedCard(offer, user, result.get()));
                      }
                   }
                }

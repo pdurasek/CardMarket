@@ -1,6 +1,7 @@
 package CardMarket;
 
 import CardMarket.controllers.BrowseController;
+import CardMarket.controllers.CartController;
 import CardMarket.controllers.RegisterController;
 import CardMarket.controllers.UniqueCardController;
 import CardMarket.dao.implementations.CardDao;
@@ -71,6 +72,7 @@ public class Market extends Application
 
       BrowseController browseController = loader.getController();
       browseController.setMarket(this);
+      browseController.setEvents();
    }
 
    public void showUniqueCard(Card card)
@@ -128,17 +130,30 @@ public class Market extends Application
       }
    }
 
-   private static List testSoldCardDao()
+   public void showCart()
    {
-      ISoldCardDao karta = new SoldCardDao();
-      List<SoldCard> karteee = karta.getAllSoldCards();
-
-      for (int i = 0; i < karteee.size(); i++)
+      try
       {
-         System.out.println(karteee.get(i).getCard().getName() + " was bought by " + karteee.get(i).getBuyer().getUsername()
-                 + " from " + karteee.get(i).getSeller().getUsername());
-      }
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(Market.class.getResource("/view_templates/Cart.fxml"));
+         AnchorPane anchorPane = loader.load();
+         Scene scene = new Scene(anchorPane);
+         scene.getStylesheets().add(getClass().getResource("/css/components.css").toExternalForm());
 
-      return karteee;
+         Stage modalStage = new Stage();
+         modalStage.setScene(scene);
+         modalStage.initModality(Modality.APPLICATION_MODAL);
+         //modalStage.setTitle(card.getName()); //TODO sent username
+         modalStage.show();
+
+         // Create controller + methods
+         CartController cartController = loader.getController();
+         cartController.updateCartList();
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+         System.err.println("Error while loading the scene template");
+      }
    }
 }
