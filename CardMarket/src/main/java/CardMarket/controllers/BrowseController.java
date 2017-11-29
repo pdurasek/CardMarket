@@ -326,5 +326,9 @@ public class BrowseController
       {
          market.showCart();
       });
+
+      profileMenuItem.setOnAction(event -> {
+         market.showUserProfile();
+      });
    }
 }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UserController">
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UserController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -25,7 +27,7 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <top>
-                        <Label alignment="CENTER" text="Username" BorderPane.alignment="CENTER">
+                        <Label alignment="CENTER" text="Username" BorderPane.alignment="CENTER" fx:id="usernameLabel">
                            <BorderPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </BorderPane.margin>
@@ -49,7 +51,7 @@
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1" fx:id="totalCardsBoughtLabel">
+                              <Label fx:id="totalCardsBoughtLabel" alignment="CENTER" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -59,7 +61,7 @@
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="totalCardsSoldLabel">
+                              <Label fx:id="totalCardsSoldLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -69,7 +71,7 @@
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="userRatingLabel">
+                              <Label fx:id="userRatingLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -79,7 +81,7 @@
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="countryLabel">
+                              <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -125,7 +127,7 @@
                                     <Insets left="25.0" />
                                  </padding>
                               </Label>
-                              <ComboBox prefWidth="150.0" promptText="New Template" GridPane.columnIndex="1" fx:id="templateComboBox">
+                              <ComboBox fx:id="templateComboBox" prefWidth="150.0" promptText="New Template" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -140,22 +142,22 @@
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="streetAddress">
+                              <TextField fx:id="streetAddress" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="city">
+                              <TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="country">
+                              <TextField fx:id="country" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="zip">
+                              <TextField fx:id="zip" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
@@ -166,6 +168,36 @@
                   </BorderPane>
                </children>
             </GridPane>
-         </top></BorderPane>
+         </top>
+         <center>
+            <JFXTabPane style="-fx-background-color: #181818; -fx-reg: #181818;" BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab style="-fx-background-color: #800000;" text="On Sale">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="415.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fx:id="onSalePane"/>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab style="-fx-background-color: #800000;" text="Sold">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="415.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab style="-fx-background-color: #800000;" text="Bought">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="415.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </center></BorderPane>
    </children>
 </AnchorPane>

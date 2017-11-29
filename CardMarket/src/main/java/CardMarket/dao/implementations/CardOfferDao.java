@@ -3,6 +3,7 @@ package CardMarket.dao.implementations;
 import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.ICardOfferDao;
 import CardMarket.models.CardOffer;
+import CardMarket.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -30,9 +31,18 @@ public class CardOfferDao implements ICardOfferDao
    @Override
    public List getAllCardOffers(int startIndex, int pageSize, String cardName)
    {
-      Query query = session.createQuery("FROM SoldCard ");
+      Query query = session.createQuery("FROM CardOffer ");
       query.setFirstResult(startIndex);
       query.setMaxResults(pageSize);
+
+      return query.list();
+   }
+
+   @Override
+   public List getAllUserCardOffers(String username)
+   {
+      Query query = session.createQuery("FROM CardOffer WHERE user.username = :userID");
+      query.setParameter("userID", username);
 
       return query.list();
    }
@@ -55,7 +65,7 @@ public class CardOfferDao implements ICardOfferDao
       }
       catch (Exception e)
       {
-         if(transaction != null)
+         if (transaction != null)
          {
             transaction.rollback();
          }

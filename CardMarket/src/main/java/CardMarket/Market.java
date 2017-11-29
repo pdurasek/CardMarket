@@ -1,9 +1,6 @@
 package CardMarket;
 
-import CardMarket.controllers.BrowseController;
-import CardMarket.controllers.CartController;
-import CardMarket.controllers.RegisterController;
-import CardMarket.controllers.UniqueCardController;
+import CardMarket.controllers.*;
 import CardMarket.dao.implementations.CardDao;
 import CardMarket.dao.implementations.CardOfferDao;
 import CardMarket.dao.implementations.CardSetDao;
@@ -146,6 +143,32 @@ public class Market extends Application
          // Create controller + methods
          CartController cartController = loader.getController();
          cartController.updateCartList();
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+         System.err.println("Error while loading the scene template");
+      }
+   }
+
+   public void showUserProfile()
+   {
+      try
+      {
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(Market.class.getResource("/view_templates/User.fxml"));
+         AnchorPane anchorPane = loader.load();
+         Scene scene = new Scene(anchorPane);
+         scene.getStylesheets().add(getClass().getResource("/css/components.css").toExternalForm());
+
+         Stage modalStage = new Stage();
+         modalStage.setScene(scene);
+         modalStage.initModality(Modality.APPLICATION_MODAL);
+         modalStage.show();
+
+         // Create controller + methods
+         UserController userController = loader.getController();
+         userController.createCardList();
       }
       catch (IOException e)
       {

@@ -10,6 +10,8 @@ public interface ICardOfferDao
 
    public List getAllCardOffers(int startIndex, int pageSize, String cardName);
 
+   public List getAllUserCardOffers(String username);
+
    public CardOffer getCardOffer(int cardOfferID);
 
    public boolean updateCardOffer(CardOffer cardOffer);
