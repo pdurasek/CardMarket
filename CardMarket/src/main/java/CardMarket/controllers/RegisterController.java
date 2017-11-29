@@ -1,13 +1,19 @@
 package CardMarket.controllers;
 
 import CardMarket.Market;
+import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.UserDao;
 import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogEvent;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class RegisterController
@@ -51,7 +57,7 @@ public class RegisterController
          String loginName = loginNameField.getText();
          String loginPassword = loginPasswordField.getText();
 
-         User loggedUser = userDao.getAuthenticatedUser(loginName, DigestUtils.sha256Hex(loginPassword));
+         User loggedUser = UserCreator.getLoggedUser(loginName, DigestUtils.sha256Hex(loginPassword));
 
          if (loggedUser != null)
          {
@@ -59,7 +65,10 @@ public class RegisterController
          }
          else
          {
-            // TODO handle incorrect login
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Error");
+            alert.setContentText("Incorrect login information");
+            alert.showAndWait();
          }
       });
    }

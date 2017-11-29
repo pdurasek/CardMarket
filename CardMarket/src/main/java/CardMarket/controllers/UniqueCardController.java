@@ -1,11 +1,10 @@
 package CardMarket.controllers;
 
+import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.CardOfferDao;
 import CardMarket.dao.implementations.ReservedCardDao;
-import CardMarket.dao.implementations.UserDao;
 import CardMarket.dao.interfaces.ICardOfferDao;
 import CardMarket.dao.interfaces.IReservedCardDao;
-import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.Card;
 import CardMarket.models.CardOffer;
 import CardMarket.models.ReservedCard;
@@ -136,8 +135,7 @@ public class UniqueCardController
                   if (cardOfferDao.updateCardOffer(offer))
                   {
                      aRecord.quantity.setValue(quantityRemaining);
-                     IUserDao userDao = new UserDao();
-                     User user = userDao.getUser(14); // TODO handle with real user
+                     User user = UserCreator.getLoggedUser();
                      ReservedCard reservedCard = reservedCardDao.getReservedCard(offer.getCardOfferID(), 14);
                      if (reservedCard != null)
                      {
