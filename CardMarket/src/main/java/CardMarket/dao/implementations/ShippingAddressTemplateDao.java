@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IShippingAddressTemplateDao;
 import CardMarket.models.ShippingAddressTemplate;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -29,9 +30,49 @@ public class ShippingAddressTemplateDao implements IShippingAddressTemplateDao
    }
 
    @Override
-   public void updateShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate)
+   public boolean updateShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate)
    {
-      session.update(shippingAddressTemplate);
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.update(shippingAddressTemplate);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
+   }
+
+   @Override
+   public boolean createShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate)
+   {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(shippingAddressTemplate);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

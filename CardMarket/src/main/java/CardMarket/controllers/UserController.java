@@ -2,19 +2,21 @@ package CardMarket.controllers;
 
 import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.CardOfferDao;
+import CardMarket.dao.implementations.CountryDao;
+import CardMarket.dao.implementations.ShippingAddressTemplateDao;
 import CardMarket.dao.interfaces.ICardOfferDao;
-import CardMarket.models.Card;
-import CardMarket.models.CardOffer;
+import CardMarket.dao.interfaces.ICountryDao;
+import CardMarket.dao.interfaces.IShippingAddressTemplateDao;
+import CardMarket.models.*;
 import CardMarket.util.TreeTableViewRecord;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 
 import java.util.List;
 
@@ -23,11 +25,15 @@ public class UserController
    @FXML
    private Label totalCardsBoughtLabel, totalCardsSoldLabel, userRatingLabel, countryLabel, usernameLabel;
    @FXML
-   private TextField streetAddress, city, country, zip;
-   @FXML
-   private ComboBox templateComboBox;
+   private TextField streetAddress, city, zip;
    @FXML
    BorderPane onSalePane, soldPane, boughtPane;
+   @FXML
+   JFXButton saveTemplateButton;
+   @FXML
+   ComboBox<Country> countryComboBox;
+   @FXML
+   GridPane rootPane;
 
    private ICardOfferDao cardOfferDao = new CardOfferDao();
    private String username;
@@ -35,8 +41,57 @@ public class UserController
    @FXML
    private void initialize()
    {
-      username = UserCreator.getLoggedUser().getUsername();
+      User user = UserCreator.getLoggedUser();
+      ShippingAddressTemplate userTemplate = user.getShippingAddressTemplate();
+      IShippingAddressTemplateDao shippingAddressTemplateDao = new ShippingAddressTemplateDao();
+      ICountryDao countryDao = new CountryDao();
+
+      username = user.getUsername();
       usernameLabel.setText(username);
+      userRatingLabel.setText(user.getCredibility().getName());
+      if (userTemplate != null)
+      {
+         countryLabel.setText(user.getShippingAddressTemplate().getCountry().getName());
+         city.setText(userTemplate.getCity());
+         zip.setText(userTemplate.getZipcode());
+         streetAddress.setText(userTemplate.getAddress());
+         countryComboBox.getItems().addAll(countryDao.getAllCountries());
+         countryComboBox.getSelectionModel().selectFirst(); // TODO select user country
+      }
+      else
+      {
+         countryLabel.setText("N/A");
+      }
+
+      totalCardsBoughtLabel.setText(Integer.toString(user.getCardsBought()));
+      totalCardsSoldLabel.setText(Integer.toString(user.getCardsSold()));
+
+      saveTemplateButton.setOnAction(event ->
+      {
+         if(userTemplate != null)
+         {
+            if(streetAddress.getText().length() > 0 && zip.getText().length() > 0 && city.getText().length() > 0)
+            {
+               userTemplate.setAddress(streetAddress.getText());
+               userTemplate.setCity(city.getText());
+               userTemplate.setZipcode(zip.getText());
+               userTemplate.setCountry(countryComboBox.getSelectionModel().getSelectedItem());
+               if(shippingAddressTemplateDao.updateShippingAddressTemplate(userTemplate))
+               {
+                  JFXSnackbar bar = new JFXSnackbar(rootPane);
+                  bar.enqueue(new JFXSnackbar.SnackbarEvent("Address Template successfully updated"));
+                  countryLabel.setText(userTemplate.getCountry().getName());
+               }
+            }
+            else
+            {
+               Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setTitle("Template Error");
+               alert.setContentText("All fields must be filled");
+               alert.showAndWait();
+            }
+         }
+      });
    }
 
    public void createCardList()
@@ -83,7 +138,7 @@ public class UserController
    private ObservableList<TreeTableViewRecord> generateOnSale()
    {
       ObservableList<TreeTableViewRecord> cartList = FXCollections.observableArrayList();
-      List<CardOffer> tempCartList = cardOfferDao.getAllUserCardOffers(username); // TODO use method with user
+      List<CardOffer> tempCartList = cardOfferDao.getAllUserCardOffers(username);
 
       for (CardOffer cardOffer : tempCartList)
       {

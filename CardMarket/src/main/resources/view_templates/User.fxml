@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
@@ -16,7 +17,7 @@
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <GridPane prefHeight="250.0" BorderPane.alignment="CENTER">
+            <GridPane prefHeight="250.0" BorderPane.alignment="CENTER" fx:id="rootPane">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,7 +28,7 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <top>
-                        <Label alignment="CENTER" text="Username" BorderPane.alignment="CENTER" fx:id="usernameLabel">
+                        <Label fx:id="usernameLabel" alignment="CENTER" text="Username" BorderPane.alignment="CENTER">
                            <BorderPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </BorderPane.margin>
@@ -107,61 +108,56 @@
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Address Template">
+                              <Label text="Street Address">
                                  <padding>
                                     <Insets left="25.0" />
                                  </padding>
                               </Label>
-                              <Label text="Street Address" GridPane.rowIndex="1">
+                              <Label text="City" GridPane.rowIndex="1">
                                  <padding>
                                     <Insets left="25.0" />
                                  </padding>
                               </Label>
-                              <Label text="City" GridPane.rowIndex="2">
-                                 <padding>
-                                    <Insets left="25.0" />
-                                 </padding>
-                              </Label>
-                              <ComboBox fx:id="templateComboBox" prefWidth="150.0" promptText="New Template" GridPane.columnIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="25.0" />
-                                 </GridPane.margin>
-                              </ComboBox>
                               <Label text="Country" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="Zip" GridPane.rowIndex="4">
+                              <Label text="Zip" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField fx:id="streetAddress" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="streetAddress" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="country" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <TextField fx:id="zip" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField fx:id="zip" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <JFXButton fx:id="saveTemplateButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" ripplerFill="#9a3b3b" style="-fx-background-color: #4BB543;" text="Save" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
+                                    <Insets left="10.0" />
                                  </GridPane.margin>
-                              </TextField>
+                              </JFXButton>
+                              <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="countryComboBox">
+                                 <GridPane.margin>
+                                    <Insets left="25.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
                            </children>
                         </GridPane>
                      </center>
@@ -176,7 +172,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <BorderPane prefHeight="415.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fx:id="onSalePane"/>
+                              <BorderPane fx:id="onSalePane" prefHeight="415.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children></AnchorPane>
                     </content>
                   </Tab>

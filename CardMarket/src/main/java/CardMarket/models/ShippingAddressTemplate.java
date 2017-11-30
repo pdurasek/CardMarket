@@ -8,6 +8,19 @@ public class ShippingAddressTemplate
    private String city;
    private Country country;
 
+   public ShippingAddressTemplate()
+   {
+   }
+
+   public ShippingAddressTemplate(int addressID, String address, String zipcode, String city, Country country)
+   {
+      this.addressID = addressID;
+      this.address = address;
+      this.zipcode = zipcode;
+      this.city = city;
+      this.country = country;
+   }
+
    public int getAddressID()
    {
       return addressID;

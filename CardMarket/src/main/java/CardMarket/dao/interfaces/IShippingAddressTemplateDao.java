@@ -10,7 +10,9 @@ public interface IShippingAddressTemplateDao
 
    public ShippingAddressTemplate getShippingAddressTemplate(int shippingAddressTemplateID);
 
-   public void updateShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
+   public boolean updateShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
+
+   public boolean createShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
 
    public void deleteShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
 }

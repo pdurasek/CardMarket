@@ -35,4 +35,10 @@ public class Country
    {
       this.abbr = abbr;
    }
+
+   @Override
+   public String toString()
+   {
+      return name;
+   }
 }
