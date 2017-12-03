@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IShippingAddressDao;
 import CardMarket.models.ShippingAddress;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -38,5 +39,28 @@ public class ShippingAddressDao implements IShippingAddressDao
    public void deleteShippingAddress(ShippingAddress shippingAddress)
    {
       session.delete(shippingAddress);
+   }
+
+   @Override
+   public boolean createShippingAddress(ShippingAddress shippingAddress)
+   {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(shippingAddress);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 }

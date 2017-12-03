@@ -12,6 +12,8 @@ public interface ICardDao
 
    public List getAllCardsLike(String pattern, int setValue);
 
+   public List getAllCardsLike(String pattern);
+
    public List getAllCardsLike(String pattern, int startIndex, int pageSize, int setValue);
 
    public List getAllCardsFiltered(String pattern, int startIndex, int pageSize, String filterColumn, int filterValue, int setValue);

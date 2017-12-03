@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IReservedCardDao
 {
-   public boolean createReservedCard(ReservedCard reservedCard);
+   public ReservedCard createReservedCard(ReservedCard reservedCard);
 
    public List getAllReservedCards();
 
@@ -20,4 +20,8 @@ public interface IReservedCardDao
    public boolean updateReservedCard(ReservedCard reservedCard);
 
    public boolean deleteReservedCard(ReservedCard reservedCard);
+
+   public double getTotalPrice(User user);
+
+   public int getNumberOfItems(User user);
 }

@@ -1,5 +1,6 @@
 package CardMarket.controllers;
 
+import CardMarket.dao.SessionCreator;
 import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.CardOfferDao;
 import CardMarket.dao.implementations.ReservedCardDao;
@@ -10,10 +11,7 @@ import CardMarket.models.CardOffer;
 import CardMarket.models.ReservedCard;
 import CardMarket.models.User;
 import CardMarket.util.TreeTableViewRecord;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,6 +23,7 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,15 +71,12 @@ public class UniqueCardController
       description.setText(card.getDescription());
       type.setText(card.getType().getName());
       subType.setText(card.getSubtype().getName());
-      averageCost.setText("0"); // TODO Calculate
+      averageCost.setText(Double.toString(cardOfferDao.getAverageCost(card.getName()))); // TODO Calculate
    }
 
    public void updateOfferList()
    {
       ObservableList<TreeTableViewRecord> cardOfferList = generateOffers();
-
-      JFXTreeTableColumn<TreeTableViewRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
-      idColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
 
       JFXTreeTableColumn<TreeTableViewRecord, String> cardsetColumn = new JFXTreeTableColumn<>("Set");
       cardsetColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
@@ -110,7 +106,7 @@ public class UniqueCardController
       JFXTreeTableView<TreeTableViewRecord> offerList = new JFXTreeTableView<>(root);
       offerList.setOnMouseClicked(event ->
       {
-         if (cardOfferList.size() > 0)
+         if (offerList.getSelectionModel().getSelectedItem() != null && cardOfferList.size() > 0)
          {
             TreeTableViewRecord aRecord = offerList.getSelectionModel().getSelectedItem().getValue();
             int quantity = aRecord.quantity.getValue();
@@ -127,16 +123,16 @@ public class UniqueCardController
             {
                int quantityRemaining = quantity - result.get();
 
-               if (quantityRemaining > 0)
+               if (quantityRemaining >= 0)
                {
-                  System.out.println(result.get());
+                  System.out.println(aRecord.id.getValue());
                   CardOffer offer = cardOfferDao.getCardOffer(aRecord.id.getValue());
                   offer.setQuantity(offer.getQuantity() - result.get());
                   if (cardOfferDao.updateCardOffer(offer))
                   {
                      aRecord.quantity.setValue(quantityRemaining);
                      User user = UserCreator.getLoggedUser();
-                     ReservedCard reservedCard = reservedCardDao.getReservedCard(offer.getCardOfferID(), 14);
+                     ReservedCard reservedCard = reservedCardDao.getReservedCard(offer.getCardOfferID(), user.getUserID());
                      if (reservedCard != null)
                      {
                         reservedCard.setQuantity(reservedCard.getQuantity() + result.get());
@@ -144,8 +140,19 @@ public class UniqueCardController
                      }
                      else
                      {
-                        reservedCardDao.createReservedCard(new ReservedCard(offer, user, result.get()));
+                        ReservedCard rs = new ReservedCard();
+                        rs.setCardOffer(offer);
+                        rs.setUser(user);
+                        rs.setQuantity(result.get());
+                        ReservedCard newReservedCard = reservedCardDao.createReservedCard(rs);
                      }
+
+                     JFXSnackbar bar = new JFXSnackbar(tablePane);
+                     bar.enqueue(new JFXSnackbar.SnackbarEvent("Added to Cart!"));
+                  }
+                  else
+                  {
+                     System.out.println("dickerino");
                   }
                }
             }
@@ -158,7 +165,7 @@ public class UniqueCardController
       tablePane.setCenter(offerList);
    }
 
-   private ObservableList<TreeTableViewRecord> generateOffers() // TODO add pagination on loading?
+   private ObservableList<TreeTableViewRecord> generateOffers()
    {
       ObservableList<TreeTableViewRecord> cardOfferList = FXCollections.observableArrayList();
       List<CardOffer> tempOfferList = cardOfferDao.getAllCardOffers(card.getName());

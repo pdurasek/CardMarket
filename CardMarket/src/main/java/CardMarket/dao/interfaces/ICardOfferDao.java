@@ -14,7 +14,11 @@ public interface ICardOfferDao
 
    public CardOffer getCardOffer(int cardOfferID);
 
+   public boolean createCardOffer(CardOffer cardOffer);
+
    public boolean updateCardOffer(CardOffer cardOffer);
 
-   public void deleteCardOffer(CardOffer cardOffer);
+   public boolean deleteCardOffer(CardOffer cardOffer);
+
+   public double getAverageCost(String cardName);
 }

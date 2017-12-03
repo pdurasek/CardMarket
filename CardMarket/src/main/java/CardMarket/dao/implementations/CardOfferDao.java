@@ -54,6 +54,29 @@ public class CardOfferDao implements ICardOfferDao
    }
 
    @Override
+   public boolean createCardOffer(CardOffer cardOffer)
+   {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(cardOffer);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
+   }
+
+   @Override
    public boolean updateCardOffer(CardOffer cardOffer)
    {
       Transaction transaction = null;
@@ -77,8 +100,41 @@ public class CardOfferDao implements ICardOfferDao
    }
 
    @Override
-   public void deleteCardOffer(CardOffer cardOffer)
+   public boolean deleteCardOffer(CardOffer cardOffer)
    {
-      session.delete(cardOffer);
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.delete(cardOffer);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if (transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
+   }
+
+   @Override
+   public double getAverageCost(String cardName)
+   {
+      Query query = session.createQuery("SELECT AVG (price) FROM CardOffer WHERE card.name = :cardName");
+      query.setParameter("cardName", cardName);
+
+      double avgCost = 0;
+      if(query.uniqueResult() != null)
+      {
+         avgCost = (double) query.uniqueResult();
+      }
+
+      return avgCost;
+
    }
 }

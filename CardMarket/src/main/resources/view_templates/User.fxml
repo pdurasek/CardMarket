@@ -17,7 +17,7 @@
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <GridPane prefHeight="250.0" BorderPane.alignment="CENTER" fx:id="rootPane">
+            <GridPane fx:id="rootPane" prefHeight="250.0" style="-fx-background-color: #181818;" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,7 +28,7 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <top>
-                        <Label fx:id="usernameLabel" alignment="CENTER" text="Username" BorderPane.alignment="CENTER">
+                        <Label fx:id="usernameLabel" alignment="CENTER" text="Username" textFill="WHITE" BorderPane.alignment="CENTER">
                            <BorderPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </BorderPane.margin>
@@ -47,42 +47,42 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Total Cards Bought">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Total Cards Bought" textFill="WHITE">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label fx:id="totalCardsBoughtLabel" alignment="CENTER" contentDisplay="CENTER" text="Label" GridPane.columnIndex="1">
+                              <Label fx:id="totalCardsBoughtLabel" alignment="CENTER" contentDisplay="CENTER" text="Label" textFill="WHITE" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Total Cards Sold" GridPane.rowIndex="1">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Total Cards Sold" textFill="WHITE" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label fx:id="totalCardsSoldLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="totalCardsSoldLabel" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="User Rating" GridPane.rowIndex="2">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="User Rating" textFill="WHITE" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label fx:id="userRatingLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="userRatingLabel" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Country" GridPane.rowIndex="3">
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Country" textFill="WHITE" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="countryLabel" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -93,7 +93,7 @@
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <top>
-                        <Label text="Shipping Address" BorderPane.alignment="CENTER">
+                        <Label text="Shipping Address" textFill="WHITE" BorderPane.alignment="CENTER">
                            <BorderPane.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </BorderPane.margin>
@@ -113,22 +113,22 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Street Address">
+                              <Label text="Street Address" textFill="WHITE">
                                  <padding>
                                     <Insets left="25.0" />
                                  </padding>
                               </Label>
-                              <Label text="City" GridPane.rowIndex="1">
+                              <Label text="City" textFill="WHITE" GridPane.rowIndex="1">
                                  <padding>
                                     <Insets left="25.0" />
                                  </padding>
                               </Label>
-                              <Label text="Country" GridPane.rowIndex="3">
+                              <Label text="Country" textFill="WHITE" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="Zip" GridPane.rowIndex="2">
+                              <Label text="Zip" textFill="WHITE" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -153,7 +153,7 @@
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="countryComboBox">
+                              <ComboBox fx:id="countryComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="25.0" />
                                  </GridPane.margin>
@@ -194,6 +194,9 @@
                   </Tab>
                </tabs>
             </JFXTabPane>
-         </center></BorderPane>
+         </center>
+         <bottom>
+            <JFXButton fx:id="newCardButton" buttonType="RAISED" prefHeight="25.0" prefWidth="800.0" style="-fx-background-color: #4BB543;" text="Add a Card" textFill="WHITE" BorderPane.alignment="CENTER" />
+         </bottom></BorderPane>
    </children>
 </AnchorPane>

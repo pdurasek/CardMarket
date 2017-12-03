@@ -15,4 +15,5 @@ public interface IShippingAddressTemplateDao
    public boolean createShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
 
    public void deleteShippingAddressTemplate(ShippingAddressTemplate shippingAddressTemplate);
+
 }

@@ -61,6 +61,16 @@ public class CardDao implements ICardDao
    }
 
    @Override
+   public List getAllCardsLike(String pattern)
+   {
+      Query query = session.createQuery("FROM Card WHERE name LIKE :pattern");
+
+      query.setParameter("pattern", "%" +pattern +"%");
+
+      return query.list();
+   }
+
+   @Override
    public List getAllCardsLike(String pattern, int startIndex, int pageSize, int setValue)
    {
       Query query = session.createQuery("FROM Card WHERE cardset.setID = :setValue AND name LIKE :pattern");

@@ -10,7 +10,7 @@ public class CardOffer
    private int quantity;
    private double price;
    private boolean reserved;
-   private Set reservedCards;
+   private Set<ReservedCard> reservedCards;
 
    public CardOffer()
    {
@@ -24,6 +24,16 @@ public class CardOffer
       this.quantity = quantity;
       this.price = price;
       this.reserved = reserved;
+   }
+
+   public CardOffer(Card card, User user, int quantity, double price, boolean reserved, Set<ReservedCard> reservedCards)
+   {
+      this.card = card;
+      this.user = user;
+      this.quantity = quantity;
+      this.price = price;
+      this.reserved = reserved;
+      this.reservedCards = reservedCards;
    }
 
    public int getCardOfferID()

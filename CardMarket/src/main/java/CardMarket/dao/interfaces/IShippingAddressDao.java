@@ -13,4 +13,6 @@ public interface IShippingAddressDao
    public void updateShippingAddress(ShippingAddress shippingAddress);
 
    public void deleteShippingAddress(ShippingAddress shippingAddress);
+
+   public boolean createShippingAddress(ShippingAddress shippingAddress);
 }

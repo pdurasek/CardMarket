@@ -26,6 +26,9 @@
             89e8ce47
         </property>
 
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+        <!--<property name="hibernate.connection.autocommit">true</property>-->
+
         <!-- List of XML mapping files -->
         <mapping resource="mappings/rarity.hbm.xml"/>
         <mapping resource="mappings/language.hbm.xml"/>
@@ -37,7 +40,7 @@
         <mapping resource="mappings/reservedCard.hbm.xml"/>
         <mapping resource="mappings/country.hbm.xml"/>
         <mapping resource="mappings/credibility.hbm.xml"/>
-        <mapping resource="mappings/order.hbm.xml"/>
+        <mapping resource="mappings/cardorder.hbm.xml"/>
         <mapping resource="mappings/paymentmethod.hbm.xml"/>
         <mapping resource="mappings/shippingaddress.hbm.xml"/>
         <mapping resource="mappings/shippingaddresstemplate.hbm.xml"/>

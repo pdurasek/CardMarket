@@ -17,7 +17,7 @@
         <property name = "address" column = "address" type = "string"/>
         <property name = "zipcode" column = "zipcode" type = "string"/>
         <property name = "city" column = "city" type = "string"/>
-        <one-to-one name="country" class="CardMarket.models.Country"/>
+        <many-to-one name="country" column="countryID" class="CardMarket.models.Country" not-null="true"/>
 
     </class>
 </hibernate-mapping>

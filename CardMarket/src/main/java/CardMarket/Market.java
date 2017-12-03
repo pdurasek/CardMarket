@@ -14,6 +14,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -31,6 +32,7 @@ public class Market extends Application
    public void start(Stage primaryStage)
    {
       mainStage = primaryStage;
+      mainStage.getIcons().add(new Image("images/icon.png"));
       showRegister();
    }
 
@@ -56,6 +58,7 @@ public class Market extends Application
       Scene scene = new Scene(root);
       scene.getStylesheets().add(getClass().getResource("/css/components.css").toExternalForm());
       mainStage.setScene(scene);
+      mainStage.setTitle("Browse");
       mainStage.setOnCloseRequest(event ->
       {
          Platform.exit();
@@ -81,6 +84,7 @@ public class Market extends Application
 
          Stage modalStage = new Stage();
          modalStage.setScene(scene);
+         modalStage.getIcons().add(new Image("images/icon.png"));
          modalStage.initModality(Modality.APPLICATION_MODAL);
          modalStage.setTitle(card.getName());
          modalStage.show();
@@ -108,6 +112,7 @@ public class Market extends Application
          root = loader.load();
 
          mainStage.setScene(new Scene(root));
+         mainStage.setTitle("CardMarket");
          mainStage.setOnCloseRequest(event ->
          {
             Platform.exit();
@@ -136,12 +141,15 @@ public class Market extends Application
 
          Stage modalStage = new Stage();
          modalStage.setScene(scene);
+         modalStage.getIcons().add(new Image("images/icon.png"));
          modalStage.initModality(Modality.APPLICATION_MODAL);
-         //modalStage.setTitle(card.getName()); //TODO sent username
+         modalStage.setTitle("Cart");
          modalStage.show();
 
          // Create controller + methods
          CartController cartController = loader.getController();
+         cartController.setMarket(this);
+         cartController.setScene(modalStage);
          cartController.updateCartList();
       }
       catch (IOException e)
@@ -163,11 +171,15 @@ public class Market extends Application
 
          Stage modalStage = new Stage();
          modalStage.setScene(scene);
+         modalStage.getIcons().add(new Image("images/icon.png"));
+         modalStage.setTitle("User Profile");
          modalStage.initModality(Modality.APPLICATION_MODAL);
          modalStage.show();
 
          // Create controller + methods
          UserController userController = loader.getController();
+         userController.setMarket(this);
+         userController.setStage(modalStage);
          userController.createCardList();
       }
       catch (IOException e)
@@ -175,5 +187,69 @@ public class Market extends Application
          e.printStackTrace();
          System.err.println("Error while loading the scene template");
       }
+   }
+
+   public void showAddCardOffer()
+   {
+      try
+      {
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(Market.class.getResource("/view_templates/AddCardOffer.fxml"));
+         AnchorPane anchorPane = loader.load();
+         Scene scene = new Scene(anchorPane);
+         scene.getStylesheets().add(getClass().getResource("/css/components.css").toExternalForm());
+
+         Stage modalStage = new Stage();
+         modalStage.setScene(scene);
+         modalStage.getIcons().add(new Image("images/icon.png"));
+         modalStage.initModality(Modality.APPLICATION_MODAL);
+         modalStage.setTitle("Add New Card");
+         modalStage.show();
+         modalStage.setOnCloseRequest(event ->
+         {
+            showUserProfile();
+         });
+
+         // Create controller + methods
+         AddCardOfferController addCardOfferController= loader.getController();
+         addCardOfferController.setMarket(this);
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+         System.err.println("Error while loading the scene template");
+      }
+   }
+
+   public void showOrder()
+   {
+      try
+      {
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(Market.class.getResource("/view_templates/Order.fxml"));
+         AnchorPane anchorPane = loader.load();
+         Scene scene = new Scene(anchorPane);
+         scene.getStylesheets().add(getClass().getResource("/css/components.css").toExternalForm());
+
+         Stage modalStage = new Stage();
+         modalStage.setScene(scene);
+         modalStage.initModality(Modality.APPLICATION_MODAL);
+         modalStage.show();
+         modalStage.setOnCloseRequest(event ->
+         {
+            showCart();
+         });
+
+         // Create controller + methods
+         OrderController orderController = loader.getController();
+         orderController.setMarket(this);
+         orderController.setModalStage(modalStage);
+      }
+      catch (IOException e)
+      {
+         e.printStackTrace();
+         System.err.println("Error while loading the scene template");
+      }
+
    }
 }

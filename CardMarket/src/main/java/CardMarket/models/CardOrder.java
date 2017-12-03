@@ -1,12 +1,24 @@
 package CardMarket.models;
 
-public class Order
+public class CardOrder
 {
    private int orderID;
    private String details;
    private User user;
    private ShippingAddress shippingAddress;
    private PaymentMethod paymentMethod;
+
+   public CardOrder()
+   {
+   }
+
+   public CardOrder(String details, User user, ShippingAddress shippingAddress, PaymentMethod paymentMethod)
+   {
+      this.details = details;
+      this.user = user;
+      this.shippingAddress = shippingAddress;
+      this.paymentMethod = paymentMethod;
+   }
 
    public int getOrderID()
    {

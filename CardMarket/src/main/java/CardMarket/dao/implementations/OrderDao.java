@@ -2,8 +2,9 @@ package CardMarket.dao.implementations;
 
 import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IOrderDao;
-import CardMarket.models.Order;
+import CardMarket.models.CardOrder;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -23,20 +24,43 @@ public class OrderDao implements IOrderDao
    }
 
    @Override
-   public Order getOrder(int orderID)
+   public CardOrder getOrder(int orderID)
    {
-      return session.get(Order.class, orderID);
+      return session.get(CardOrder.class, orderID);
    }
 
    @Override
-   public void updateOrder(Order order)
+   public void updateOrder(CardOrder order)
    {
       session.update(order);
    }
 
    @Override
-   public void deleteOrder(Order order)
+   public void deleteOrder(CardOrder order)
    {
       session.delete(order);
+   }
+
+   @Override
+   public boolean createOrder(CardOrder order)
+   {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(order);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 }

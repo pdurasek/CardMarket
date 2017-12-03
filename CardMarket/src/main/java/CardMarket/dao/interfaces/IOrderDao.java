@@ -1,6 +1,6 @@
 package CardMarket.dao.interfaces;
 
-import CardMarket.models.Order;
+import CardMarket.models.CardOrder;
 
 import java.util.List;
 
@@ -8,9 +8,11 @@ public interface IOrderDao
 {
    public List getAllOrders();
 
-   public Order getOrder(int orderID);
+   public CardOrder getOrder(int orderID);
 
-   public void updateOrder(Order order);
+   public void updateOrder(CardOrder order);
 
-   public void deleteOrder(Order order);
+   public void deleteOrder(CardOrder order);
+
+   public boolean createOrder(CardOrder order);
 }

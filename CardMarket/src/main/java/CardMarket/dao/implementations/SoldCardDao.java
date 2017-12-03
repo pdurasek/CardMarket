@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.ISoldCardDao;
 import CardMarket.models.SoldCard;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -49,5 +50,28 @@ public class SoldCardDao implements ISoldCardDao
    public void deleteSoldCard(SoldCard soldCard)
    {
       session.delete(soldCard);
+   }
+
+   @Override
+   public boolean createSoldCard(SoldCard soldCard)
+   {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(soldCard);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 }

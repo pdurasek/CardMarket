@@ -15,4 +15,6 @@ public interface ISoldCardDao
    public void updateSoldCard(SoldCard soldCard);
 
    public void deleteSoldCard(SoldCard soldCard);
+
+   public boolean createSoldCard(SoldCard soldCard);
 }
