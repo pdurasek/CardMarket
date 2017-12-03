@@ -52,8 +52,17 @@ public class CartController
       totalPrice.setText(Double.toString(reservedCardDao.getTotalPrice(UserCreator.getLoggedUser())));
       purchaseButton.setOnAction(event ->
       {
-         market.showOrder();
-         scene.close();
+
+         if(reservedCardDao.getAllReservedCards(UserCreator.getLoggedUser()).size() > 0)
+         {
+            market.showOrder();
+            scene.close();
+         }
+         else
+         {
+            JFXSnackbar bar = new JFXSnackbar(tablePane);
+            bar.enqueue(new JFXSnackbar.SnackbarEvent("Cart is empty"));
+         }
       });
    }
 

@@ -150,10 +150,6 @@ public class UniqueCardController
                      JFXSnackbar bar = new JFXSnackbar(tablePane);
                      bar.enqueue(new JFXSnackbar.SnackbarEvent("Added to Cart!"));
                   }
-                  else
-                  {
-                     System.out.println("dickerino");
-                  }
                }
             }
          }

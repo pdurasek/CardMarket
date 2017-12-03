@@ -172,7 +172,7 @@ public class UserController
             TreeTableViewRecord currentOffer = cartTableList.getSelectionModel().getSelectedItem().getValue();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Delete Card Offer");
-            alert.setHeaderText("Delete " + currentOffer.cardname.toString() + "from offer list");
+            alert.setHeaderText("Delete " + currentOffer.cardname.get() + " from offer list");
             alert.setContentText("Are you ok with this?");
 
             Optional<ButtonType> result = alert.showAndWait();
