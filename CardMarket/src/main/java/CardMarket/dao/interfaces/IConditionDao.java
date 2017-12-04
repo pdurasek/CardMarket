@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IConditionDao
 {
+   public boolean createCondition(Condition condition);
+
    public List getAllConditions();
 
    public Condition getConditions(int conditionID);

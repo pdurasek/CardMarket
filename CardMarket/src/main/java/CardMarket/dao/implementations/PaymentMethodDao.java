@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IPaymentMethodDao;
 import CardMarket.models.PaymentMethod;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -14,6 +15,28 @@ public class PaymentMethodDao implements IPaymentMethodDao
    public PaymentMethodDao()
    {
       session = SessionCreator.getSession();
+   }
+
+   @Override
+   public boolean createPaymentMethod(PaymentMethod paymentMethod) {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(paymentMethod);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

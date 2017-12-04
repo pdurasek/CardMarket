@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ICredibilityDao
 {
+   public boolean createCredibility(Credibility credibility);
+
    public List getAllCredibilities();
 
    public Credibility getCredibility(int credibilityID);

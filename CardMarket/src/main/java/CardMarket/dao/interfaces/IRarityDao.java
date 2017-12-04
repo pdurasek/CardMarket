@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IRarityDao
 {
+   public boolean createRarity(Rarity rarity);
+
    public List getAllRarities();
 
    public List getAllRarityNames();

@@ -20,7 +20,7 @@
         </set>
 
         <property name = "name" column = "name" type = "string"/>
-
+        <property name = "abbr" column = "abbr" type = "string"/>
 
     </class>
 </hibernate-mapping>

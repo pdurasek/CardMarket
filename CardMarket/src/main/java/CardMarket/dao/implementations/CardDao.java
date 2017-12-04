@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.ICardDao;
 import CardMarket.models.Card;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.hibernate.type.BooleanType;
 
@@ -17,6 +18,28 @@ public class CardDao implements ICardDao
    public CardDao()
    {
       session = SessionCreator.getSession();
+   }
+
+   @Override
+   public boolean createCard(Card card) {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(card);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

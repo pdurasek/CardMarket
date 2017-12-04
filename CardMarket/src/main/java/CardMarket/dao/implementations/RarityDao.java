@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IRarityDao;
 import CardMarket.models.Rarity;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -14,6 +15,28 @@ public class RarityDao implements IRarityDao
    public RarityDao()
    {
       session = SessionCreator.getSession();
+   }
+
+   @Override
+   public boolean createRarity(Rarity rarity) {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(rarity);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

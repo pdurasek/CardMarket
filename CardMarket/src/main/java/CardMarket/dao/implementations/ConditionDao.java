@@ -4,6 +4,7 @@ import CardMarket.dao.SessionCreator;
 import CardMarket.dao.interfaces.IConditionDao;
 import CardMarket.models.Condition;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -14,6 +15,28 @@ public class ConditionDao implements IConditionDao
    public ConditionDao()
    {
       session = SessionCreator.getSession();
+   }
+
+   @Override
+   public boolean createCondition(Condition condition) {
+      Transaction transaction = null;
+      try
+      {
+         transaction = session.beginTransaction();
+         session.save(condition);
+         transaction.commit();
+      }
+      catch (Exception e)
+      {
+         if(transaction != null)
+         {
+            transaction.rollback();
+         }
+
+         return false;
+      }
+
+      return true;
    }
 
    @Override

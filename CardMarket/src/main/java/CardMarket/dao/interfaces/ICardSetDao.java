@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ICardSetDao
 {
+   public boolean createCardset(Cardset cardset);
+
    public List getAllSets();
 
    public Cardset getCardSet(int cardSetID);

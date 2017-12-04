@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ICardDao
 {
+   public boolean createCard(Card card);
+
    public List getAllCards();
 
    public List getAllCards(int startIndex, int pageSize, int setValue);

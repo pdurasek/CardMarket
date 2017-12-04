@@ -2,14 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="899857d4-f415-42e8-9a39-d266faf1a135" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/util/CardRecord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/util/OneRecord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/util/TwoRecord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/util/UserRecord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressTemplateDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressTemplateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IShippingAddressTemplateDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IShippingAddressTemplateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/models/Country.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/models/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddressTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddressTemplate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/css/components.css" afterPath="$PROJECT_DIR$/src/main/resources/css/components.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/view_templates/User.fxml" afterPath="$PROJECT_DIR$/src/main/resources/view_templates/User.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardSetDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardSetDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ConditionDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ConditionDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CredibilityDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CredibilityDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/PaymentMethodDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/PaymentMethodDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/RarityDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/RarityDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/SubtypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/SubtypeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/TypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/TypeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardSetDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardSetDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IConditionDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IConditionDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICredibilityDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICredibilityDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IPaymentMethodDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IPaymentMethodDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IRarityDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IRarityDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ISubtypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ISubtypeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ITypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ITypeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappings/rarity.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappings/rarity.hbm.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml" afterPath="$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,6 +65,10 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="card_market@eu-cdbr-azure-west-b.cloudapp.net" type="e3449647:DbNodeDescriptor" />
         <item name="card_market" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="hibernate.cfg.xml/Hibernate" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
@@ -89,24 +113,264 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+      <file leaf-file-name="Admin.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="520" column="57" lean-forward="false" selection-start-line="520" selection-start-column="57" selection-end-line="520" selection-end-column="57" />
               <folding>
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
+                <marker date="1512356274747" expanded="true" signature="8910:9106" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="8950:9067" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="9349:9545" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="9389:9506" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="9825:10666" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="9869:10475" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="10212:10430" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="10265:10384" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="10522:10628" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="10926:13880" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11063:13849" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11101:13674" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11175:11515" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11215:11332" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11380:11476" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11612:11799" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11660:11756" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11868:12217" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="11908:12025" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="12072:12178" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="12460:12809" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="12500:12617" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="12664:12770" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="13083:13432" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="13123:13240" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="13287:13393" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="13987:16635" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14012:16616" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14117:16590" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14147:15034" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14309:15003" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14636:14773" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="14820:14959" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15064:16561" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15163:16530" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15201:16498" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15275:15636" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15315:15432" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15479:15597" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15695:15885" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15742:15873" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="15986:16191" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16033:16151" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16271:16459" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16318:16450" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16669:19370" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16694:19351" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16802:19325" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16832:17686" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="16962:17655" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17299:17436" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17483:17611" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17716:19293" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17815:19262" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17853:19230" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17931:18292" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="17971:18088" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18135:18253" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18354:18575" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18401:18532" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18683:18888" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18730:18848" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="18972:19191" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19019:19151" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19399:22837" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19424:22818" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19532:22792" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19562:20507" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="19688:20476" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20120:20257" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20304:20432" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20537:22760" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20636:22729" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20674:22722" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20747:21108" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20794:20912" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="20952:21069" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21166:21376" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21213:21333" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21453:21814" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21500:21618" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21658:21775" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21871:22081" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="21918:22038" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22180:22385" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22227:22345" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22464:22683" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22511:22643" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22869:26374" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="22894:26355" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="23002:26329" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="23032:24027" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="23196:23996" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="23640:23777" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="23824:23952" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24057:26297" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24155:26266" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24193:26259" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24269:24630" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24316:24434" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24474:24591" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24691:24901" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24738:24858" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="24978:25339" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25025:25143" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25183:25300" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25399:25609" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25446:25566" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25714:25919" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="25761:25879" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26001:26220" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26048:26180" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26409:29887" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26434:29868" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26542:29842" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26572:27532" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="26704:27501" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27145:27282" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27329:27457" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27562:29810" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27660:29779" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27698:29772" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27777:28138" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27824:27942" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="27982:28099" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28197:28407" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28244:28364" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28484:28845" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28531:28649" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28689:28806" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28903:29113" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="28950:29070" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29224:29429" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29271:29389" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29514:29733" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29561:29693" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29917:40842" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="29942:40823" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="30050:40797" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="30080:31560" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="30188:31529" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31162:31299" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31346:31485" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31590:33240" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31727:33209" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31765:33202" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31842:32203" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="31889:32007" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32047:32164" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32269:32466" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32316:32423" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32541:32902" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32588:32706" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32746:32863" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="32966:33163" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33013:33120" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33268:35554" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33405:35554" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33443:35554" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33516:33877" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33563:33681" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33721:33838" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33936:34133" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="33983:34090" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="34206:34567" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="34253:34371" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="34411:34528" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="34626:34823" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="34673:34780" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38517:38556" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38517:38699" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38517:38729" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38603:38692" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38756:40765" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38860:40737" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38896:39227" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="38968:39190" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39021:39147" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39262:39617" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39374:39581" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39427:39541" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39650:40168" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39761:40134" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39801:39918" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="39971:40095" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40204:40699" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40320:40662" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40360:40477" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40530:40654" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40901:44382" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="40926:44363" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41034:44337" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41064:42017" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41194:41986" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41231:41582" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41630:41767" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="41814:41942" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42047:44305" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42145:44274" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42183:44267" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42260:42621" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42307:42425" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42465:42582" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42679:42889" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42726:42846" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="42965:43326" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43012:43130" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43170:43287" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43384:43594" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43431:43551" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43701:43906" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="43748:43866" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44009:44228" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44056:44188" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44419:47926" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44444:47907" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44552:47881" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44582:45581" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44751:45550" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="44788:45146" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45194:45331" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45378:45506" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45611:47849" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45691:47818" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45729:47811" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45810:46171" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="45857:45975" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46015:46132" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46230:46440" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46277:46397" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46516:46877" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46563:46681" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46721:46838" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46936:47146" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="46983:47103" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="47261:47466" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="47308:47426" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="47553:47772" ph="..." />
+                <marker date="1512356274747" expanded="true" signature="47600:47732" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java">
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+            <state relative-caret-position="494">
+              <caret line="19" column="105" lean-forward="false" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,93 +378,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="components.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/css/components.css">
+      <file leaf-file-name="UserRecord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/UserRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state relative-caret-position="352">
+              <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Market.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/Market.java">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+            <state relative-caret-position="208">
+              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Register.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="728">
+              <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrowseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/BrowseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/User.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="179" lean-forward="false" selection-start-line="15" selection-start-column="179" selection-end-line="15" selection-end-column="179" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShippingAddressTemplateDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressTemplateDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-              <folding>
-                <element signature="e#439#440#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IShippingAddressTemplateDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IShippingAddressTemplateDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="97" lean-forward="false" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2329">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#461#462#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -219,9 +422,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cardSet</find>
-      <find>trav</find>
-      <find>br</find>
       <find>System</find>
       <find>stackpane</find>
       <find>styles</find>
@@ -249,6 +449,9 @@
       <find>user</find>
       <find>save</find>
       <find>combo</find>
+      <find>password</find>
+      <find>TreTableView</find>
+      <find>cardDesc</find>
     </findStrings>
     <replaceStrings>
       <replace>col</replace>
@@ -261,7 +464,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\PatrikDurasek\.gradle\wrapper\dists\gradle-3.5-rc-2-all\c0k4lbl8pjtnoeqme5ekch4re\gradle-3.5-rc-2" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Ivan\.gradle\wrapper\dists\gradle-3.5-rc-2-all\c0k4lbl8pjtnoeqme5ekch4re\gradle-3.5-rc-2" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -440,7 +643,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4531908738503" />
+        <entry key="$PROJECT_DIR$" value="4536709877875" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3616990102" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="615277776" />
       </map>
@@ -616,34 +819,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/dao/implementations/RarityDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/interfaces/IRariryDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/interfaces/IRarityDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/jfoenix-components.css" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/implementations/CrediblityDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/implementations/CredibilityDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Cardset.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Condition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Language.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Rarity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Subtype.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Type.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/interfaces/ICardDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/Card.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappings/card.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/implementations/CardDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Market.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/BrowseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view_templates/UniqueCard.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardOfferDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardOfferDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/UserDao.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/mappings/user.hbm.xml" />
@@ -665,8 +840,36 @@
         <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IShippingAddressTemplateDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressTemplateDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/components.css" />
-        <option value="$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view_templates/User.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/models/Card.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IPaymentMethodDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/PaymentMethodDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/models/PaymentMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/PaymentRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/NewTreeTableViewRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CredibilityDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICredibilityDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IConditionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ConditionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/RarityDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IRarityDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/AbbTreeTableView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardSetDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardSetDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/TwoRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/OneRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ISubtypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/SubtypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ITypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/TypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappings/rarity.hbm.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/CardRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/util/UserRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java" />
       </list>
     </option>
   </component>
@@ -676,11 +879,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -700,8 +902,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -712,16 +915,6 @@
             <path>
               <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
               <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="setup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -744,53 +937,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="implementations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CardMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
@@ -798,37 +944,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="card.market" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CardMarket" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="view_templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -839,7 +960,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JFoenix" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -871,7 +992,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Market">
+  <component name="RunManager" selected="Application.Admin">
     <configuration name="Admin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Admin" />
@@ -1308,8 +1429,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Market" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Admin" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Admin" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Market" />
         <item index="2" class="java.lang.String" itemvalue="Gradle.CardMarket [clean]" />
         <item index="3" class="java.lang.String" itemvalue="Gradle.CardMarket [fatJar]" />
         <item index="4" class="java.lang.String" itemvalue="Gradle.CardMarket [:fatJar]" />
@@ -1363,39 +1484,42 @@
       <workItem from="1511971413494" duration="2109000" />
       <workItem from="1511973874734" duration="1051000" />
       <workItem from="1512068681278" duration="3705000" />
+      <workItem from="1512236849787" duration="14506000" />
+      <workItem from="1512318185282" duration="32352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152456000" />
+    <option name="totallyTimeSpent" value="199314000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31548974" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19172932" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32460135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31548974" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3043478" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18792711" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17697228" sideWeight="0.29431438" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616205" sideWeight="0.7056856" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.336887" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19495167" sideWeight="0.7056856" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1405,37 +1529,38 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31612903" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31548974" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.336887" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19172932" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32460135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31413043" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16287015" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17697228" sideWeight="0.29431438" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1748401" sideWeight="0.7056856" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17669173" sideWeight="0.7056856" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32801822" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1466,386 +1591,685 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/card.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IPaymentMethodDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jfoenix/jfoenix/1.9.0/f40ae1f6c2a8f87d9b970c9fafa42620da8f2ab6/jfoenix-1.9.0-sources.jar!/com/jfoenix/controls/JFXDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="585" column="22" lean-forward="false" selection-start-line="585" selection-start-column="22" selection-end-line="585" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Admin.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/RarityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardOfferDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardOfferDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="65" column="18" lean-forward="false" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state relative-caret-position="156">
+          <caret line="8" column="67" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff6a3a88-b478-4e7b-85b1-069f9ecb1ab4/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/OrderDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICredibilityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="208">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/PaymentMethodDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="338">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#945#946#0" expanded="false" />
+            <element signature="e#1014#1015#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/user.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IConditionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="116" lean-forward="false" selection-start-line="22" selection-start-column="116" selection-end-line="22" selection-end-column="116" />
+        <state relative-caret-position="156">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/BrowseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        <state relative-caret-position="282">
+          <caret line="253" column="42" lean-forward="false" selection-start-line="253" selection-start-column="42" selection-end-line="253" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IRarityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/CardOffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Cart.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/cardoffer.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Browse.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="69" lean-forward="false" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ReservedCardDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        <state relative-caret-position="832">
+          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding>
-            <element signature="e#449#450#0" expanded="false" />
-            <element signature="e#499#500#0" expanded="false" />
+            <element signature="e#775#776#0" expanded="false" />
+            <element signature="e#799#800#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IReservedCardDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/AbbTreeTableView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="208">
+          <caret line="8" column="77" lean-forward="true" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Cart.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardOfferDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/SessionCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ConditionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="38" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IUserDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardSetDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="416">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/UserCreator.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/event/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="497">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardSetDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/CartController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/OneRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="152" column="37" lean-forward="false" selection-start-line="152" selection-start-column="33" selection-end-line="152" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/UniqueCardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/UniqueCard.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+        <state relative-caret-position="234">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1175#1176#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Subtype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="208">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICountryDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ISubtypeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="156">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Country.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/SubtypeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state relative-caret-position="234">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/TypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ITypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/RarityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Rarity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
           <folding>
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="false" />
+            <element signature="e#746#747#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CountryDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/condition.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        <state relative-caret-position="572">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/shippingaddresstemplate.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/rarity.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="443">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddress.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Condition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="624">
+          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+          <folding>
+            <element signature="e#756#757#0" expanded="false" />
+            <element signature="e#785#786#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Cardset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="e#624#625#0" expanded="false" />
+            <element signature="e#648#649#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/cardset.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddressTemplate.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/util/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="235">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/RegisterController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/TwoRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="70" selection-end-column="32" />
+        <state relative-caret-position="208">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CredibilityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="38" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/CardDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2329">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="123">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding>
-            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="false" />
+            <element signature="e#495#496#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/ICardDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/LanguageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding>
+            <element signature="e#1173#1174#0" expanded="false" />
+            <element signature="e#1202#1203#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/CardRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="28" column="57" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="28" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IShippingAddressTemplateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="97" lean-forward="false" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
+        <state relative-caret-position="364">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/implementations/ShippingAddressTemplateDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/UserCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+        <state relative-caret-position="432">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/Credibility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/dao/interfaces/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/ShippingAddressTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="25" />
           <folding>
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="false" />
+            <element signature="e#812#813#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Register.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="40">
+          <caret line="2565" column="0" lean-forward="false" selection-start-line="2565" selection-start-column="0" selection-end-line="2565" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="862" column="0" lean-forward="false" selection-start-line="862" selection-start-column="0" selection-end-line="862" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/TreeTableViewRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappings/shippingaddresstemplate.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/components.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/Admin.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="520" column="57" lean-forward="false" selection-start-line="520" selection-start-column="57" selection-end-line="520" selection-end-column="57" />
+          <folding>
+            <marker date="1512356274747" expanded="true" signature="8910:9106" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="8950:9067" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="9349:9545" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="9389:9506" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="9825:10666" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="9869:10475" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="10212:10430" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="10265:10384" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="10522:10628" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="10926:13880" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11063:13849" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11101:13674" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11175:11515" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11215:11332" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11380:11476" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11612:11799" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11660:11756" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11868:12217" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="11908:12025" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="12072:12178" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="12460:12809" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="12500:12617" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="12664:12770" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="13083:13432" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="13123:13240" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="13287:13393" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="13987:16635" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14012:16616" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14117:16590" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14147:15034" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14309:15003" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14636:14773" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="14820:14959" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15064:16561" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15163:16530" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15201:16498" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15275:15636" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15315:15432" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15479:15597" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15695:15885" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15742:15873" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="15986:16191" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16033:16151" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16271:16459" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16318:16450" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16669:19370" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16694:19351" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16802:19325" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16832:17686" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="16962:17655" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17299:17436" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17483:17611" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17716:19293" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17815:19262" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17853:19230" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17931:18292" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="17971:18088" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18135:18253" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18354:18575" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18401:18532" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18683:18888" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18730:18848" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="18972:19191" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19019:19151" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19399:22837" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19424:22818" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19532:22792" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19562:20507" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="19688:20476" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20120:20257" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20304:20432" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20537:22760" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20636:22729" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20674:22722" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20747:21108" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20794:20912" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="20952:21069" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21166:21376" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21213:21333" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21453:21814" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21500:21618" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21658:21775" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21871:22081" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="21918:22038" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22180:22385" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22227:22345" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22464:22683" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22511:22643" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22869:26374" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="22894:26355" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="23002:26329" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="23032:24027" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="23196:23996" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="23640:23777" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="23824:23952" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24057:26297" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24155:26266" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24193:26259" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24269:24630" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24316:24434" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24474:24591" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24691:24901" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24738:24858" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="24978:25339" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25025:25143" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25183:25300" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25399:25609" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25446:25566" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25714:25919" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="25761:25879" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26001:26220" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26048:26180" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26409:29887" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26434:29868" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26542:29842" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26572:27532" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="26704:27501" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27145:27282" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27329:27457" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27562:29810" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27660:29779" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27698:29772" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27777:28138" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27824:27942" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="27982:28099" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28197:28407" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28244:28364" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28484:28845" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28531:28649" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28689:28806" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28903:29113" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="28950:29070" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29224:29429" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29271:29389" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29514:29733" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29561:29693" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29917:40842" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="29942:40823" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="30050:40797" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="30080:31560" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="30188:31529" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31162:31299" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31346:31485" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31590:33240" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31727:33209" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31765:33202" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31842:32203" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="31889:32007" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32047:32164" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32269:32466" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32316:32423" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32541:32902" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32588:32706" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32746:32863" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="32966:33163" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33013:33120" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33268:35554" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33405:35554" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33443:35554" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33516:33877" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33563:33681" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33721:33838" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33936:34133" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="33983:34090" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="34206:34567" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="34253:34371" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="34411:34528" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="34626:34823" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="34673:34780" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38517:38556" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38517:38699" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38517:38729" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38603:38692" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38756:40765" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38860:40737" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38896:39227" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="38968:39190" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39021:39147" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39262:39617" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39374:39581" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39427:39541" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39650:40168" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39761:40134" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39801:39918" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="39971:40095" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40204:40699" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40320:40662" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40360:40477" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40530:40654" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40901:44382" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="40926:44363" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41034:44337" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41064:42017" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41194:41986" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41231:41582" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41630:41767" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="41814:41942" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42047:44305" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42145:44274" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42183:44267" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42260:42621" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42307:42425" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42465:42582" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42679:42889" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42726:42846" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="42965:43326" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43012:43130" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43170:43287" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43384:43594" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43431:43551" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43701:43906" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="43748:43866" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44009:44228" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44056:44188" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44419:47926" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44444:47907" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44552:47881" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44582:45581" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44751:45550" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="44788:45146" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45194:45331" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45378:45506" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45611:47849" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45691:47818" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45729:47811" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45810:46171" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="45857:45975" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46015:46132" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46230:46440" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46277:46397" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46516:46877" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46563:46681" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46721:46838" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46936:47146" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="46983:47103" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="47261:47466" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="47308:47426" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="47553:47772" ph="..." />
+            <marker date="1512356274747" expanded="true" signature="47600:47732" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        <state relative-caret-position="494">
+          <caret line="19" column="105" lean-forward="false" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/BrowseController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/util/UserRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
+        <state relative-caret-position="352">
+          <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/Market.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+        <state relative-caret-position="208">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view_templates/User.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CardMarket/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="179" lean-forward="false" selection-start-line="15" selection-start-column="179" selection-end-line="15" selection-end-column="179" />
+        <state relative-caret-position="728">
+          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="28" />
           <folding />
         </state>
       </provider>

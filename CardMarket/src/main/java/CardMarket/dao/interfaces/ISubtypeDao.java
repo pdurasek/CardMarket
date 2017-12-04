@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ISubtypeDao
 {
+   public boolean createSubType(Subtype subtype);
+
    public List getAllSubtypes();
 
    public Subtype getSubtype(int subtypeID);

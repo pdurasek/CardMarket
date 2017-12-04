@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ITypeDao
 {
+   public boolean createType(Type type);
+
    public List getAllTypes();
 
    public Type getType(int typeID);
