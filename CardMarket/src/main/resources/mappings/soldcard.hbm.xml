@@ -19,7 +19,7 @@
         <many-to-one name="card" column="card_cardid" class="CardMarket.models.Card" not-null="true"/>
         <many-to-one name="buyer" column="buyerID" class="CardMarket.models.User" not-null="true"/>
         <many-to-one name="seller" column="sellerID" class="CardMarket.models.User" not-null="true"/>
-        <many-to-one name="order" column="orderID" class="CardMarket.models.Order" not-null="true"/>
+        <many-to-one name="order" column="orderID" class="CardMarket.models.CardOrder" not-null="true"/>
 
     </class>
 </hibernate-mapping>

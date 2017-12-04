@@ -14,7 +14,7 @@
             <generator class="native"/>
         </id>
 
-        <set name="reservedCards" cascade="save-update">
+        <set name="reservedCards" cascade="save-update" >
             <key column="reservedCardID"/>
             <one-to-many class="CardMarket.models.ReservedCard"/>
         </set>
@@ -22,7 +22,7 @@
         <property name = "quantity" column = "quantity" type = "int"/>
         <property name = "price" column = "price" type = "double"/>
         <property name="reserved" column="reserved" type="boolean"/>
-        <many-to-one name="card" column="card_cardid" class="CardMarket.models.Card" not-null="true"/>
+        <many-to-one name="card" column="card_cardid" class="CardMarket.models.Card" not-null="true" lazy="false"/>
         <many-to-one name="user" column="user_userid" class="CardMarket.models.User" not-null="true"/>
 
     </class>

@@ -1,5 +1,8 @@
 package CardMarket.controllers;
 
+import CardMarket.Market;
+import CardMarket.dao.SessionCreator;
+import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.CardDao;
 import CardMarket.dao.implementations.CardOfferDao;
 import CardMarket.dao.implementations.ReservedCardDao;
@@ -9,18 +12,20 @@ import CardMarket.dao.interfaces.IReservedCardDao;
 import CardMarket.models.Card;
 import CardMarket.models.CardOffer;
 import CardMarket.models.ReservedCard;
+import CardMarket.models.User;
 import CardMarket.util.TreeTableViewRecord;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
-import com.jfoenix.controls.RecursiveTreeItem;
+import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +34,36 @@ import java.util.Optional;
 public class CartController
 {
    @FXML
-   BorderPane tablePane;
+   private BorderPane tablePane;
+   @FXML
+   private Label totalPrice;
+   @FXML
+   private JFXButton purchaseButton;
 
    private IReservedCardDao reservedCardDao = new ReservedCardDao();
    private ICardOfferDao cardOfferDao = new CardOfferDao();
+   private Market market;
+   private Stage scene;
+
 
    @FXML
    private void initialize()
    {
+      totalPrice.setText(Double.toString(reservedCardDao.getTotalPrice(UserCreator.getLoggedUser())));
+      purchaseButton.setOnAction(event ->
+      {
 
+         if(reservedCardDao.getAllReservedCards(UserCreator.getLoggedUser()).size() > 0)
+         {
+            market.showOrder();
+            scene.close();
+         }
+         else
+         {
+            JFXSnackbar bar = new JFXSnackbar(tablePane);
+            bar.enqueue(new JFXSnackbar.SnackbarEvent("Cart is empty"));
+         }
+      });
    }
 
    public void updateCartList()
@@ -45,9 +71,6 @@ public class CartController
       ObservableList<TreeTableViewRecord> cartList = generateCartItems();
 
       // TODO refactor this copypasta from UniqueCardController
-      JFXTreeTableColumn<TreeTableViewRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
-      idColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
-
       JFXTreeTableColumn<TreeTableViewRecord, String> cardsetColumn = new JFXTreeTableColumn<>("Set");
       cardsetColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
 
@@ -76,7 +99,7 @@ public class CartController
       JFXTreeTableView<TreeTableViewRecord> cartTableList = new JFXTreeTableView<>(root);
       cartTableList.setOnMouseClicked(event ->
       {
-         if (cartList.size() > 0)
+         if (cartTableList.getSelectionModel().getSelectedItem() != null && cartList.size() > 0)
          {
             TreeTableViewRecord aRecord = cartTableList.getSelectionModel().getSelectedItem().getValue();
             int quantity = aRecord.quantity.getValue();
@@ -95,15 +118,14 @@ public class CartController
 
                if (quantityRemaining >= 0)
                {
-                  System.out.println(aRecord.id.getValue());
-
                   ReservedCard reservedCard = reservedCardDao.getReservedCard(aRecord.id.getValue());
                   reservedCard.setQuantity(reservedCard.getQuantity() - result.get());
+                  CardOffer cardOffer = cardOfferDao.getCardOffer(reservedCard.getCardOffer().getCardOfferID());
 
                   if (reservedCardDao.updateReservedCard(reservedCard))
                   {
                      aRecord.quantity.setValue(quantityRemaining);
-                     CardOffer cardOffer = cardOfferDao.getCardOffer(reservedCard.getCardOffer().getCardOfferID());
+
 
                      if (cardOffer != null)
                      {
@@ -120,8 +142,15 @@ public class CartController
                   {
                      TreeItem selectedItem = cartTableList.getSelectionModel().getSelectedItem();
                      selectedItem.getParent().getChildren().remove(selectedItem);
+                     cartTableList.getSelectionModel().clearSelection();
+
                      reservedCardDao.deleteReservedCard(reservedCard);
                   }
+
+                  totalPrice.setText(Double.toString(Double.parseDouble(totalPrice.getText()) - (result.get() * cardOffer.getPrice())));
+
+                  JFXSnackbar bar = new JFXSnackbar(tablePane);
+                  bar.enqueue(new JFXSnackbar.SnackbarEvent("Cart updated"));
                }
             }
          }
@@ -136,7 +165,7 @@ public class CartController
    private ObservableList<TreeTableViewRecord> generateCartItems()
    {
       ObservableList<TreeTableViewRecord> cartList = FXCollections.observableArrayList();
-      List<ReservedCard> tempCartList = reservedCardDao.getAllReservedCards(); // TODO use method with use
+      List<ReservedCard> tempCartList = reservedCardDao.getAllReservedCards(UserCreator.getLoggedUser());
 
       for (ReservedCard reservedCard : tempCartList)
       {
@@ -150,9 +179,19 @@ public class CartController
                  card.getLanguage().getName(),
                  reservedCard.getCardOffer().getPrice(),
                  reservedCard.getQuantity(),
-                 reservedCard.getUser().getUsername()));
+                 reservedCard.getCardOffer().getUser().getUsername()));
       }
 
       return cartList;
+   }
+
+   public void setMarket(Market market)
+   {
+      this.market = market;
+   }
+
+   public void setScene(Stage scene)
+   {
+      this.scene = scene;
    }
 }

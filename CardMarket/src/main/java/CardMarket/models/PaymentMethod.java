@@ -35,4 +35,10 @@ public class PaymentMethod
    {
       this.description = description;
    }
+
+   @Override
+   public String toString()
+   {
+      return name;
+   }
 }

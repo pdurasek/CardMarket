@@ -20,7 +20,7 @@ public class ReservedCardDao implements IReservedCardDao
    }
 
    @Override
-   public boolean createReservedCard(ReservedCard reservedCard)
+   public ReservedCard createReservedCard(ReservedCard reservedCard)
    {
       Transaction transaction = null;
       try
@@ -36,10 +36,14 @@ public class ReservedCardDao implements IReservedCardDao
             transaction.rollback();
          }
 
-         return false;
+         e.printStackTrace();
+
+         return null;
       }
 
-      return true;
+//      session.save(reservedCard);
+
+      return reservedCard;
    }
 
    @Override
@@ -118,5 +122,28 @@ public class ReservedCardDao implements IReservedCardDao
       }
 
       return true;
+   }
+
+   @Override
+   public double getTotalPrice(User user)
+   {
+      Query query = session.createQuery("SELECT SUM(cardOffer.price*quantity) FROM ReservedCard WHERE user.userID = :userID");
+      query.setParameter("userID", user.getUserID());
+
+      double totalPrice = 0;
+      if(query.uniqueResult() != null)
+      {
+         totalPrice = (Double) query.uniqueResult();
+      }
+      return totalPrice;
+   }
+
+   @Override
+   public int getNumberOfItems(User user)
+   {
+      Query query = session.createQuery("SELECT SUM(quantity) FROM ReservedCard WHERE user.userID = :userID");
+      query.setParameter("userID", user.getUserID());
+
+      return ((Long)query.uniqueResult()).intValue();
    }
 }

@@ -12,7 +12,7 @@ public class User
    private int cardsSold;
    private ShippingAddressTemplate shippingAddressTemplate;
    private Credibility credibility;
-   private Set reservedCards;
+   private Set<ReservedCard> reservedCards;
 
    public User()
    {

@@ -1,5 +1,6 @@
 package CardMarket.controllers;
 
+import CardMarket.Market;
 import CardMarket.dao.UserCreator;
 import CardMarket.dao.implementations.CardOfferDao;
 import CardMarket.dao.implementations.CountryDao;
@@ -17,8 +18,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UserController
 {
@@ -29,7 +32,7 @@ public class UserController
    @FXML
    BorderPane onSalePane, soldPane, boughtPane;
    @FXML
-   JFXButton saveTemplateButton;
+   JFXButton saveTemplateButton, newCardButton;
    @FXML
    ComboBox<Country> countryComboBox;
    @FXML
@@ -37,6 +40,8 @@ public class UserController
 
    private ICardOfferDao cardOfferDao = new CardOfferDao();
    private String username;
+   private Market market;
+   private Stage stage;
 
    @FXML
    private void initialize()
@@ -49,38 +54,72 @@ public class UserController
       username = user.getUsername();
       usernameLabel.setText(username);
       userRatingLabel.setText(user.getCredibility().getName());
+
+      newCardButton.setOnAction(event ->
+      {
+         market.showAddCardOffer();
+         stage.close();
+      });
+
+      countryComboBox.getItems().addAll(countryDao.getAllCountries());
+      countryComboBox.getSelectionModel().selectFirst();
+
       if (userTemplate != null)
       {
          countryLabel.setText(user.getShippingAddressTemplate().getCountry().getName());
          city.setText(userTemplate.getCity());
          zip.setText(userTemplate.getZipcode());
          streetAddress.setText(userTemplate.getAddress());
-         countryComboBox.getItems().addAll(countryDao.getAllCountries());
-         countryComboBox.getSelectionModel().selectFirst(); // TODO select user country
       }
       else
       {
          countryLabel.setText("N/A");
       }
 
-      totalCardsBoughtLabel.setText(Integer.toString(user.getCardsBought()));
-      totalCardsSoldLabel.setText(Integer.toString(user.getCardsSold()));
+      totalCardsBoughtLabel.setText("N/A"); // TODO implement with user stats
+      totalCardsSoldLabel.setText("N/A");
 
       saveTemplateButton.setOnAction(event ->
       {
-         if(userTemplate != null)
+         ShippingAddressTemplate currentTemplate = user.getShippingAddressTemplate();
+         if (currentTemplate != null)
          {
-            if(streetAddress.getText().length() > 0 && zip.getText().length() > 0 && city.getText().length() > 0)
+            if (streetAddress.getText().length() > 0 && zip.getText().length() > 0 && city.getText().length() > 0)
             {
-               userTemplate.setAddress(streetAddress.getText());
-               userTemplate.setCity(city.getText());
-               userTemplate.setZipcode(zip.getText());
-               userTemplate.setCountry(countryComboBox.getSelectionModel().getSelectedItem());
-               if(shippingAddressTemplateDao.updateShippingAddressTemplate(userTemplate))
+               currentTemplate.setAddress(streetAddress.getText());
+               currentTemplate.setCity(city.getText());
+               currentTemplate.setZipcode(zip.getText());
+               currentTemplate.setCountry(countryComboBox.getSelectionModel().getSelectedItem());
+               if (shippingAddressTemplateDao.updateShippingAddressTemplate(currentTemplate))
                {
                   JFXSnackbar bar = new JFXSnackbar(rootPane);
                   bar.enqueue(new JFXSnackbar.SnackbarEvent("Address Template successfully updated"));
-                  countryLabel.setText(userTemplate.getCountry().getName());
+                  countryLabel.setText(currentTemplate.getCountry().getName());
+               }
+            }
+            else
+            {
+               Alert alert = new Alert(Alert.AlertType.ERROR);
+               alert.setTitle("Template Error");
+               alert.setContentText("All fields must be filled");
+               alert.showAndWait();
+            }
+         }
+         else
+         {
+            if (streetAddress.getText().length() > 0 && zip.getText().length() > 0 && city.getText().length() > 0)
+            {
+               ShippingAddressTemplate newTemplate = new ShippingAddressTemplate();
+               newTemplate.setAddress(streetAddress.getText());
+               newTemplate.setCity(city.getText());
+               newTemplate.setZipcode(zip.getText());
+               newTemplate.setCountry(countryComboBox.getSelectionModel().getSelectedItem());
+               if (shippingAddressTemplateDao.createShippingAddressTemplate(newTemplate))
+               {
+                  user.setShippingAddressTemplate(newTemplate);
+                  JFXSnackbar bar = new JFXSnackbar(rootPane);
+                  bar.enqueue(new JFXSnackbar.SnackbarEvent("Address Template successfully created"));
+                  countryLabel.setText(newTemplate.getCountry().getName());
                }
             }
             else
@@ -99,9 +138,6 @@ public class UserController
       ObservableList<TreeTableViewRecord> cartList = generateOnSale();
 
       // TODO refactor this copypasta from UniqueCardController
-      JFXTreeTableColumn<TreeTableViewRecord, String> idColumn = new JFXTreeTableColumn<>("ID");
-      idColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
-
       JFXTreeTableColumn<TreeTableViewRecord, String> cardsetColumn = new JFXTreeTableColumn<>("Set");
       cardsetColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<TreeTableViewRecord, String> col) -> col.getValue().getValue().cardset);
 
@@ -129,6 +165,40 @@ public class UserController
       final TreeItem<TreeTableViewRecord> root = new RecursiveTreeItem<>(cartList, RecursiveTreeObject::getChildren);
       JFXTreeTableView<TreeTableViewRecord> cartTableList = new JFXTreeTableView<>(root);
 
+      cartTableList.setOnMouseClicked(event ->
+      {
+         if (cartTableList.getSelectionModel().getSelectedItem() != null && cartList.size() > 0)
+         {
+            TreeTableViewRecord currentOffer = cartTableList.getSelectionModel().getSelectedItem().getValue();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Card Offer");
+            alert.setHeaderText("Delete " + currentOffer.cardname.get() + " from offer list");
+            alert.setContentText("Are you ok with this?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK)
+            {
+               CardOffer cardOffer = cardOfferDao.getCardOffer(currentOffer.id.getValue().intValue());
+
+               if(!cardOfferDao.deleteCardOffer(cardOffer))
+               {
+                  Alert alertError = new Alert(Alert.AlertType.ERROR);
+                  alertError.setTitle("Error");
+                  alertError.setHeaderText("Unable to delete card offer");
+                  alertError.setContentText("Card is reserved!");
+
+                  alertError.showAndWait();
+               }
+               else
+               {
+                  TreeItem selectedItem = cartTableList.getSelectionModel().getSelectedItem();
+                  selectedItem.getParent().getChildren().remove(selectedItem);
+                  cartTableList.getSelectionModel().clearSelection();
+               }
+            }
+         }
+      });
+
       cartTableList.setShowRoot(false);
       cartTableList.setEditable(false);
       cartTableList.getColumns().setAll(cardsetColumn, cardColumn, rarityColumn, conditionColumn, languageColumn, priceColumn, quantityColumn, sellerColumn);
@@ -144,7 +214,7 @@ public class UserController
       {
          Card card = cardOffer.getCard();
 
-         cartList.add(new TreeTableViewRecord(card.getCardID(),
+         cartList.add(new TreeTableViewRecord(cardOffer.getCardOfferID(),
                  card.getCardset().getName(),
                  card.getName(),
                  card.getRarity().getName(),
@@ -161,5 +231,15 @@ public class UserController
    public void setUser(String username)
    {
       this.username = username;
+   }
+
+   public void setMarket(Market market)
+   {
+      this.market = market;
+   }
+
+   public void setStage(Stage stage)
+   {
+      this.stage = stage;
    }
 }

@@ -8,6 +8,18 @@ public class ShippingAddress
    private String city;
    private Country country;
 
+   public ShippingAddress()
+   {
+   }
+
+   public ShippingAddress(String address, String zipcode, String city, Country country)
+   {
+      this.address = address;
+      this.zipcode = zipcode;
+      this.city = city;
+      this.country = country;
+   }
+
    public int getAddressID()
    {
       return addressID;

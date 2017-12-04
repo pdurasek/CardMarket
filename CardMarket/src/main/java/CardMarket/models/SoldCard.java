@@ -8,7 +8,21 @@ public class SoldCard
    private Card card;
    private User buyer;
    private User seller;
-   private Order order;
+   private CardOrder order;
+
+   public SoldCard()
+   {
+   }
+
+   public SoldCard(int quantity, double price, Card card, User buyer, User seller, CardOrder order)
+   {
+      this.quantity = quantity;
+      this.price = price;
+      this.card = card;
+      this.buyer = buyer;
+      this.seller = seller;
+      this.order = order;
+   }
 
    public int getSoldCardID()
    {
@@ -70,12 +84,12 @@ public class SoldCard
       this.seller = seller;
    }
 
-   public Order getOrder()
+   public CardOrder getOrder()
    {
       return order;
    }
 
-   public void setOrder(Order order)
+   public void setOrder(CardOrder order)
    {
       this.order = order;
    }

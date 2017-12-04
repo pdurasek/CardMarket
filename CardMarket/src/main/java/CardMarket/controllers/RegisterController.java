@@ -7,6 +7,7 @@ import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.User;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogEvent;
+import javafx.scene.layout.AnchorPane;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class RegisterController
@@ -24,6 +26,8 @@ public class RegisterController
    private JFXPasswordField registerPasswordField, loginPasswordField;
    @FXML
    private JFXButton registerButton, loginButton;
+   @FXML
+   private AnchorPane rootPane;
 
    private IUserDao userDao = new UserDao();
    private Market market;
@@ -43,12 +47,15 @@ public class RegisterController
 
             if (userDao.createUser(newUser))
             {
-               market.showBrowse(); // TODO handle passing user through screens
+               market.showBrowse();
             }
          }
          else
          {
-            // TODO handle wrong fields length
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Registration Error");
+            alert.setContentText("Incorrect registration information");
+            alert.showAndWait();
          }
       });
 
@@ -61,7 +68,7 @@ public class RegisterController
 
          if (loggedUser != null)
          {
-            market.showBrowse(); // TODO handle passing user through screens
+            market.showBrowse();
          }
          else
          {

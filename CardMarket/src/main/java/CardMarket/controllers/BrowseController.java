@@ -22,6 +22,8 @@ import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.CustomTextField;
 import org.controlsfx.control.textfield.TextFields;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static javafx.scene.input.MouseEvent.MOUSE_PRESSED;
@@ -60,6 +62,8 @@ public class BrowseController
    private List<Card> lastSearchCardList;
    private ICardDao cardDao = new CardDao();
    private Market market;
+   private ArrayList<ComboBox> comboBoxesList;
+   private boolean isReseting = false;
 
    private final int IMAGE_CARDS_PER_PAGE = 15;
 
@@ -129,7 +133,7 @@ public class BrowseController
          if (bind != null && searchBar.getText().length() < 3)
          {
             bind.dispose();
-            isSearching = false; // TODO revisit autosuggestion logic?
+            isSearching = false;
          }
 
          if (searchBar.getText().length() >= 3 && !isSearching)
@@ -247,6 +251,8 @@ public class BrowseController
 
    private void populateFilters()
    {
+      comboBoxesList = new ArrayList(Arrays.asList(rarityCombo, typeCombo, subTypeCombo, conditionCombo, languageCombo));
+
       ICardSetDao cardSetDao = new CardSetDao();
       List<Cardset> cardsetList = cardSetDao.getAllSets();
 
@@ -274,8 +280,14 @@ public class BrowseController
       rarityCombo.getItems().addAll(rarityList);
       rarityCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "rarity", newValue.getRarityID()), filterDrawer);
+         if (!isReseting)
+         {
+            isReseting = true;
+            resetComboBoxes(rarityCombo);
+            mainPane.getChildren().clear();
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "rarity", newValue.getRarityID()), filterDrawer);
+         }
+
       });
 
       typeCombo.getItems().add(new Type(-1, "All Types"));
@@ -283,8 +295,13 @@ public class BrowseController
       typeCombo.getItems().addAll(typeList);
       typeCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "type", newValue.getTypeID()), filterDrawer);
+         if (!isReseting)
+         {
+            isReseting = true;
+            resetComboBoxes(typeCombo);
+            mainPane.getChildren().clear();
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "type", newValue.getTypeID()), filterDrawer);
+         }
       });
 
       subTypeCombo.getItems().add(new Subtype(-1, "All Sub Types"));
@@ -292,8 +309,13 @@ public class BrowseController
       subTypeCombo.getItems().addAll(subtypeList);
       subTypeCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "subtype", newValue.getSubTypeID()), filterDrawer);
+         if (!isReseting)
+         {
+            isReseting = true;
+            resetComboBoxes(subTypeCombo);
+            mainPane.getChildren().clear();
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "subtype", newValue.getSubTypeID()), filterDrawer);
+         }
       });
 
       conditionCombo.getItems().add(new Condition(-1, "All Conditions", ""));
@@ -301,8 +323,13 @@ public class BrowseController
       conditionCombo.getItems().addAll(conditionList);
       conditionCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "condition", newValue.getConditionId()), filterDrawer);
+         if(!isReseting)
+         {
+            isReseting = true;
+            resetComboBoxes(conditionCombo);
+            mainPane.getChildren().clear();
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "condition", newValue.getConditionId()), filterDrawer);
+         }
       });
 
       languageCombo.getItems().add(new Language(-1, "All Languages", ""));
@@ -310,8 +337,13 @@ public class BrowseController
       languageCombo.getItems().addAll(languageList);
       languageCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "language", newValue.getLanguageID()), filterDrawer);
+         if(!isReseting)
+         {
+            isReseting = true;
+            resetComboBoxes(languageCombo);
+            mainPane.getChildren().clear();
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "language", newValue.getLanguageID()), filterDrawer);
+         }
       });
    }
 
@@ -330,5 +362,18 @@ public class BrowseController
       profileMenuItem.setOnAction(event -> {
          market.showUserProfile();
       });
+   }
+
+   private void resetComboBoxes(ComboBox comboBox)
+   {
+      for (int i = 0; i < comboBoxesList.size(); ++i)
+      {
+         if (!comboBox.equals(comboBoxesList.get(i)))
+         {
+            comboBoxesList.get(i).getSelectionModel().selectFirst();
+         }
+      }
+
+      isReseting = false;
    }
 }

@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CardMarket.controllers.UniqueCardController">
    <children>
-      <BorderPane prefHeight="800.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #181818;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Label fx:id="bigName" alignment="CENTER" text="Card Name" BorderPane.alignment="CENTER">
+            <Label fx:id="bigName" alignment="CENTER" text="Card Name" textFill="#e48282" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </BorderPane.margin>
@@ -25,7 +25,7 @@
             </Label>
          </top>
          <center>
-            <SplitPane dividerPositions="0.37969924812030076" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.37969924812030076" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #181818;" BorderPane.alignment="CENTER">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
@@ -41,12 +41,12 @@
                                  <children>
                                     <FlowPane alignment="CENTER_LEFT" prefHeight="125.0">
                                        <children>
-                                          <Label text="Name:">
+                                          <Label text="Name:" textFill="WHITE">
                                              <padding>
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label fx:id="name" text="Label" />
+                                          <Label fx:id="name" text="Label" textFill="WHITE" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -54,7 +54,7 @@
                                     </FlowPane>
                                     <FlowPane alignment="BOTTOM_LEFT" prefHeight="100.0">
                                        <children>
-                                          <Label alignment="CENTER" text="Description:">
+                                          <Label alignment="CENTER" text="Description:" textFill="WHITE">
                                              <padding>
                                                 <Insets right="10.0" />
                                              </padding>
@@ -74,12 +74,12 @@
                                     </JFXTextArea>
                                     <FlowPane alignment="CENTER_LEFT" prefHeight="125.0">
                                        <children>
-                                          <Label text="Type:">
+                                          <Label text="Type:" textFill="WHITE">
                                              <padding>
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label fx:id="type" text="Label" />
+                                          <Label fx:id="type" text="Label" textFill="WHITE" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -87,12 +87,12 @@
                                     </FlowPane>
                                     <FlowPane alignment="CENTER_LEFT" prefHeight="125.0">
                                        <children>
-                                          <Label text="Subtype:">
+                                          <Label text="Subtype:" textFill="WHITE">
                                              <padding>
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label fx:id="subType" text="Label" />
+                                          <Label fx:id="subType" text="Label" textFill="WHITE" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />
@@ -100,12 +100,12 @@
                                     </FlowPane>
                                     <FlowPane alignment="CENTER_LEFT" prefHeight="125.0">
                                        <children>
-                                          <Label text="Average Cost:">
+                                          <Label text="Average Cost:" textFill="WHITE">
                                              <padding>
                                                 <Insets right="10.0" />
                                              </padding>
                                           </Label>
-                                          <Label fx:id="averageCost" text="Label" />
+                                          <Label fx:id="averageCost" text="Label" textFill="WHITE" />
                                        </children>
                                        <VBox.margin>
                                           <Insets left="20.0" />

@@ -14,7 +14,7 @@
             <generator class="native"/>
         </id>
 
-        <set name="reservedCards" cascade="save-update">
+        <set name="reservedCards" cascade="save-update" >
             <key column="reservedCardID"/>
             <one-to-many class="CardMarket.models.ReservedCard"/>
         </set>
@@ -24,8 +24,8 @@
         <property name= "email" column="email" type="string"/>
         <property name = "cardsBought" column = "cardsBought" type = "int"/>
         <property name = "cardsSold" column = "cardsSold" type = "int"/>
-        <many-to-one name="shippingAddressTemplate" column="addressID" class="CardMarket.models.ShippingAddressTemplate" not-null="false"/>
-        <many-to-one name="credibility" column="credibilityID" class="CardMarket.models.Credibility" not-null="false"/>
+        <many-to-one name="shippingAddressTemplate" column="addressID" class="CardMarket.models.ShippingAddressTemplate" not-null="false" lazy="false"/>
+        <many-to-one name="credibility" column="credibilityID" class="CardMarket.models.Credibility" not-null="false" lazy="false"/>
 
     </class>
 </hibernate-mapping>
