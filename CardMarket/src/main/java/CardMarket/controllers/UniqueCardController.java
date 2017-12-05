@@ -66,7 +66,7 @@ public class UniqueCardController
    public void updateCardInfo()
    {
       bigName.setText(card.getName());
-      imageView.setImage(new Image("images/" + card.getImageUrl()));
+      imageView.setImage(new Image("images/cards/" + card.getImageUrl()));
       name.setText(card.getName());
       description.setText(card.getDescription());
       type.setText(card.getType().getName());

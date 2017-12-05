@@ -24,6 +24,19 @@ public class UserCreator
       return loggedUser;
    }
 
+   public static void logUser(String username, String password)
+   {
+      if (loggedUser == null)
+      {
+         loggedUser = userDao.getAuthenticatedUser(username, password);
+
+         if (loggedUser == null)
+         {
+            System.err.println("Cannot authenticate user");
+         }
+      }
+   }
+
    public static User getLoggedUser()
    {
       if (loggedUser == null)

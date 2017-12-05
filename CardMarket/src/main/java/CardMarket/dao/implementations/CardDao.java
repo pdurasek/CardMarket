@@ -49,6 +49,17 @@ public class CardDao implements ICardDao
    }
 
    @Override
+   public List getAllCards(int startIndex, int pageSize)
+   {
+      Query query = session.createQuery("FROM Card ORDER BY name");
+
+      query.setFirstResult(startIndex);
+      query.setMaxResults(pageSize);
+
+      return query.list();
+   }
+
+   @Override
    public List getAllCards(int startIndex, int pageSize, int setValue)
    {
       Query query = session.createQuery("FROM Card WHERE cardset.setID = :setValue");

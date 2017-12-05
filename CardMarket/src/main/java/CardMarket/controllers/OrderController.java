@@ -92,6 +92,7 @@ public class OrderController
                         reservedCardDao.deleteReservedCard(aReservedCard);
                         JFXSnackbar bar = new JFXSnackbar(basePane);
                         bar.enqueue(new JFXSnackbar.SnackbarEvent("Cards ordered successfully"));
+                        modalStage.close();
                      }
                   }
                }

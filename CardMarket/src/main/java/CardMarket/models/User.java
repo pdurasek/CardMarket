@@ -24,11 +24,12 @@ public class User
       this.password = password;
    }
 
-   public User(String username, String password, String email)
+   public User(String username, String password, String email, Credibility credibility)
    {
       this.username = username;
       this.password = password;
       this.email = email;
+      this.credibility = credibility;
    }
 
    public int getUserID()

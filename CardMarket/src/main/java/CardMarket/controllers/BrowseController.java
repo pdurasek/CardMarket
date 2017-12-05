@@ -33,7 +33,7 @@ public class BrowseController
    @FXML
    private CustomTextField searchBar;
    @FXML
-   private JFXButton searchButton;
+   private JFXButton searchButton, resetButton;
    @FXML
    private JFXDrawer filterDrawer;
    @FXML
@@ -81,15 +81,23 @@ public class BrowseController
       searchButton.addEventHandler(MOUSE_PRESSED, event ->
       {
          mainPane.getChildren().clear();
-         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), false, "", -1), filterDrawer);
+         mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), false, "", -1, false), filterDrawer);
       });
 
       createHamburgerMenu();
       populateFilters();
       populateAutoComplete();
 
+      resetButton.setOnAction(event ->
+      {
+         isReseting = true;
+         resetComboBoxes(null);
+         mainPane.getChildren().clear();
+         mainPane.getChildren().addAll(createCardGrid("", false, "", -1, true), filterDrawer);
+      });
+
       mainPane.getChildren().clear();
-      mainPane.getChildren().addAll(createCardGrid("", false, "", -1), filterDrawer);
+      mainPane.getChildren().addAll(createCardGrid("", false, "", -1, true), filterDrawer);
    }
 
    private void createHamburgerMenu()
@@ -151,7 +159,7 @@ public class BrowseController
       });
    }
 
-   private Pagination createCardGrid(String pattern, boolean isFiltered, String filterColumn, int filterValue)
+   private Pagination createCardGrid(String pattern, boolean isFiltered, String filterColumn, int filterValue, boolean isFirst)
    {
       int uniqueCardsCount;
 
@@ -163,9 +171,13 @@ public class BrowseController
       {
          uniqueCardsCount = cardDao.getAllCardsCount(pattern, cardSetCombo.getSelectionModel().getSelectedItem().getSetID());
       }
+      else if (isFirst)
+      {
+         uniqueCardsCount = cardDao.getAllCardsCount();
+      }
       else
       {
-         uniqueCardsCount = cardDao.getAllCardsCount("",cardSetCombo.getSelectionModel().getSelectedItem().getSetID());
+         uniqueCardsCount = cardDao.getAllCardsCount("", cardSetCombo.getSelectionModel().getSelectedItem().getSetID());
       }
 
       int pageCount = (int) Math.ceil((double) uniqueCardsCount / IMAGE_CARDS_PER_PAGE);
@@ -175,13 +187,13 @@ public class BrowseController
       }
 
       Pagination pagination = new Pagination(pageCount, 0);
-      pagination.setPageFactory(param -> populateCardGrid(param, pattern, isFiltered, filterColumn, filterValue));
+      pagination.setPageFactory(param -> populateCardGrid(param, pattern, isFiltered, filterColumn, filterValue, isFirst));
       pagination.setStyle("-fx-background-color: #181818");
 
       return pagination;
    }
 
-   private ScrollPane populateCardGrid(int pageIndex, String pattern, boolean isFiltered, String filterColumn, int filterValue)
+   private ScrollPane populateCardGrid(int pageIndex, String pattern, boolean isFiltered, String filterColumn, int filterValue, boolean isFirst)
    {
       JFXMasonryPane masonryCardPane;
 
@@ -193,6 +205,10 @@ public class BrowseController
       else if (pattern.length() > 0)
       {
          lastSearchCardList = cardDao.getAllCardsLike(pattern, pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE, cardSetCombo.getSelectionModel().getSelectedItem().getSetID());
+      }
+      else if (isFirst)
+      {
+         lastSearchCardList = cardDao.getAllCards(pageIndex * IMAGE_CARDS_PER_PAGE, IMAGE_CARDS_PER_PAGE);
       }
       else
       {
@@ -230,7 +246,7 @@ public class BrowseController
          });
          String imgName = card.getImageUrl();
 
-         ImageView cardImage = new ImageView("images/" + imgName); // TODO handle image not found exceptions - IllegalArgumentException
+         ImageView cardImage = new ImageView("images/cards/" + imgName); // TODO handle image not found exceptions - IllegalArgumentException
 
          Label label = new Label(card.getName());
          Label label2 = new Label(card.getDescription());
@@ -285,7 +301,7 @@ public class BrowseController
             isReseting = true;
             resetComboBoxes(rarityCombo);
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "rarity", newValue.getRarityID()), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "rarity", newValue.getRarityID(), false), filterDrawer);
          }
 
       });
@@ -300,7 +316,7 @@ public class BrowseController
             isReseting = true;
             resetComboBoxes(typeCombo);
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "type", newValue.getTypeID()), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "type", newValue.getTypeID(), false), filterDrawer);
          }
       });
 
@@ -314,7 +330,7 @@ public class BrowseController
             isReseting = true;
             resetComboBoxes(subTypeCombo);
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "subtype", newValue.getSubTypeID()), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "subtype", newValue.getSubTypeID(), false), filterDrawer);
          }
       });
 
@@ -323,12 +339,12 @@ public class BrowseController
       conditionCombo.getItems().addAll(conditionList);
       conditionCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         if(!isReseting)
+         if (!isReseting)
          {
             isReseting = true;
             resetComboBoxes(conditionCombo);
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "condition", newValue.getConditionId()), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "condition", newValue.getConditionId(), false), filterDrawer);
          }
       });
 
@@ -337,12 +353,12 @@ public class BrowseController
       languageCombo.getItems().addAll(languageList);
       languageCombo.valueProperty().addListener((observable, oldValue, newValue) ->
       {
-         if(!isReseting)
+         if (!isReseting)
          {
             isReseting = true;
             resetComboBoxes(languageCombo);
             mainPane.getChildren().clear();
-            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "language", newValue.getLanguageID()), filterDrawer);
+            mainPane.getChildren().addAll(createCardGrid(searchBar.getText(), true, "language", newValue.getLanguageID(), false), filterDrawer);
          }
       });
    }
@@ -359,7 +375,8 @@ public class BrowseController
          market.showCart();
       });
 
-      profileMenuItem.setOnAction(event -> {
+      profileMenuItem.setOnAction(event ->
+      {
          market.showUserProfile();
       });
    }
@@ -368,7 +385,7 @@ public class BrowseController
    {
       for (int i = 0; i < comboBoxesList.size(); ++i)
       {
-         if (!comboBox.equals(comboBoxesList.get(i)))
+         if (comboBox == null || !comboBox.equals(comboBoxesList.get(i)))
          {
             comboBoxesList.get(i).getSelectionModel().selectFirst();
          }

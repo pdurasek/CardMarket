@@ -2,7 +2,9 @@ package CardMarket.controllers;
 
 import CardMarket.Market;
 import CardMarket.dao.UserCreator;
+import CardMarket.dao.implementations.CredibilityDao;
 import CardMarket.dao.implementations.UserDao;
+import CardMarket.dao.interfaces.ICredibilityDao;
 import CardMarket.dao.interfaces.IUserDao;
 import CardMarket.models.User;
 import com.jfoenix.controls.JFXButton;
@@ -30,6 +32,7 @@ public class RegisterController
    private AnchorPane rootPane;
 
    private IUserDao userDao = new UserDao();
+   private ICredibilityDao credibilityDao = new CredibilityDao();
    private Market market;
 
    @FXML
@@ -43,10 +46,12 @@ public class RegisterController
 
          if (registerName.length() >= 3 && registerPassword.length() >= 5 && registerEmail.length() >= 7)
          {
-            User newUser = new User(registerName, DigestUtils.sha256Hex(registerPassword), registerEmail);
+            String passHash = DigestUtils.sha256Hex(registerPassword);
+            User newUser = new User(registerName, passHash, registerEmail, credibilityDao.getCredibility(1));
 
             if (userDao.createUser(newUser))
             {
+               UserCreator.logUser(registerName, passHash);
                market.showBrowse();
             }
          }
